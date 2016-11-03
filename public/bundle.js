@@ -21472,7 +21472,7 @@
 	'use strict';
 
 	Object.defineProperty(exports, "__esModule", {
-	  value: true
+	    value: true
 	});
 
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
@@ -21508,38 +21508,62 @@
 	var React = __webpack_require__(2);
 
 
-	__webpack_require__(183);
+	__webpack_require__(179);
 
 	var SurveyApp = function (_React$Component) {
-	  _inherits(SurveyApp, _React$Component);
+	    _inherits(SurveyApp, _React$Component);
 
-	  function SurveyApp() {
-	    _classCallCheck(this, SurveyApp);
+	    function SurveyApp() {
+	        _classCallCheck(this, SurveyApp);
 
-	    return _possibleConstructorReturn(this, (SurveyApp.__proto__ || Object.getPrototypeOf(SurveyApp)).apply(this, arguments));
-	  }
-
-	  _createClass(SurveyApp, [{
-	    key: 'render',
-	    value: function render() {
-	      return React.createElement(
-	        'div',
-	        null,
-	        React.createElement(
-	          'div',
-	          { className: 'centerAll' },
-	          'Survey App'
-	        ),
-	        React.createElement(_SurveyMessage2.default, null),
-	        React.createElement(_SurveyControls2.default, null),
-	        React.createElement(_SurveyOptions2.default, null),
-	        React.createElement(_SurveyNavigation2.default, null),
-	        React.createElement(_SurveyBottom2.default, null)
-	      );
+	        return _possibleConstructorReturn(this, (SurveyApp.__proto__ || Object.getPrototypeOf(SurveyApp)).apply(this, arguments));
 	    }
-	  }]);
 
-	  return SurveyApp;
+	    _createClass(SurveyApp, [{
+	        key: 'render',
+	        value: function render() {
+	            return React.createElement(
+	                'div',
+	                { className: 'main' },
+	                React.createElement(
+	                    'header',
+	                    { className: 'centerAll' },
+	                    'SURVEY'
+	                ),
+	                React.createElement(
+	                    'section',
+	                    null,
+	                    React.createElement(
+	                        'div',
+	                        { className: 'content-body content-shadow' },
+	                        React.createElement(
+	                            'div',
+	                            { className: 'survey-alert-container flexDirection' },
+	                            React.createElement(
+	                                'div',
+	                                { className: 'survey-container centerAll' },
+	                                React.createElement(_SurveyMessage2.default, null)
+	                            ),
+	                            React.createElement(
+	                                'div',
+	                                { className: 'decision-container' },
+	                                React.createElement(_SurveyControls2.default, null),
+	                                React.createElement(_SurveyOptions2.default, null)
+	                            ),
+	                            React.createElement(_SurveyNavigation2.default, null)
+	                        )
+	                    )
+	                ),
+	                React.createElement(
+	                    'footer',
+	                    null,
+	                    React.createElement(_SurveyBottom2.default, null)
+	                )
+	            );
+	        }
+	    }]);
+
+	    return SurveyApp;
 	}(React.Component);
 
 	exports.default = SurveyApp;
@@ -21549,7 +21573,7 @@
 /* 174 */
 /***/ function(module, exports, __webpack_require__) {
 
-	'use strict';
+	"use strict";
 
 	Object.defineProperty(exports, "__esModule", {
 	  value: true
@@ -21575,12 +21599,21 @@
 	  }
 
 	  _createClass(SurveyBottom, [{
-	    key: 'render',
+	    key: "render",
 	    value: function render() {
 	      return React.createElement(
-	        'div',
-	        null,
-	        'Survey Bottom'
+	        "div",
+	        { className: "spaceBetween displayFlex footerClass" },
+	        React.createElement(
+	          "div",
+	          { className: "home-icon" },
+	          React.createElement("img", { src: "../images/home.png", width: "150", height: "150", alt: "home" })
+	        ),
+	        React.createElement(
+	          "div",
+	          { className: "home-icon" },
+	          React.createElement("img", { src: "../images/back.png", width: "150", height: "150", alt: "back" })
+	        )
 	      );
 	    }
 	  }]);
@@ -21595,10 +21628,10 @@
 /* 175 */
 /***/ function(module, exports, __webpack_require__) {
 
-	'use strict';
+	"use strict";
 
 	Object.defineProperty(exports, "__esModule", {
-	  value: true
+	    value: true
 	});
 
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
@@ -21612,26 +21645,40 @@
 	var React = __webpack_require__(2);
 
 	var SurveyControls = function (_React$Component) {
-	  _inherits(SurveyControls, _React$Component);
+	    _inherits(SurveyControls, _React$Component);
 
-	  function SurveyControls() {
-	    _classCallCheck(this, SurveyControls);
+	    function SurveyControls() {
+	        _classCallCheck(this, SurveyControls);
 
-	    return _possibleConstructorReturn(this, (SurveyControls.__proto__ || Object.getPrototypeOf(SurveyControls)).apply(this, arguments));
-	  }
-
-	  _createClass(SurveyControls, [{
-	    key: 'render',
-	    value: function render() {
-	      return React.createElement(
-	        'div',
-	        null,
-	        'Survey Controls'
-	      );
+	        return _possibleConstructorReturn(this, (SurveyControls.__proto__ || Object.getPrototypeOf(SurveyControls)).apply(this, arguments));
 	    }
-	  }]);
 
-	  return SurveyControls;
+	    _createClass(SurveyControls, [{
+	        key: "render",
+	        value: function render() {
+	            return React.createElement(
+	                "div",
+	                { className: "inner-container displayFlex spaceBetween surevyControls" },
+	                React.createElement(
+	                    "div",
+	                    { className: "decision-key-controls centerAll" },
+	                    "Now"
+	                ),
+	                React.createElement(
+	                    "div",
+	                    { className: "decision-key-controls centerAll" },
+	                    "Later"
+	                ),
+	                React.createElement(
+	                    "div",
+	                    { className: "decision-key-controls centerAll" },
+	                    "Exit"
+	                )
+	            );
+	        }
+	    }]);
+
+	    return SurveyControls;
 	}(React.Component);
 
 	exports.default = SurveyControls;
@@ -21671,27 +21718,23 @@
 	        value: function render() {
 	            return React.createElement(
 	                "div",
-	                null,
+	                { className: "survey-box-main flexDirection spaceAround " },
 	                React.createElement(
 	                    "div",
-	                    { className: "survey-box flexDirection spaceAround " },
+	                    { className: "survey-msg-container spaceAround" },
 	                    React.createElement(
 	                        "div",
-	                        { className: "survey-msg-container spaceAround" },
-	                        React.createElement(
-	                            "div",
-	                            { className: "survey-msg " },
-	                            "2 New Survey (s) Avaliable"
-	                        )
-	                    ),
+	                        { className: "survey-msg flexEnd " },
+	                        "2 New Survey (s) Avaliable"
+	                    )
+	                ),
+	                React.createElement(
+	                    "div",
+	                    { className: "survey-check-container centerAll" },
 	                    React.createElement(
 	                        "div",
-	                        { className: "survey-check-container centerAll" },
-	                        React.createElement(
-	                            "div",
-	                            { className: "survey-check-text" },
-	                            "Do you want to take it?"
-	                        )
+	                        { className: "survey-check-text" },
+	                        "Do you want to take it?"
 	                    )
 	                )
 	            );
@@ -21708,10 +21751,10 @@
 /* 177 */
 /***/ function(module, exports, __webpack_require__) {
 
-	'use strict';
+	"use strict";
 
 	Object.defineProperty(exports, "__esModule", {
-	  value: true
+	    value: true
 	});
 
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
@@ -21725,26 +21768,39 @@
 	var React = __webpack_require__(2);
 
 	var SurveyNavigation = function (_React$Component) {
-	  _inherits(SurveyNavigation, _React$Component);
+	    _inherits(SurveyNavigation, _React$Component);
 
-	  function SurveyNavigation() {
-	    _classCallCheck(this, SurveyNavigation);
+	    function SurveyNavigation() {
+	        _classCallCheck(this, SurveyNavigation);
 
-	    return _possibleConstructorReturn(this, (SurveyNavigation.__proto__ || Object.getPrototypeOf(SurveyNavigation)).apply(this, arguments));
-	  }
-
-	  _createClass(SurveyNavigation, [{
-	    key: 'render',
-	    value: function render() {
-	      return React.createElement(
-	        'div',
-	        null,
-	        'Survey Navigation'
-	      );
+	        return _possibleConstructorReturn(this, (SurveyNavigation.__proto__ || Object.getPrototypeOf(SurveyNavigation)).apply(this, arguments));
 	    }
-	  }]);
 
-	  return SurveyNavigation;
+	    _createClass(SurveyNavigation, [{
+	        key: "render",
+	        value: function render() {
+	            return React.createElement(
+	                "div",
+	                { className: "surveyNavContainer flexEndAll" },
+	                React.createElement(
+	                    "div",
+	                    { className: "displayFlex surveyNav flexEndAll spaceBetween" },
+	                    React.createElement(
+	                        "div",
+	                        { className: "nav-key centerAll" },
+	                        "Previuos"
+	                    ),
+	                    React.createElement(
+	                        "div",
+	                        { className: "nav-key centerAll" },
+	                        "Skip"
+	                    )
+	                )
+	            );
+	        }
+	    }]);
+
+	    return SurveyNavigation;
 	}(React.Component);
 
 	exports.default = SurveyNavigation;
@@ -21754,10 +21810,10 @@
 /* 178 */
 /***/ function(module, exports, __webpack_require__) {
 
-	'use strict';
+	"use strict";
 
 	Object.defineProperty(exports, "__esModule", {
-	  value: true
+	    value: true
 	});
 
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
@@ -21771,34 +21827,91 @@
 	var React = __webpack_require__(2);
 
 	var SurveyOptions = function (_React$Component) {
-	  _inherits(SurveyOptions, _React$Component);
+	    _inherits(SurveyOptions, _React$Component);
 
-	  function SurveyOptions() {
-	    _classCallCheck(this, SurveyOptions);
+	    function SurveyOptions() {
+	        _classCallCheck(this, SurveyOptions);
 
-	    return _possibleConstructorReturn(this, (SurveyOptions.__proto__ || Object.getPrototypeOf(SurveyOptions)).apply(this, arguments));
-	  }
-
-	  _createClass(SurveyOptions, [{
-	    key: 'render',
-	    value: function render() {
-	      return React.createElement(
-	        'div',
-	        null,
-	        'Survey Options'
-	      );
+	        return _possibleConstructorReturn(this, (SurveyOptions.__proto__ || Object.getPrototypeOf(SurveyOptions)).apply(this, arguments));
 	    }
-	  }]);
 
-	  return SurveyOptions;
+	    _createClass(SurveyOptions, [{
+	        key: "render",
+	        value: function render() {
+	            return React.createElement(
+	                "div",
+	                { className: "inner-container displayFlex spaceBetween wrap surveyOptions" },
+	                React.createElement(
+	                    "div",
+	                    { className: "decision-key-options centerAll " },
+	                    "Excellent"
+	                ),
+	                React.createElement(
+	                    "div",
+	                    { className: "decision-key-options centerAll " },
+	                    "Good"
+	                ),
+	                React.createElement(
+	                    "div",
+	                    { className: "decision-key-options centerAll" },
+	                    "Bad"
+	                ),
+	                React.createElement(
+	                    "div",
+	                    { className: "decision-key-options centerAll" },
+	                    "Ok"
+	                )
+	            );
+	        }
+	    }]);
+
+	    return SurveyOptions;
 	}(React.Component);
 
 	exports.default = SurveyOptions;
 	;
 
 /***/ },
-/* 179 */,
-/* 180 */,
+/* 179 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+
+	// load the styles
+	var content = __webpack_require__(180);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(182)(content, {});
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept("!!./../../../../node_modules/css-loader/index.js!./SurveyStyles.css", function() {
+				var newContent = require("!!./../../../../node_modules/css-loader/index.js!./SurveyStyles.css");
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ },
+/* 180 */
+/***/ function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(181)();
+	// imports
+
+
+	// module
+	exports.push([module.id, "\r\n/*\r\nTo change this license header, choose License Headers in Project Properties.\r\nTo change this template file, choose Tools | Templates\r\nand open the template in the editor.\r\n*/\r\n/* \r\n    Created on : Oct 31, 2016, 11:19:14 AM\r\n    Author     : dharani\r\n*/\r\n/* Font Style and families are listed*/\r\n/*@font-face {\r\n    font-family: 'Bryant';\r\n    font-style: normal;\r\n    font-weight: 500;\r\n    src: url(\"../../fonts/BryantPro-Medium.otf\");\r\n}\r\n@font-face {\r\n    font-family: 'Myriad-Bold';\r\n    font-style: normal;\r\n    font-weight: 500;\r\n    src: url(\"../../fonts/Myriad-Pro-Bold.ttf\");\r\n}\r\n@font-face {\r\n    font-family: 'Myriad-Regular';\r\n    font-style: normal;\r\n    font-weight: 500;\r\n    src: url(\"../../fonts/Myriad-Pro-Regular.ttf\");\r\n}*/\r\n\r\n.centerAll {\r\n    display: flex;\r\n    justify-content: center;\r\n    align-items: center;\r\n    display: -webkit-flex; /* Safari */\r\n    -webkit-justify-content: center; \r\n    -webkit-align-items: center;\r\n    display: -moz-flex; /* Mozilla */\r\n    -moz-justify-content: center; \r\n    -moz-align-items: center;\r\n}\r\n/* Display flex and its properties are grouped for particular use */\r\n.displayFlex {\r\n    display: flex;\r\n    display: -webkit-flex; /* Safari */\r\n    display: -moz-flex; /* Mozilla */\r\n\r\n}\r\n.centerAll {\r\n    display: flex;\r\n    justify-content: center;\r\n    align-items: center;\r\n    display: -webkit-flex; /* Safari */\r\n    -webkit-justify-content: center; \r\n    -webkit-align-items: center;\r\n    display: -moz-flex; /* Mozilla */\r\n    -moz-justify-content: center; \r\n    -moz-align-items: center;\r\n}\r\n.flexEnd {\r\n    display: flex;\r\n    justify-content: center;\r\n    align-items: flex-end;\r\n    display: -webkit-flex; /* Safari */\r\n    -webkit-justify-content: center; \r\n    -webkit-align-items: flex-end;\r\n    display: -moz-flex; /* Mozilla */\r\n    -moz-justify-content: center; \r\n    -moz-align-items: flex-end;\r\n}\r\n.flexEndAlign {\r\n    display: flex;\r\n    align-items: flex-end;\r\n    display: -webkit-flex; /* Safari */\r\n    -webkit-align-items: flex-end;\r\n    display: -moz-flex; /* Mozilla */\r\n    -moz-align-items: flex-end;\r\n}\r\n.flexAlignEnd {\r\n    display: flex;\r\n    justify-content: flex-end;\r\n    display: -webkit-flex; /* Safari */\r\n    -webkit-justify-content: flex-end;\r\n    display: -moz-flex; /* Mozilla */\r\n    -moz-justify-content: flex-end;\r\n}\r\n.flexEndAll {\r\n    display: flex;\r\n    justify-content: flex-end;\r\n    align-items: flex-end;\r\n    display: -webkit-flex; /* Safari */\r\n    -webkit-justify-content: flex-end; \r\n    -webkit-align-items: flex-end;\r\n    display: -moz-flex; /* Mozilla */\r\n    -moz-justify-content: flex-end; \r\n    -moz-align-items: flex-end;\r\n}\r\n.spaceAround {\r\n    display: flex;\r\n    justify-content: space-around;\r\n    align-items: center;\r\n    display: -webkit-flex; /* Safari */\r\n    -webkit-justify-content: space-around; \r\n    -webkit-align-items: center;\r\n    display: -moz-flex; /* Mozilla */\r\n    -moz-justify-content: space-around; \r\n    -moz-align-items: center;\r\n}\r\n.flexStart {\r\n    display: flex;\r\n    justify-content: flex-start;\r\n    align-items: center;\r\n    display: -webkit-flex; /* Safari */\r\n    -webkit-justify-content: flex-start; \r\n    -webkit-align-items: center;\r\n    display: -moz-flex; /* Mozilla */\r\n    -moz-justify-content: flex-start; \r\n    -moz-align-items: center;\r\n}\r\n.flexStartCenter {\r\n    display: flex;\r\n    justify-content: center;\r\n    align-items: flex-start;\r\n    display: -webkit-flex; /* Safari */\r\n    -webkit-justify-content: center; \r\n    -webkit-align-items: flex-start;\r\n    display: -moz-flex; /* Mozilla */\r\n    -moz-justify-content: center; \r\n    -moz-align-items: flex-start;\r\n}\r\n.centerItems {\r\n    display: flex;\r\n    align-items: center;\r\n    display: -webkit-flex; /* Safari */\r\n    -webkit-align-items: center;\r\n    display: -moz-flex; /* Mozilla */\r\n    -moz-align-items: center;\r\n}\r\n.justifyContent {\r\n    display: flex;\r\n    justify-content: center;\r\n    display: -webkit-flex; /* Safari */\r\n    -webkit-justify-content: center; \r\n    display: -moz-flex; /* Mozilla */\r\n    -moz-justify-content: center; \r\n}\r\n.spaceBetween {\r\n    display: flex;\r\n    justify-content: space-between;\r\n    align-items: center;\r\n    display: -webkit-flex; /* Safari */\r\n    -webkit-justify-content: space-between; \r\n    -webkit-align-items: center;\r\n    display: -moz-flex; /* Mozilla */\r\n    -moz-justify-content: space-between; \r\n    -moz-align-items: center;\r\n}\r\n.centerContent {\r\n    display: flex;\r\n    justify-content: center;\r\n    display: -webkit-flex; /* Safari */\r\n    -webkit-justify-content: center; \r\n    display: -moz-flex; /* Mozilla */\r\n    -moz-justify-content: center; \r\n}\r\n.flexDirection {\r\n    dispaly: flex;\r\n    flex-direction: column;\r\n    display: -webkit-flex; /* Safari */\r\n    -webkit-flex-direction: column; \r\n    display: -moz-flex; /* Mozilla */\r\n    -moz-flex-direction: column; \r\n}\r\n.wrap{\r\n    dispaly: flex;\r\n    flex-wrap: wrap;\r\n    display: -webkit-flex; /* Safari */\r\n    -webkit-flex-wrap: wrap; \r\n    display: -moz-flex; /* Mozilla */\r\n    -moz-flex-wrap: wrap; \r\n}\r\n\r\n/* Html layout header, section and footer speciivations*/\r\nheader {\r\n    height: 11%;\r\n    font-size: 35px;\r\n    font-family: 'Bryant';\r\n    width: 100%;\r\n    margin: 0 auto;\r\n}\r\n.header-title {\r\n    width: 50%;\r\n    display: flex;\r\n    justify-content: center;\r\n}\r\n.header-right {\r\n    width: 25%;\r\n}\r\nsection {\r\n    height:70%;\r\n}\r\nfooter {\r\n    height: 19%;\r\n    display: flex;\r\n}\r\n.footerClass {\r\n    width: 100%;\r\n    height: 100%;\r\n}\r\n.content-body {\r\n    background-color: #ffffff;\r\n    margin: 0 auto;\r\n    width: 97%;\r\n    height: 100%;\r\n}\r\n.container-main {\r\n    width: 94%;\r\n    height: 100%;\r\n    margin: 0 auto;\r\n}\r\n.main {\r\n    width: 100%;\r\n    height: 100%;\r\n}\r\n\r\nhtml, body {\r\n    background-color: #59c4bc;\r\n    height: 100%;\r\n    color: #ffffff;\r\n    margin: 0 auto;\r\n}\r\n.menu-div{\r\n    width:100%;\r\n    height:100%;\r\n}\r\n.cal-image {\r\n    width:50%;\r\n}\r\n.home-image {\r\n    width:50%;\r\n}\r\n.survey-alert-container{\r\n    width: 85%;\r\n    height: 100%;\r\n    margin: auto;\r\n}\r\n.survey-container{\r\n    width:100%;\r\n    height:50%;\r\n}\r\n.decision-container{\r\n    width:100%;\r\n    height:35%;\r\n}\r\n.inner-container{\r\n    width: 85%;\r\n    height: 30%;\r\n    margin: auto;\r\n}\r\n.decision-key {\r\n    border-radius: 15px;\r\n    width:35%;\r\n    height:100%;\r\n    background-color: #F4B936;\r\n    color:#ffffff;\r\n    font-size: 22px;\r\n    font-family: 'Myriad-Bold';\r\n}\r\n.decision-key-controls {\r\n    border-radius: 15px;\r\n    width:30%;\r\n    height:100%;\r\n    background-color: #F4B936;\r\n    color:#ffffff;\r\n    font-size: 22px;\r\n    font-family: 'Myriad-Bold';\r\n}\r\n.nav-key {\r\n    border-radius: 15px;\r\n    width:45%;\r\n    height:73%;\r\n    background-color: #F4B936;\r\n    color:#ffffff;\r\n    font-size: 22px;\r\n    font-family: 'Myriad-Bold';\r\n}\r\n.decision-key-options {\r\n    border: 3px solid white;\r\n    border-radius: 15px;\r\n    width:45%;\r\n    height:100%;\r\n    background-color: #F4B936;\r\n    color:#ffffff;\r\n    font-size: 22px;\r\n    font-family: 'Myriad-Bold';\r\n}\r\n.survey-box-content {\r\n    width: 90%;\r\n    height: 75%;\r\n    margin: auto;\r\n    border: 4px solid white;\r\n    border-radius: 14px;\r\n    background-color: #16bad6;\r\n}\r\n.survey-box-main {\r\n    width: 90%;\r\n    height: 75%;\r\n    margin: 0 auto;\r\n    border: 4px solid white;\r\n    border-radius: 14px;\r\n    background-color: #16bad6;\r\n}\r\n.survey-msg-container{\r\n    width:100%;\r\n    margin: auto;\r\n    height:40%;\r\n}\r\n.survey-msg\r\n{ \r\n    height: 90%;\r\n    font-size: 30px;\r\n    font-family: 'Myriad-Bold';\r\n}\r\n.survey-check-container{\r\n    width:100%;\r\n    margin: auto;\r\n    height:40%;\r\n}\r\n.survey-check-text{\r\n    font-size: 27px;\r\n    font-family: 'Myriad-Bold';\r\n    height:100%;\r\n}\r\n.survey-navigation {\r\n    display: none;\r\n}\r\n.surevyControls {\r\n    //display: none;\r\n}\r\n.surveyOptions {\r\n    display: flex;\r\n}\r\n.survey-address-container  {\r\n    width:  100%;\r\n    height: 50%;\r\n}\r\n.address-time-date  {\r\n    height: 75%;\r\n    width: 95%;\r\n    margin: 0 auto;\r\n}\r\n.surveyNavContainer {\r\n    height: 15%;\r\n}\r\n.surveyNav {\r\n    height: 100%;\r\n    width: 70%;\r\n}", ""]);
+
+	// exports
+
+
+/***/ },
 /* 181 */
 /***/ function(module, exports) {
 
@@ -22104,46 +22217,6 @@
 		if(oldSrc)
 			URL.revokeObjectURL(oldSrc);
 	}
-
-
-/***/ },
-/* 183 */
-/***/ function(module, exports, __webpack_require__) {
-
-	// style-loader: Adds some css to the DOM by adding a <style> tag
-
-	// load the styles
-	var content = __webpack_require__(184);
-	if(typeof content === 'string') content = [[module.id, content, '']];
-	// add the styles to the DOM
-	var update = __webpack_require__(182)(content, {});
-	if(content.locals) module.exports = content.locals;
-	// Hot Module Replacement
-	if(false) {
-		// When the styles change, update the <style> tags
-		if(!content.locals) {
-			module.hot.accept("!!./../../../../node_modules/css-loader/index.js!./SurveyStyles.css", function() {
-				var newContent = require("!!./../../../../node_modules/css-loader/index.js!./SurveyStyles.css");
-				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-				update(newContent);
-			});
-		}
-		// When the module is disposed, remove the <style> tags
-		module.hot.dispose(function() { update(); });
-	}
-
-/***/ },
-/* 184 */
-/***/ function(module, exports, __webpack_require__) {
-
-	exports = module.exports = __webpack_require__(181)();
-	// imports
-
-
-	// module
-	exports.push([module.id, ".centerAll {\n    display: flex;\n    justify-content: center;\n    align-items: center;\n    display: -webkit-flex; /* Safari */\n    -webkit-justify-content: center; \n    -webkit-align-items: center;\n    display: -moz-flex; /* Mozilla */\n    -moz-justify-content: center; \n    -moz-align-items: center;\n}\n/*\nTo change this license header, choose License Headers in Project Properties.\nTo change this template file, choose Tools | Templates\nand open the template in the editor.\n*/\n/* \n    Created on : Oct 31, 2016, 11:19:14 AM\n    Author     : dharani\n*/\n\n", ""]);
-
-	// exports
 
 
 /***/ }
