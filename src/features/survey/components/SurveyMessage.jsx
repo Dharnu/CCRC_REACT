@@ -1,5 +1,6 @@
 var React = require('react');
-export default class SurveyMessage extends React.Component {
+var {connect}= require('react-redux')
+export class SurveyMessage extends React.Component {
   render () {
 return(
   	<div><div className="survey-box flexDirection spaceAround ">
@@ -18,3 +19,4 @@ return(
   
   }
   };
+  export default connect()(SurveyMessage);

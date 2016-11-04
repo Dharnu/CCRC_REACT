@@ -5,19 +5,25 @@ import SurveyMessage from './SurveyMessage'  ;
 import SurveyNavigation from './SurveyNavigation'  ;
 import SurveyOptions from './SurveyOptions'  ;
 
-require('style!css!../styles/SurveyStyles.css');
+var {Provider}= require('react-redux');
+var SurveyStore =require('./../store/configureStore').configure();
+var SurveyActions =require('./../actions/index');
+
 
 export default class SurveyApp extends React.Component {
   render () {
   return(
+  <Provider store={SurveyStore}>
   <div>
-  	<div className="centerAll">Survey App</div>
+  	<div>Survey App</div>
   	<SurveyMessage/>
   	<SurveyControls/>
   	<SurveyOptions/>
   	<SurveyNavigation/>
   	<SurveyBottom/>
+  	
   </div>
+  </Provider>
   )
   }
   };
