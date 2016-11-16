@@ -1,8 +1,11 @@
-var React = require('react');
+import React, {PropTypes} from 'react';
 export default class SurveyBottom extends React.Component {
   render () {
 return(
-  	<div>Survey Bottom</div>
+  	<div className="spaceBetween displayFlex footerClass">
+                <div className="home-icon"><img src="../images/home.png" width="150" height="150" alt="home" /></div>
+                <div className="home-icon"><img src="../images/back.png" width="150" height="150" alt="back" /></div>
+            </div>
   )
   
   }

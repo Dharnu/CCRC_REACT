@@ -1,29 +1,53 @@
-var React = require('react');
-import SurveyBottom from './SurveyBottom'  ;
-import SurveyControls from './SurveyControls'  ;
-import SurveyMessage from './SurveyMessage'  ;
-import SurveyNavigation from './SurveyNavigation'  ;
-import SurveyOptions from './SurveyOptions'  ;
+import React, {
+  PropTypes
+} from 'react';
+import SurveyBottom from './SurveyBottom';
+import SurveyControls from './SurveyControls';
+import SurveyMessage from './SurveyMessage';
+import SurveyNavigation from './SurveyNavigation';
+import SurveyOptions from './SurveyOptions';
+import initialState from './../reducers/initialState';
 
-var {Provider}= require('react-redux');
-var SurveyStore =require('./../store/configureStore').configure();
-var SurveyActions =require('./../actions/index');
+import {connect} from 'react-redux';
 
 
-export default class SurveyApp extends React.Component {
-  render () {
-  return(
-  <Provider store={SurveyStore}>
-  <div>
-  	<div>Survey App</div>
-  	<SurveyMessage/>
-  	<SurveyControls/>
-  	<SurveyOptions/>
-  	<SurveyNavigation/>
-  	<SurveyBottom/>
-  	
-  </div>
-  </Provider>
-  )
+require('style!css!../styles/SurveyStyles.css');
+class SurveyApp extends React.Component {
+
+  constructor(props, context) {
+    super(props, context);
   }
+
+  render() {
+
+    return (
+
+      <div className="main">
+  	 <header className="centerAll">SURVEY</header>
+  	 <section>
+            <div className="content-body content-shadow">
+                <div className="survey-alert-container flexDirection">
+                    <div className="survey-container centerAll">
+                        <SurveyMessage question={this.props.state.displayMessage}/>
+                    </div>
+                    {this.props.state.displayControlPanel?<SurveyControls/>:''}
+                    {this.props.state.displayOptionsPanel?<SurveyOptions/>:''}
+                    {this.props.state.displayNavigationPanel?<SurveyNavigation/>:''}
+                    
+                </div>
+            </div>
+        </section>
+  	<footer>{this.props.state.displayNavigationPanel?<SurveyBottom/>:''}</footer>
+  </div>
+
+    )
+  }
+};
+
+function mapStateToProps(state, ownProps) {
+  return {
+    state: state
   };
+}
+
+export default connect(mapStateToProps)(SurveyApp);

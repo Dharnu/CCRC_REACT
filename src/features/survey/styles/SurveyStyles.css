@@ -1,0 +1,358 @@
+
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Oct 31, 2016, 11:19:14 AM
+    Author     : dharani
+*/
+/* Font Style and families are listed*/
+/*@font-face {
+    font-family: 'Bryant';
+    font-style: normal;
+    font-weight: 500;
+    src: url("../../fonts/BryantPro-Medium.otf");
+}
+@font-face {
+    font-family: 'Myriad-Bold';
+    font-style: normal;
+    font-weight: 500;
+    src: url("../../fonts/Myriad-Pro-Bold.ttf");
+}
+@font-face {
+    font-family: 'Myriad-Regular';
+    font-style: normal;
+    font-weight: 500;
+    src: url("../../fonts/Myriad-Pro-Regular.ttf");
+}*/
+
+.centerAll {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    display: -webkit-flex; /* Safari */
+    -webkit-justify-content: center; 
+    -webkit-align-items: center;
+    display: -moz-flex; /* Mozilla */
+    -moz-justify-content: center; 
+    -moz-align-items: center;
+}
+/* Display flex and its properties are grouped for particular use */
+.displayFlex {
+    display: flex;
+    display: -webkit-flex; /* Safari */
+    display: -moz-flex; /* Mozilla */
+
+}
+.centerAll {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    display: -webkit-flex; /* Safari */
+    -webkit-justify-content: center; 
+    -webkit-align-items: center;
+    display: -moz-flex; /* Mozilla */
+    -moz-justify-content: center; 
+    -moz-align-items: center;
+}
+.flexEnd {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    display: -webkit-flex; /* Safari */
+    -webkit-justify-content: center; 
+    -webkit-align-items: flex-end;
+    display: -moz-flex; /* Mozilla */
+    -moz-justify-content: center; 
+    -moz-align-items: flex-end;
+}
+.flexEndAlign {
+    display: flex;
+    align-items: flex-end;
+    display: -webkit-flex; /* Safari */
+    -webkit-align-items: flex-end;
+    display: -moz-flex; /* Mozilla */
+    -moz-align-items: flex-end;
+}
+.flexAlignEnd {
+    display: flex;
+    justify-content: flex-end;
+    display: -webkit-flex; /* Safari */
+    -webkit-justify-content: flex-end;
+    display: -moz-flex; /* Mozilla */
+    -moz-justify-content: flex-end;
+}
+.flexEndAll {
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    display: -webkit-flex; /* Safari */
+    -webkit-justify-content: flex-end; 
+    -webkit-align-items: flex-end;
+    display: -moz-flex; /* Mozilla */
+    -moz-justify-content: flex-end; 
+    -moz-align-items: flex-end;
+}
+.spaceAround {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    display: -webkit-flex; /* Safari */
+    -webkit-justify-content: space-around; 
+    -webkit-align-items: center;
+    display: -moz-flex; /* Mozilla */
+    -moz-justify-content: space-around; 
+    -moz-align-items: center;
+}
+.flexStart {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    display: -webkit-flex; /* Safari */
+    -webkit-justify-content: flex-start; 
+    -webkit-align-items: center;
+    display: -moz-flex; /* Mozilla */
+    -moz-justify-content: flex-start; 
+    -moz-align-items: center;
+}
+.flexStartCenter {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    display: -webkit-flex; /* Safari */
+    -webkit-justify-content: center; 
+    -webkit-align-items: flex-start;
+    display: -moz-flex; /* Mozilla */
+    -moz-justify-content: center; 
+    -moz-align-items: flex-start;
+}
+.centerItems {
+    display: flex;
+    align-items: center;
+    display: -webkit-flex; /* Safari */
+    -webkit-align-items: center;
+    display: -moz-flex; /* Mozilla */
+    -moz-align-items: center;
+}
+.justifyContent {
+    display: flex;
+    justify-content: center;
+    display: -webkit-flex; /* Safari */
+    -webkit-justify-content: center; 
+    display: -moz-flex; /* Mozilla */
+    -moz-justify-content: center; 
+}
+.spaceBetween {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    display: -webkit-flex; /* Safari */
+    -webkit-justify-content: space-between; 
+    -webkit-align-items: center;
+    display: -moz-flex; /* Mozilla */
+    -moz-justify-content: space-between; 
+    -moz-align-items: center;
+}
+.centerContent {
+    display: flex;
+    justify-content: center;
+    display: -webkit-flex; /* Safari */
+    -webkit-justify-content: center; 
+    display: -moz-flex; /* Mozilla */
+    -moz-justify-content: center; 
+}
+.flexDirection {
+    dispaly: flex;
+    flex-direction: column;
+    display: -webkit-flex; /* Safari */
+    -webkit-flex-direction: column; 
+    display: -moz-flex; /* Mozilla */
+    -moz-flex-direction: column; 
+}
+.wrap{
+    dispaly: flex;
+    flex-wrap: wrap;
+    display: -webkit-flex; /* Safari */
+    -webkit-flex-wrap: wrap; 
+    display: -moz-flex; /* Mozilla */
+    -moz-flex-wrap: wrap; 
+}
+
+/* Html layout header, section and footer speciivations*/
+header {
+    height: 11%;
+    font-size: 35px;
+    font-family: 'Bryant';
+    width: 100%;
+    margin: 0 auto;
+}
+.header-title {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+}
+.header-right {
+    width: 25%;
+}
+section {
+    height:70%;
+}
+footer {
+    height: 19%;
+    display: flex;
+}
+.footerClass {
+    width: 100%;
+    height: 100%;
+}
+.content-body {
+    background-color: #ffffff;
+    margin: 0 auto;
+    width: 97%;
+    height: 100%;
+}
+.container-main {
+    width: 94%;
+    height: 100%;
+    margin: 0 auto;
+}
+.main {
+    width: 100%;
+    height: 100%;
+}
+
+html, body {
+    background-color: #59c4bc;
+    height: 100%;
+    color: #ffffff;
+    margin: 0 auto;
+}
+.menu-div{
+    width:100%;
+    height:100%;
+}
+.cal-image {
+    width:50%;
+}
+.home-image {
+    width:50%;
+}
+.survey-alert-container{
+    width: 85%;
+    height: 100%;
+    margin: auto;
+}
+.survey-container{
+    width:100%;
+    height:50%;
+}
+.decision-container{
+    width:100%;
+    height:35%;
+}
+.inner-container{
+    width: 85%;
+    height: 30%;
+    margin: auto;
+}
+.decision-key {
+    border-radius: 15px;
+    width:35%;
+    height:100%;
+    background-color: #F4B936;
+    color:#ffffff;
+    font-size: 22px;
+    font-family: 'Myriad-Bold';
+}
+.decision-key-controls {
+    border-radius: 15px;
+    width:30%;
+    height:100%;
+    background-color: #F4B936;
+    color:#ffffff;
+    font-size: 22px;
+    font-family: 'Myriad-Bold';
+}
+.nav-key {
+    border-radius: 15px;
+    width:45%;
+    height:73%;
+    background-color: #F4B936;
+    color:#ffffff;
+    font-size: 22px;
+    font-family: 'Myriad-Bold';
+}
+.decision-key-options {
+    border: 3px solid white;
+    border-radius: 15px;
+    width:45%;
+    height:100%;
+    background-color: #F4B936;
+    color:#ffffff;
+    font-size: 22px;
+    font-family: 'Myriad-Bold';
+}
+.survey-box-content {
+    width: 90%;
+    height: 75%;
+    margin: auto;
+    border: 4px solid white;
+    border-radius: 14px;
+    background-color: #16bad6;
+}
+.survey-box-main {
+    width: 90%;
+    height: 75%;
+    margin: 0 auto;
+    border: 4px solid white;
+    border-radius: 14px;
+    background-color: #16bad6;
+}
+.survey-msg-container{
+    width:100%;
+    margin: auto;
+    height:40%;
+}
+.survey-msg
+{ 
+    height: 90%;
+    font-size: 30px;
+    font-family: 'Myriad-Bold';
+}
+.survey-check-container{
+    width:100%;
+    margin: auto;
+    height:40%;
+}
+.survey-check-text{
+    font-size: 27px;
+    font-family: 'Myriad-Bold';
+    height:100%;
+}
+.survey-navigation {
+    display: none;
+}
+.surevyControls {
+    //display: none;
+}
+.surveyOptions {
+    display: flex;
+}
+.survey-address-container  {
+    width:  100%;
+    height: 50%;
+}
+.address-time-date  {
+    height: 75%;
+    width: 95%;
+    margin: 0 auto;
+}
+.surveyNavContainer {
+    height: 15%;
+}
+.surveyNav {
+    height: 100%;
+    width: 70%;
+}
