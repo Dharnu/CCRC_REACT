@@ -27,17 +27,18 @@ class SurveyApp extends React.Component {
       <div className="main">
   	 <header className="centerAll">SURVEY</header>
   	 <section>
-            <div className="content-body content-shadow">
+            <div className="content-body content-shadow displayFlex flexDirection">
                 <div className="survey-alert-container flexDirection">
                     <div className="survey-container centerAll">
                         <SurveyMessage question={this.props.state.surveyQuestions[this.props.state.surveyIndex].survey}/>
                     </div>
                     {this.props.state.displayControlPanel?<SurveyControls />:''}
                     {this.props.state.displayOptionsPanel?<SurveyOptions options={this.props.state.surveyQuestions[this.props.state.surveyIndex].options}/>:''}
-                    {this.props.state.displayNavigationPanel?<SurveyNavigation />:''}
+                    
                     
                 </div>
-            </div>
+                {this.props.state.displayNavigationPanel?<SurveyNavigation />:''}</div>
+            
         </section>
   	<footer>{this.props.state.displayBottomPanel?<SurveyBottom/>:''}</footer>
   </div>

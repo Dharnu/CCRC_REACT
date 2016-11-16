@@ -240,13 +240,17 @@ html, body {
     width:50%;
 }
 .survey-alert-container{
-    width: 85%;
-    height: 100%;
+    width: 95%;
+    height: 80%;
     margin: auto;
 }
 .survey-container{
-    width:100%;
-    height:50%;
+    width: 95%;
+    height: 58%;
+    margin: 0 auto;
+    background-color: #16bad6;
+    margin-bottom: 2%;
+    border-radius: 10px;
 }
 .decision-container{
     width:100%;
@@ -269,7 +273,7 @@ html, body {
 .decision-key-controls {
     border-radius: 15px;
     width:30%;
-    height:100%;
+    height:45%;
     background-color: #F4B936;
     color:#ffffff;
     font-size: 22px;
@@ -288,7 +292,7 @@ html, body {
     border: 3px solid white;
     border-radius: 15px;
     width:45%;
-    height:100%;
+    height:45%;
     background-color: #F4B936;
     color:#ffffff;
     font-size: 22px;
@@ -355,4 +359,19 @@ html, body {
 .surveyNav {
     height: 100%;
     width: 70%;
+}
+
+.surveyNavigation {
+    width: 90%;
+    height: 15%;
+    margin: 0 auto;
+}
+.surveyActionContainer {
+    width: 80%;
+    height: 30%;
+    margin: 0 auto;
+}
+.prevNext {
+    width: 100%;
+    height: 100%;
 }

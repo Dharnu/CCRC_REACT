@@ -21,7 +21,8 @@ class SurveyControls extends React.Component {
   }
   render() {
 
-    return (<div className = "inner-container displayFlex spaceBetween surevyControls" >
+    return (
+        <div className = "surveyActionContainer displayFlex spaceBetween surevyControls" >
       <div className = "decision-key-controls centerAll" 
       onClick = { this.displayQuestions}>Now </div> 
        <div className = "decision-key-controls centerAll" > Later</div> 
