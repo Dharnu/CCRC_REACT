@@ -2,11 +2,13 @@ import {combineReducers} from 'redux';
 import * as surveyReducers from './../reducers/reducers';
 
 var  rootReducer = combineReducers({
-	displayMessage: surveyReducers.displayMessage,
 	displayControlPanel:surveyReducers.displayControlPanel,
-	displayOptionsPanel:surveyReducers.displaySurveyOptionsPanel,
-	displayNavigationPanel:surveyReducers.displaySurveyNavigationPanel,
-	displayBottomPanel:surveyReducers.displaySurveyBottomPanel
+	displayOptionsPanel:surveyReducers.displayOptionsPanel,
+	displayNavigationPanel:surveyReducers.displayNavigationPanel,
+	displayBottomPanel:surveyReducers.displayBottomPanel,
+	surveyIndex:surveyReducers.modifySurveyIndex,
+	surveyQuestions:surveyReducers.setSurveyQuestions
+
 });
 
 export default rootReducer;

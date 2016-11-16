@@ -67,7 +67,9 @@
 
 	var _SurveyApp2 = _interopRequireDefault(_SurveyApp);
 
-	var _configureStore = __webpack_require__(211);
+	var _index = __webpack_require__(200);
+
+	var _configureStore = __webpack_require__(210);
 
 	var _configureStore2 = _interopRequireDefault(_configureStore);
 
@@ -83,31 +85,71 @@
 	    Provider = _require.Provider;
 
 	var SurveyStore = (0, _configureStore2.default)();
-	SurveyStore.subscribe(function () {
-	  console.log(SurveyStore.getState());
-	});
+	// fetchSurveyQuestions()
+	// .then(surveys=> {
+	// 				SurveyStore.dispatch(surveyFetchSuccess(surveys));
+	// 			})
+	// SurveyStore.subscribe(()=>{console.log(SurveyStore.getState());});
+
+	SurveyStore.dispatch((0, _index.surveyFetchSuccess)([{
+		'id': 69,
+		'survey': 'Test1',
+		'date': 'October 21, 2016 12:09:07 PM',
+		'signature': '- StatusSolutionAdministrator8668467272',
+		'options': [{
+			'id': 4,
+			'option': 'Good'
+		}, {
+			'id': 7,
+			'option': 'No'
+		}, {
+			'id': 5,
+			'option': 'Bad'
+		}, {
+			'id': 3,
+			'option': 'Excellent'
+		}]
+	}, {
+		'id': 70,
+		'survey': 'Test2',
+		'date': 'October 21, 2016 12:09:07 PM',
+		'signature': '- StatusSolutionAdministrator8668467272',
+		'options': [{
+			'id': 4,
+			'option': 'Good'
+		}, {
+			'id': 7,
+			'option': 'No'
+		}, {
+			'id': 5,
+			'option': 'Bad'
+		}, {
+			'id': 3,
+			'option': 'Excellent'
+		}]
+	}]));
 
 	var App = function (_Component) {
-	  _inherits(App, _Component);
+		_inherits(App, _Component);
 
-	  function App() {
-	    _classCallCheck(this, App);
+		function App() {
+			_classCallCheck(this, App);
 
-	    return _possibleConstructorReturn(this, (App.__proto__ || Object.getPrototypeOf(App)).apply(this, arguments));
-	  }
+			return _possibleConstructorReturn(this, (App.__proto__ || Object.getPrototypeOf(App)).apply(this, arguments));
+		}
 
-	  _createClass(App, [{
-	    key: 'render',
-	    value: function render() {
-	      return _react2.default.createElement(
-	        Provider,
-	        { store: SurveyStore },
-	        _react2.default.createElement(_SurveyApp2.default, null)
-	      );
-	    }
-	  }]);
+		_createClass(App, [{
+			key: 'render',
+			value: function render() {
+				return _react2.default.createElement(
+					Provider,
+					{ store: SurveyStore },
+					_react2.default.createElement(_SurveyApp2.default, null)
+				);
+			}
+		}]);
 
-	  return App;
+		return App;
 	}(_react.Component);
 
 	;
@@ -21505,19 +21547,19 @@
 
 	var _SurveyControls2 = _interopRequireDefault(_SurveyControls);
 
-	var _SurveyMessage = __webpack_require__(203);
+	var _SurveyMessage = __webpack_require__(202);
 
 	var _SurveyMessage2 = _interopRequireDefault(_SurveyMessage);
 
-	var _SurveyNavigation = __webpack_require__(204);
+	var _SurveyNavigation = __webpack_require__(203);
 
 	var _SurveyNavigation2 = _interopRequireDefault(_SurveyNavigation);
 
-	var _SurveyOptions = __webpack_require__(205);
+	var _SurveyOptions = __webpack_require__(204);
 
 	var _SurveyOptions2 = _interopRequireDefault(_SurveyOptions);
 
-	var _initialState = __webpack_require__(206);
+	var _initialState = __webpack_require__(205);
 
 	var _initialState2 = _interopRequireDefault(_initialState);
 
@@ -21531,7 +21573,7 @@
 
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-	__webpack_require__(207);
+	__webpack_require__(206);
 
 	var SurveyApp = function (_React$Component) {
 	  _inherits(SurveyApp, _React$Component);
@@ -21566,7 +21608,7 @@
 	              _react2.default.createElement(
 	                'div',
 	                { className: 'survey-container centerAll' },
-	                _react2.default.createElement(_SurveyMessage2.default, { question: this.props.state.displayMessage })
+	                _react2.default.createElement(_SurveyMessage2.default, { question: this.props.state.surveyQuestions[this.props.state.surveyIndex].survey })
 	              ),
 	              this.props.state.displayControlPanel ? _react2.default.createElement(_SurveyControls2.default, null) : '',
 	              this.props.state.displayOptionsPanel ? _react2.default.createElement(_SurveyOptions2.default, null) : '',
@@ -21577,7 +21619,7 @@
 	        _react2.default.createElement(
 	          'footer',
 	          null,
-	          this.props.state.displayNavigationPanel ? _react2.default.createElement(_SurveyBottom2.default, null) : ''
+	          this.props.state.displayBottomPanel ? _react2.default.createElement(_SurveyBottom2.default, null) : ''
 	        )
 	      );
 	    }
@@ -21679,7 +21721,7 @@
 
 	var SurveyActions = _interopRequireWildcard(_index);
 
-	var _mockSurvey = __webpack_require__(202);
+	var _mockSurvey = __webpack_require__(201);
 
 	var _mockSurvey2 = _interopRequireDefault(_mockSurvey);
 
@@ -23379,18 +23421,47 @@
 	Object.defineProperty(exports, "__esModule", {
 		value: true
 	});
+	exports.surveyFetchSuccess = surveyFetchSuccess;
+	exports.fetchSurveyQuestions = fetchSurveyQuestions;
+	exports.incrementSurveyIndex = incrementSurveyIndex;
+	exports.decrementSurveyIndex = decrementSurveyIndex;
 	exports.setDisplayMessage = setDisplayMessage;
 	exports.hideControlPanel = hideControlPanel;
 	exports.hideNavigationPanel = hideNavigationPanel;
 	exports.hideOptionsPanel = hideOptionsPanel;
 	exports.hideBottomPanel = hideBottomPanel;
 
-	var _actionTypes = __webpack_require__(201);
+	var _actionTypes = __webpack_require__(213);
 
 	var types = _interopRequireWildcard(_actionTypes);
 
+	var _mockSurvey = __webpack_require__(201);
+
+	var _mockSurvey2 = _interopRequireDefault(_mockSurvey);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
 	function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
 
+	function surveyFetchSuccess(surveys) {
+		return {
+			type: types.SURVEY_FETCH_SUCCESS,
+			surveys: surveys
+		};
+	}
+	function fetchSurveyQuestions() {
+		return _mockSurvey2.default.fetchSurveys();
+	}
+	function incrementSurveyIndex() {
+		return {
+			type: types.INCREMENT_QUESTION_INDEX
+		};
+	}
+	function decrementSurveyIndex() {
+		return {
+			type: types.DECREMENT_QUESTION_INDEX
+		};
+	}
 	function setDisplayMessage(displayMessage) {
 
 		return {
@@ -23434,21 +23505,6 @@
 	'use strict';
 
 	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	var SET_DISPLAY_MESSAGE = exports.SET_DISPLAY_MESSAGE = 'SET_DISPLAY_MESSAGE';
-	var HIDE_CONTROL_PANEL = exports.HIDE_CONTROL_PANEL = 'HIDE_CONTROL_PANEL';
-	var HIDE_OPTIONS_PANEL = exports.HIDE_OPTIONS_PANEL = 'HIDE_OPTIONS_PANEL';
-	var HIDE_NAVIGATION_PANEL = exports.HIDE_NAVIGATION_PANEL = 'HIDE_NAVIGATION_PANEL';
-	var HIDE_BOTTOM_PANEL = exports.HIDE_BOTTOM_PANEL = 'HIDE_BOTTOM_PANEL';
-
-/***/ },
-/* 202 */
-/***/ function(module, exports) {
-
-	'use strict';
-
-	Object.defineProperty(exports, "__esModule", {
 		value: true
 	});
 
@@ -23456,9 +23512,9 @@
 
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-	var surveys = {
+	var surveys = [{
 		'id': 69,
-		'survey': 'Test5',
+		'survey': 'Test1',
 		'date': 'October 21, 2016 12:09:07 PM',
 		'signature': '- StatusSolutionAdministrator8668467272',
 		'options': [{
@@ -23474,7 +23530,25 @@
 			'id': 3,
 			'option': 'Excellent'
 		}]
-	};
+	}, {
+		'id': 70,
+		'survey': 'Test2',
+		'date': 'October 21, 2016 12:09:07 PM',
+		'signature': '- StatusSolutionAdministrator8668467272',
+		'options': [{
+			'id': 4,
+			'option': 'Good'
+		}, {
+			'id': 7,
+			'option': 'No'
+		}, {
+			'id': 5,
+			'option': 'Bad'
+		}, {
+			'id': 3,
+			'option': 'Excellent'
+		}]
+	}];
 
 	var mockSurvey = function () {
 		function mockSurvey() {
@@ -23498,7 +23572,7 @@
 	exports.default = mockSurvey;
 
 /***/ },
-/* 203 */
+/* 202 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -23548,7 +23622,7 @@
 	exports.default = SurveyMessage;
 
 /***/ },
-/* 204 */
+/* 203 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -23613,7 +23687,7 @@
 	;
 
 /***/ },
-/* 205 */
+/* 204 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -23684,33 +23758,34 @@
 	;
 
 /***/ },
-/* 206 */
+/* 205 */
 /***/ function(module, exports) {
 
-	'use strict';
+	"use strict";
 
 	Object.defineProperty(exports, "__esModule", {
 		value: true
 	});
 	exports.default = {
-		initialMessage: 'there are questions to be answered',
 		displaySurveyControlPanel: true,
-		displaySurveyOptionsPanel: false,
-		displaySurveyNavigationPanel: false,
-		displaySurveyBottomPanel: true
+		displaySurveyOptionsPanel: true,
+		displaySurveyNavigationPanel: true,
+		displaySurveyBottomPanel: true,
+		surveyIndex: 0,
+		surveyQuestions: []
 	};
 
 /***/ },
-/* 207 */
+/* 206 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(208);
+	var content = __webpack_require__(207);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
-	var update = __webpack_require__(210)(content, {});
+	var update = __webpack_require__(209)(content, {});
 	if(content.locals) module.exports = content.locals;
 	// Hot Module Replacement
 	if(false) {
@@ -23727,10 +23802,10 @@
 	}
 
 /***/ },
-/* 208 */
+/* 207 */
 /***/ function(module, exports, __webpack_require__) {
 
-	exports = module.exports = __webpack_require__(209)();
+	exports = module.exports = __webpack_require__(208)();
 	// imports
 
 
@@ -23741,7 +23816,7 @@
 
 
 /***/ },
-/* 209 */
+/* 208 */
 /***/ function(module, exports) {
 
 	/*
@@ -23797,7 +23872,7 @@
 
 
 /***/ },
-/* 210 */
+/* 209 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/*
@@ -24049,7 +24124,7 @@
 
 
 /***/ },
-/* 211 */
+/* 210 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -24059,7 +24134,7 @@
 	});
 	exports.default = configureStore;
 
-	var _index = __webpack_require__(212);
+	var _index = __webpack_require__(211);
 
 	var _index2 = _interopRequireDefault(_index);
 
@@ -24072,7 +24147,7 @@
 	}
 
 /***/ },
-/* 212 */
+/* 211 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -24083,24 +24158,26 @@
 
 	var _redux = __webpack_require__(183);
 
-	var _reducers = __webpack_require__(213);
+	var _reducers = __webpack_require__(212);
 
 	var surveyReducers = _interopRequireWildcard(_reducers);
 
 	function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
 
 	var rootReducer = (0, _redux.combineReducers)({
-		displayMessage: surveyReducers.displayMessage,
 		displayControlPanel: surveyReducers.displayControlPanel,
-		displayOptionsPanel: surveyReducers.displaySurveyOptionsPanel,
-		displayNavigationPanel: surveyReducers.displaySurveyNavigationPanel,
-		displayBottomPanel: surveyReducers.displaySurveyBottomPanel
+		displayOptionsPanel: surveyReducers.displayOptionsPanel,
+		displayNavigationPanel: surveyReducers.displayNavigationPanel,
+		displayBottomPanel: surveyReducers.displayBottomPanel,
+		surveyIndex: surveyReducers.modifySurveyIndex,
+		surveyQuestions: surveyReducers.setSurveyQuestions
+
 	});
 
 	exports.default = rootReducer;
 
 /***/ },
-/* 213 */
+/* 212 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -24108,17 +24185,18 @@
 	Object.defineProperty(exports, "__esModule", {
 		value: true
 	});
-	exports.displayMessage = displayMessage;
+	exports.modifySurveyIndex = modifySurveyIndex;
+	exports.setSurveyQuestions = setSurveyQuestions;
 	exports.displayControlPanel = displayControlPanel;
 	exports.displayOptionsPanel = displayOptionsPanel;
 	exports.displayNavigationPanel = displayNavigationPanel;
 	exports.displayBottomPanel = displayBottomPanel;
 
-	var _actionTypes = __webpack_require__(201);
+	var _actionTypes = __webpack_require__(213);
 
 	var types = _interopRequireWildcard(_actionTypes);
 
-	var _initialState = __webpack_require__(206);
+	var _initialState = __webpack_require__(205);
 
 	var _initialState2 = _interopRequireDefault(_initialState);
 
@@ -24126,13 +24204,28 @@
 
 	function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
 
-	function displayMessage() {
-		var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : _initialState2.default.initialMessage;
+	function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
+
+	function modifySurveyIndex() {
+		var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : _initialState2.default.surveyIndex;
 		var action = arguments[1];
 
 		switch (action.type) {
-			case types.SET_DISPLAY_MESSAGE:
-				return action.displayMessage;
+			case types.INCREMENT_SURVEY_INDEX:
+				return state + 1;
+			case types.DECREMENT_SURVEY_INDEX:
+				return state - 1;
+			default:
+				return state;
+		}
+	}
+	function setSurveyQuestions() {
+		var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : _initialState2.default.surveyQuestions;
+		var action = arguments[1];
+
+		switch (action.type) {
+			case types.SURVEY_FETCH_SUCCESS:
+				return [{ 'survey': 'there are ' + action.surveys.length + ' questions' }].concat(_toConsumableArray(action.surveys));
 			default:
 				return state;
 		}
@@ -24185,6 +24278,25 @@
 				return state;
 		}
 	};
+
+/***/ },
+/* 213 */
+/***/ function(module, exports) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	var SET_DISPLAY_MESSAGE = exports.SET_DISPLAY_MESSAGE = 'SET_DISPLAY_MESSAGE';
+	var HIDE_CONTROL_PANEL = exports.HIDE_CONTROL_PANEL = 'HIDE_CONTROL_PANEL';
+	var HIDE_OPTIONS_PANEL = exports.HIDE_OPTIONS_PANEL = 'HIDE_OPTIONS_PANEL';
+	var HIDE_NAVIGATION_PANEL = exports.HIDE_NAVIGATION_PANEL = 'HIDE_NAVIGATION_PANEL';
+	var HIDE_BOTTOM_PANEL = exports.HIDE_BOTTOM_PANEL = 'HIDE_BOTTOM_PANEL';
+	var INCREMENT_SURVEY_INDEX = exports.INCREMENT_SURVEY_INDEX = 'INCREMENT_SURVEY_INDEX';
+	var DECREMENT_SURVEY_INDEX = exports.DECREMENT_SURVEY_INDEX = 'DECREMENT_SURVEY_INDEX';
+	var FETCH_QUESTIONS = exports.FETCH_QUESTIONS = 'FETCH_QUESTIONS';
+	var SURVEY_FETCH_SUCCESS = exports.SURVEY_FETCH_SUCCESS = 'SURVEY_FETCH_SUCCESS';
 
 /***/ }
 /******/ ]);

@@ -8,7 +8,9 @@ import SurveyNavigation from './SurveyNavigation';
 import SurveyOptions from './SurveyOptions';
 import initialState from './../reducers/initialState';
 
-import {connect} from 'react-redux';
+import {
+  connect
+} from 'react-redux';
 
 
 require('style!css!../styles/SurveyStyles.css');
@@ -28,7 +30,7 @@ class SurveyApp extends React.Component {
             <div className="content-body content-shadow">
                 <div className="survey-alert-container flexDirection">
                     <div className="survey-container centerAll">
-                        <SurveyMessage question={this.props.state.displayMessage}/>
+                        <SurveyMessage question={this.props.state.surveyQuestions[this.props.state.surveyIndex].survey}/>
                     </div>
                     {this.props.state.displayControlPanel?<SurveyControls/>:''}
                     {this.props.state.displayOptionsPanel?<SurveyOptions/>:''}
@@ -37,7 +39,7 @@ class SurveyApp extends React.Component {
                 </div>
             </div>
         </section>
-  	<footer>{this.props.state.displayNavigationPanel?<SurveyBottom/>:''}</footer>
+  	<footer>{this.props.state.displayBottomPanel?<SurveyBottom/>:''}</footer>
   </div>
 
     )
