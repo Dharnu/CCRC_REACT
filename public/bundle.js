@@ -21709,12 +21709,12 @@
 	        _react2.default.createElement(
 	          "div",
 	          { className: "home-icon" },
-	          _react2.default.createElement("img", { src: "../assets/home.png", width: "150", height: "150", alt: "home" })
+	          _react2.default.createElement("img", { src: "assets/home.png", width: "150", height: "150", alt: "home" })
 	        ),
 	        _react2.default.createElement(
 	          "div",
 	          { className: "home-icon" },
-	          _react2.default.createElement("img", { src: "../assets/back.png", width: "150", height: "150", alt: "back" })
+	          _react2.default.createElement("img", { src: "assets/back.png", width: "150", height: "150", alt: "back" })
 	        )
 	      );
 	    }
