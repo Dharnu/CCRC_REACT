@@ -8,27 +8,26 @@ class SurveyNavigation extends React.Component {
 
   constructor(props, context) {
     super(props, context);
-    this.skip=this.skip.bind(this);
-    this.previous=this.previous.bind(this);
+    this.skip = this.skip.bind(this);
+    this.previous = this.previous.bind(this);
   }
-skip(event){
+  skip(event) {
 
-  this.props.actions.incrementSurveyIndex();
-}
-previous(){
-  this.props.actions.decrementSurveyIndex();
-}
+    this.props.actions.incrementSurveyIndex();
+  }
+  previous() {
+    this.props.actions.decrementSurveyIndex();
+  }
   render() {
     var directions = [];
     debugger;
-    if (this.props.index > 0 && (this.props.index<this.props.totalSurveys)) {
+    if (this.props.index > 0 && (this.props.index < this.props.totalSurveys)) {
       return <div> <div className="nav-key centerAll" onClick={this.previous}>Previuos</div>
           <div className="nav-key centerAll" onClick={this.skip}>Skip</div>;
     </div>
-    } else if(this.props.index===0) {
+    } else if (this.props.index === 0) {
       return <div className="nav-key centerAll" onClick={this.skip}>Skip</div>;
-    }
-    else if(this.props.index===this.props.totalSurveys) {
+    } else if (this.props.index === this.props.totalSurveys) {
       return <div className="nav-key centerAll" onClick={this.previous}>Previuos</div>;
     }
 
@@ -42,21 +41,23 @@ previous(){
   }
 }
 
-SurveyNavigation.proptypes={
-  index:PropTypes.number.isRequired,
-  totalSurveys:PropTypes.number.isRequired,
-  actions:PropTypes.array.isRequired
+SurveyNavigation.proptypes = {
+  index: PropTypes.number.isRequired,
+  totalSurveys: PropTypes.number.isRequired,
+  actions: PropTypes.array.isRequired
 
 }
+
 function mapStateToProps(state, ownProps) {
   return {
     index: state.surveyIndex,
-    totalSurveys:state.surveyQuestions.length-1
+    totalSurveys: state.surveyQuestions.length - 1
   };
 }
+
 function mapDispatchToProps(dispatch) {
   return {
     actions: bindActionCreators(SurveyActions, dispatch)
   };
 }
-export default connect(mapStateToProps,mapDispatchToProps)(SurveyNavigation);
+export default connect(mapStateToProps, mapDispatchToProps)(SurveyNavigation);

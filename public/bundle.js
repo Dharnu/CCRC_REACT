@@ -23771,12 +23771,14 @@
 	  actions: _react.PropTypes.array.isRequired
 
 	};
+
 	function mapStateToProps(state, ownProps) {
 	  return {
 	    index: state.surveyIndex,
 	    totalSurveys: state.surveyQuestions.length - 1
 	  };
 	}
+
 	function mapDispatchToProps(dispatch) {
 	  return {
 	    actions: (0, _redux.bindActionCreators)(SurveyActions, dispatch)
