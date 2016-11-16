@@ -21640,7 +21640,7 @@
 	                _react2.default.createElement(_SurveyMessage2.default, { question: this.props.state.surveyQuestions[this.props.state.surveyIndex].survey })
 	              ),
 	              this.props.state.displayControlPanel ? _react2.default.createElement(_SurveyControls2.default, null) : '',
-	              this.props.state.displayOptionsPanel ? _react2.default.createElement(_SurveyOptions2.default, { options: this.props.state.surveyQuestions[this.props.state.surveyIndex].options }) : ''
+	              this.props.state.displayOptionsPanel ? _react2.default.createElement(_SurveyOptions2.default, null) : ''
 	            ),
 	            this.props.state.displayNavigationPanel ? _react2.default.createElement(_SurveyNavigation2.default, null) : ''
 	          )
@@ -23790,39 +23790,85 @@
 	  value: true
 	});
 
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
 	var _react = __webpack_require__(2);
 
 	var _react2 = _interopRequireDefault(_react);
 
 	var _reactRedux = __webpack_require__(176);
 
+	var _redux = __webpack_require__(183);
+
+	var _index = __webpack_require__(200);
+
+	var SurveyActions = _interopRequireWildcard(_index);
+
+	function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	var SurveyOptions = function SurveyOptions(_ref) {
-	  var options = _ref.options;
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-	  var optionsList = [];
-	  if (options && options.length > 0) {
-	    optionsList = options.map(function (option) {
-	      return _react2.default.createElement(
-	        'div',
-	        { className: 'decision-key-options centerAll', id: option.id, key: option.id },
-	        option.option
-	      );
-	    });
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var SurveyOptions = function (_React$Component) {
+	  _inherits(SurveyOptions, _React$Component);
+
+	  function SurveyOptions(props, context) {
+	    _classCallCheck(this, SurveyOptions);
+
+	    return _possibleConstructorReturn(this, (SurveyOptions.__proto__ || Object.getPrototypeOf(SurveyOptions)).call(this, props, context));
 	  }
 
-	  return _react2.default.createElement(
-	    'div',
-	    { className: 'inner-container displayFlex spaceBetween wrap surveyOptions' },
-	    optionsList
-	  );
-	};
+	  _createClass(SurveyOptions, [{
+	    key: 'render',
+	    value: function render() {
+
+	      var optionsList = [];
+	      if (this.props.surveyQuestions) {
+	        optionsList = this.props.surveyQuestions[this.props.index].options.map(function (option) {
+	          return _react2.default.createElement(
+	            'div',
+	            { className: 'decision-key-options centerAll', id: option.id, key: option.id },
+	            option.option
+	          );
+	        });
+	      }
+
+	      return _react2.default.createElement(
+	        'div',
+	        { className: 'inner-container displayFlex spaceBetween wrap surveyOptions' },
+	        optionsList
+	      );
+	    }
+	  }]);
+
+	  return SurveyOptions;
+	}(_react2.default.Component);
+
 	SurveyOptions.propType = {
-	  options: _react2.default.PropTypes.array.isRequired
+	  surveyQuestions: _react2.default.PropTypes.array.isRequired,
+	  index: _react.PropTypes.number.isRequired
+
 	};
 
-	exports.default = SurveyOptions;
+	function mapStateToProps(state, ownProps) {
+	  return {
+	    index: state.surveyIndex,
+	    surveyQuestions: state.surveyQuestions
+	  };
+	}
+
+	function mapDispatchToProps(dispatch) {
+	  return {
+	    actions: (0, _redux.bindActionCreators)(SurveyActions, dispatch)
+	  };
+	}
+
+	exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(SurveyOptions);
 
 /***/ },
 /* 206 */

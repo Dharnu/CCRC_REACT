@@ -1,25 +1,49 @@
 import React, {PropTypes} from 'react';
 import {connect} from 'react-redux';
+import {bindActionCreators} from 'redux';
+
+import * as SurveyActions from './../actions/index';
 
 
-const SurveyOptions = ({options}) => {
-  var optionsList=[]
-  if(options&&options.length>0){
-   optionsList= options.map(option => {
-    return <div className="decision-key-options centerAll" id={option.id} key={option.id}>{option.option}</div>
-  });
-}
+class SurveyOptions extends React.Component {
+  constructor(props, context) {
+    super(props, context);
+  }
+  render() {
 
-  return (
+    var optionsList = []
+    if (this.props.surveyQuestions) {
+      optionsList = this.props.surveyQuestions[this.props.index].options.map(option => {
+        return <div className="decision-key-options centerAll" id={option.id} key={option.id}>{option.option}</div>
+      });
+    }
 
-    <div className="inner-container displayFlex spaceBetween wrap surveyOptions">
+    return (
+
+      <div className="inner-container displayFlex spaceBetween wrap surveyOptions">
             {optionsList}
         </div>
 
-  )
+    )
+  }
 }
 SurveyOptions.propType = {
-  options: React.PropTypes.array.isRequired
+  surveyQuestions: React.PropTypes.array.isRequired,
+  index: PropTypes.number.isRequired,
+
 }
 
-export default SurveyOptions;
+function mapStateToProps(state, ownProps) {
+  return {
+    index: state.surveyIndex,
+    surveyQuestions: state.surveyQuestions
+  };
+}
+
+function mapDispatchToProps(dispatch) {
+  return {
+    actions: bindActionCreators(SurveyActions, dispatch)
+  };
+}
+
+export default connect(mapStateToProps, mapDispatchToProps) (SurveyOptions);
