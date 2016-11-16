@@ -32,9 +32,9 @@ class SurveyApp extends React.Component {
                     <div className="survey-container centerAll">
                         <SurveyMessage question={this.props.state.surveyQuestions[this.props.state.surveyIndex].survey}/>
                     </div>
-                    {this.props.state.displayControlPanel?<SurveyControls/>:''}
-                    {this.props.state.displayOptionsPanel?<SurveyOptions/>:''}
-                    {this.props.state.displayNavigationPanel?<SurveyNavigation/>:''}
+                    {this.props.state.displayControlPanel?<SurveyControls />:''}
+                    {this.props.state.displayOptionsPanel?<SurveyOptions options={this.props.state.surveyQuestions[this.props.state.surveyIndex].options}/>:''}
+                    {this.props.state.displayNavigationPanel?<SurveyNavigation />:''}
                     
                 </div>
             </div>

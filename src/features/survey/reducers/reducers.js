@@ -1,12 +1,12 @@
 import * as types from './../actions/actionTypes';
 import initialState from './initialState';
 
-export function modifySurveyIndex(state=initialState.surveyIndex,action){
+export function modifySurveyIndex(state = initialState.surveyIndex, action) {
 	switch (action.type) {
 		case types.INCREMENT_SURVEY_INDEX:
-			return state+1;
+			return state + 1;
 		case types.DECREMENT_SURVEY_INDEX:
-			return state-1;
+			return state - 1;
 		default:
 			return state;
 	}
@@ -14,16 +14,22 @@ export function modifySurveyIndex(state=initialState.surveyIndex,action){
 export function setSurveyQuestions(state = initialState.surveyQuestions, action) {
 	switch (action.type) {
 		case types.SURVEY_FETCH_SUCCESS:
-			return [
-			{'survey':'there are '+action.surveys.length+' questions'},...action.surveys
-			]
+			return [{
+				'survey': 'there are ' + action.surveys.length + ' questions'
+			}, ...action.surveys]
+
+		case types.DISPLAY_QUESTIONS:
+			state.shift()
+			return state
 		default:
 			return state;
 	}
 };
 export function displayControlPanel(state = initialState.displaySurveyControlPanel, action) {
+
 	switch (action.type) {
 		case types.HIDE_CONTROL_PANEL:
+
 			return !state;
 			// return [...state, {
 			// 	state: !action.hideControlPanel

@@ -5,35 +5,29 @@ import {bindActionCreators} from 'redux';
 import * as SurveyActions from './../actions/index';
 import SurveyApi from './../api/mockSurvey';
 
- class SurveyControls extends React.Component {
+class SurveyControls extends React.Component {
 
   constructor(props) {
     super(props);
     this.displayQuestions = this.displayQuestions.bind(this);
-    this.hideControlPanel = this.hideControlPanel.bind(this);
 
-  }
-
-  hideControlPanel(){
-    this.props.actions.hideControlPanel(true);
   }
   displayQuestions(event) {
-    // make ajax request
-    SurveyApi.fetchSurveys()
-      .then(json => {this.props.actions.setDisplayMessage(json.survey)})
+    this.props.actions.displaySurveyQuestions();
+    this.props.actions.hideControlPanel(true);
+    this.props.actions.hideOptionsPanel(false);
+    this.props.actions.hideNavigationPanel(false);
 
   }
   render() {
 
-    return ( <div className = "inner-container displayFlex spaceBetween surevyControls" >
+    return (<div className = "inner-container displayFlex spaceBetween surevyControls" >
       <div className = "decision-key-controls centerAll" 
-      onClick = { this.displayQuestions}>
-       Now </div> 
-       <div className = "decision-key-controls centerAll" > Later 
-       </div> <div className = "decision-key-controls centerAll" onClick = {this.hideControlPanel }>
-        Exit </div>
-        </div >
-    )
+      onClick = { this.displayQuestions}>Now </div> 
+       <div className = "decision-key-controls centerAll" > Later</div> 
+       <div className = "decision-key-controls centerAll" >Exit </div>
+        </div>
+        )
 
   }
 };
@@ -53,4 +47,4 @@ function mapDispatchToProps(dispatch) {
     actions: bindActionCreators(SurveyActions, dispatch)
   };
 }
-export default connect(mapStateToProps,mapDispatchToProps)(SurveyControls);
+export default connect(mapStateToProps, mapDispatchToProps)(SurveyControls);

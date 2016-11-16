@@ -11,7 +11,7 @@ var {Provider} = require('react-redux');
 // .then(surveys=> {
 // 				SurveyStore.dispatch(surveyFetchSuccess(surveys));
 // 			})
-// SurveyStore.subscribe(()=>{console.log(SurveyStore.getState());});
+ SurveyStore.subscribe(()=>{console.log(SurveyStore.getState());});
 
 SurveyStore.dispatch(surveyFetchSuccess([{
 		'id': 69,
@@ -32,8 +32,9 @@ SurveyStore.dispatch(surveyFetchSuccess([{
 			'option': 'Excellent'
 		}]
 	},
+	
 	{
-		'id': 70,
+		'id': 71,
 		'survey': 'Test2',
 		'date': 'October 21, 2016 12:09:07 PM',
 		'signature': '- StatusSolutionAdministrator8668467272',
@@ -46,9 +47,36 @@ SurveyStore.dispatch(surveyFetchSuccess([{
 		}, {
 			'id': 5,
 			'option': 'Bad'
+		}]
+	},{
+		'id': 74,
+		'survey': 'Test3',
+		'date': 'October 21, 2016 12:09:07 PM',
+		'signature': '- StatusSolutionAdministrator8668467272',
+		'options': [{
+			'id': 4,
+			'option': 'Good'
 		}, {
-			'id': 3,
-			'option': 'Excellent'
+			'id': 7,
+			'option': 'No'
+		}, {
+			'id': 5,
+			'option': 'Bad'
+		}]
+	},{
+		'id': 75,
+		'survey': 'Test4',
+		'date': 'October 21, 2016 12:09:07 PM',
+		'signature': '- StatusSolutionAdministrator8668467272',
+		'options': [{
+			'id': 4,
+			'option': 'Good'
+		}, {
+			'id': 7,
+			'option': 'No'
+		}, {
+			'id': 5,
+			'option': 'Bad'
 		}]
 	}]));
 

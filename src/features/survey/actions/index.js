@@ -1,24 +1,29 @@
 import * as types from './actionTypes';
 import SurveyApi from './../api/mockSurvey';
 
-
-export function surveyFetchSuccess(surveys){
+export function displaySurveyQuestions() {
 	return {
-		type:types.SURVEY_FETCH_SUCCESS,
+		type: types.DISPLAY_QUESTIONS
+	}
+}
+export function surveyFetchSuccess(surveys) {
+	return {
+		type: types.SURVEY_FETCH_SUCCESS,
 		surveys
 	}
 }
-export function fetchSurveyQuestions() {	
-		return SurveyApi.fetchSurveys()
+export function fetchSurveyQuestions() {
+	return SurveyApi.fetchSurveys()
 }
 export function incrementSurveyIndex() {
+
 	return {
-		type: types.INCREMENT_QUESTION_INDEX,
+		type: types.INCREMENT_SURVEY_INDEX,
 	};
 }
 export function decrementSurveyIndex() {
 	return {
-		type: types.DECREMENT_QUESTION_INDEX,
+		type: types.DECREMENT_SURVEY_INDEX,
 	};
 }
 export function setDisplayMessage(displayMessage) {
