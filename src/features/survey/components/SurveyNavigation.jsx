@@ -32,11 +32,11 @@ class SurveyNavigation extends React.Component {
 
     if (this.props.index > 0 && (this.props.index<=this.props.totalSurveys)) {
       directions = <div className="prevNext displayFlex flexAlignCenterJustifySpaceBetween"> 
-      <div className="nav-key flexAlignCenterJustifyCenter" onClick={this.previous}>Previuos</div>
+      <div className="nav-key flexAlignCenterJustifyCenter" onClick={this.previous}>Previous</div>
       <div className="nav-key flexAlignCenterJustifyCenter" onClick={this.skip}>Skip</div>;
     </div>
     } else if(this.props.index===0) {
-      directions = <div className="prevNext displayFlex flexAlignCenterJustifyCenter"> <div className="nav-key centerAll" onClick={this.skip}>Skip</div></div>;
+      directions = <div className="prevNext displayFlex flexAlignCenterJustifyCenter"> <div className="nav-key flexAlignCenterJustifyCenter" onClick={this.skip}>Skip</div></div>;
     }
     return (
       <div className="surveyNavigation displayFlex flexAlignCenterJustifySpaceAround">
