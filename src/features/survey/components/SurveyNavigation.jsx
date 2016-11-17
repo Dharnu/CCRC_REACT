@@ -16,13 +16,23 @@ class SurveyNavigation extends React.Component {
   }
   previous() {
     this.props.actions.decrementSurveyIndex();
+    
   }
+  componentWillUpdate(){
+    if(this.props.index === this.props.totalSurveys){
+      this.props.actions.hideNavigationPanel(true);
+      this.props.actions.surveyEnded();
+
+    }
+  }
+  
   render() {
     var directions = [];
 
     if (this.props.index > 0 && (this.props.index<=this.props.totalSurveys)) {
-      directions = <div className="prevNext displayFlex spaceBetween"> <div className="nav-key centerAll" onClick={this.previous}>Previuos</div>
-          <div className="nav-key centerAll" onClick={this.skip}>Skip</div>;
+      directions = <div className="prevNext displayFlex spaceBetween"> 
+      <div className="nav-key centerAll" onClick={this.previous}>Previuos</div>
+      <div className="nav-key centerAll" onClick={this.skip}>Skip</div>;
     </div>
     } else if(this.props.index===0) {
       directions = <div className="nav-key centerAll" onClick={this.skip}>Skip</div>;

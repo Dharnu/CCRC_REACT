@@ -11,18 +11,29 @@ class SurveyOptions extends React.Component {
         this.nextQuestion = this.nextQuestion.bind(this);
 
   }
+  componentWillUpdate(){
+    if(this.props.index===this.props.surveyQuestions.length-1){
+      
+      this.props.actions.hideOptionsPanel(true);
+      this.props.actions.surveyEnded();
+    }
+  }
   nextQuestion(event) {
     this.props.actions.incrementSurveyIndex();
+    // if(this.props.index===this.props.surveyQuestions.length-1){ 
+    //   this.props.actions.surveyEnded();
+    // }
+    
   }
   render() {
 
     var optionsList = []
-    if (this.props.surveyQuestions) {
+    if (this.props.index<this.props.surveyQuestions.length) {
       optionsList = this.props.surveyQuestions[this.props.index].options.map(option => {
         return <div onClick={this.nextQuestion} className="decision-key-options centerAll" id={option.id} key={option.id}>{option.option}</div>
       });
     }
-
+    
     return (
 
       <div className="inner-container displayFlex spaceBetween wrap surveyOptions">

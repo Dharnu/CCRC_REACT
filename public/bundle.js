@@ -21830,12 +21830,14 @@
 
 	SurveyControls.propTypes = {
 	  actions: _react.PropTypes.object.isRequired,
-	  index: _react.PropTypes.number.isRequired
+	  index: _react.PropTypes.number.isRequired,
+	  totalSurveys: _react.PropTypes.number.isRequired
 	};
 
 	function mapStateToProps(state, ownProps) {
 	  return {
-	    index: state.surveyIndex
+	    index: state.surveyIndex,
+	    totalSurveys: state.surveyQuestions.length - 1
 	  };
 	}
 
@@ -23453,8 +23455,7 @@
 	Object.defineProperty(exports, "__esModule", {
 		value: true
 	});
-	exports.displayStartMessage = displayStartMessage;
-	exports.displayEndMessage = displayEndMessage;
+	exports.surveyEnded = surveyEnded;
 	exports.displaySurveyQuestions = displaySurveyQuestions;
 	exports.surveyFetchSuccess = surveyFetchSuccess;
 	exports.fetchSurveyQuestions = fetchSurveyQuestions;
@@ -23478,14 +23479,9 @@
 
 	function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
 
-	function displayStartMessage() {
+	function surveyEnded() {
 		return {
-			type: types.DISPLAY_START_MESSAGE
-		};
-	}
-	function displayEndMessage() {
-		return {
-			type: types.DISPLAY_END_MESSAGE
+			type: types.SURVEY_ENDED
 		};
 	}
 	function displaySurveyQuestions() {
@@ -23571,6 +23567,7 @@
 	var DISPLAY_QUESTIONS = exports.DISPLAY_QUESTIONS = 'DISPLAY_QUESTIONS';
 	var DISPLAY_START_MESSAGE = exports.DISPLAY_START_MESSAGE = 'DISPLAY_START_MESSAGE';
 	var DISPLAY_END_MESSAGE = exports.DISPLAY_END_MESSAGE = 'DISPLAY_END_MESSAGE';
+	var SURVEY_ENDED = exports.SURVEY_ENDED = 'SURVEY_ENDED';
 
 /***/ },
 /* 202 */
@@ -23677,26 +23674,7 @@
 
 	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 
-	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; } // import React, { PropTypes } from 'react';
-
-	// /*Stateless component*/
-
-	// const SurveyMessage = ({ question }) => {
-	//     return (
-	//         <div className="survey-box-main flexDirection spaceAround ">
-
-	//                 <div className="survey-check-container centerAll">
-	//                     <div className="survey-check-text">
-	//                         {question}
-	//                     </div>
-	//                 </div>
-	//             </div>)
-	// }
-	// SurveyMessage.propType = {
-	//     question: React.PropTypes.object.isRequired
-	// }
-
-	// export default SurveyMessage;
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 	var SurveyMessage = function (_React$Component) {
 		_inherits(SurveyMessage, _React$Component);
@@ -23706,6 +23684,13 @@
 
 			return _possibleConstructorReturn(this, (SurveyMessage.__proto__ || Object.getPrototypeOf(SurveyMessage)).call(this, props, context));
 		}
+
+		// reachedSurveyEnd(){
+		// 	this.props.actions.hideControlPanel(false);
+		// 	this.props.actions.hideOptionsPanel(true);
+		// 	this.props.actions.hideNavigationPanel(true);
+		// }
+
 
 		_createClass(SurveyMessage, [{
 			key: 'render',
@@ -23718,10 +23703,8 @@
 					messageContent = this.props.surveyQuestions[this.props.index].survey;
 				} else if (this.props.index === this.props.surveyQuestions.length) {
 					/** broadcast options hide and display control panel*/
-					this.props.actions.hideControlPanel(true);
-					this.props.actions.hideOptionsPanel(false);
-					this.props.actions.hideNavigationPanel(false);
-					messageContent = 'there are ' + this.props.surveyQuestions.length + 'unanswered questions';
+					//this.reachedSurveyEnd();
+					messageContent = 'there are ' + this.props.surveyQuestions.length + ' unanswered questions';
 				}
 				return _react2.default.createElement(
 					'div',
@@ -23821,6 +23804,14 @@
 	      this.props.actions.decrementSurveyIndex();
 	    }
 	  }, {
+	    key: 'componentWillUpdate',
+	    value: function componentWillUpdate() {
+	      if (this.props.index === this.props.totalSurveys) {
+	        this.props.actions.hideNavigationPanel(true);
+	        this.props.actions.surveyEnded();
+	      }
+	    }
+	  }, {
 	    key: 'render',
 	    value: function render() {
 	      var directions = [];
@@ -23829,7 +23820,6 @@
 	        directions = _react2.default.createElement(
 	          'div',
 	          { className: 'prevNext displayFlex spaceBetween' },
-	          ' ',
 	          _react2.default.createElement(
 	            'div',
 	            { className: 'nav-key centerAll', onClick: this.previous },
@@ -23929,9 +23919,21 @@
 	  }
 
 	  _createClass(SurveyOptions, [{
+	    key: 'componentWillUpdate',
+	    value: function componentWillUpdate() {
+	      if (this.props.index === this.props.surveyQuestions.length - 1) {
+
+	        this.props.actions.hideOptionsPanel(true);
+	        this.props.actions.surveyEnded();
+	      }
+	    }
+	  }, {
 	    key: 'nextQuestion',
 	    value: function nextQuestion(event) {
 	      this.props.actions.incrementSurveyIndex();
+	      // if(this.props.index===this.props.surveyQuestions.length-1){ 
+	      //   this.props.actions.surveyEnded();
+	      // }
 	    }
 	  }, {
 	    key: 'render',
@@ -23939,7 +23941,7 @@
 	      var _this2 = this;
 
 	      var optionsList = [];
-	      if (this.props.surveyQuestions) {
+	      if (this.props.index < this.props.surveyQuestions.length) {
 	        optionsList = this.props.surveyQuestions[this.props.index].options.map(function (option) {
 	          return _react2.default.createElement(
 	            'div',
@@ -24411,6 +24413,7 @@
 	});
 	exports.modifySurveyIndex = modifySurveyIndex;
 	exports.setSurveyQuestions = setSurveyQuestions;
+	exports.displayPanels = displayPanels;
 	exports.displayControlPanel = displayControlPanel;
 	exports.displayOptionsPanel = displayOptionsPanel;
 	exports.displayNavigationPanel = displayNavigationPanel;
@@ -24458,6 +24461,7 @@
 				return state;
 		}
 	};
+	function displayPanels(state, action) {}
 	function displayControlPanel() {
 		var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : _initialState2.default.displaySurveyControlPanel;
 		var action = arguments[1];
@@ -24467,6 +24471,9 @@
 			case types.HIDE_CONTROL_PANEL:
 
 				return !state;
+			case types.SURVEY_ENDED:
+
+				return true;
 			// return [...state, {
 			// 	state: !action.hideControlPanel
 			// }];
@@ -24502,7 +24509,7 @@
 		var action = arguments[1];
 
 		switch (action.type) {
-			case types.HIDE_NAVIGATION_PANEL:
+			case types.HIDE_BOTTOM_PANEL:
 				return !state;
 			default:
 				return state;

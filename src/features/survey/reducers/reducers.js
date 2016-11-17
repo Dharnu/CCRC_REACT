@@ -25,12 +25,18 @@ export function setSurveyQuestions(state = initialState.surveyQuestions, action)
 			return state;
 	}
 };
+export function displayPanels(state,action){
+
+}
 export function displayControlPanel(state = initialState.displaySurveyControlPanel, action) {
 
 	switch (action.type) {
 		case types.HIDE_CONTROL_PANEL:
 
 			return !state;
+		case types.SURVEY_ENDED:
+
+			return true;
 			// return [...state, {
 			// 	state: !action.hideControlPanel
 			// }];
@@ -57,7 +63,7 @@ export function displayNavigationPanel(state = initialState.displaySurveyNavigat
 };
 export function displayBottomPanel(state = initialState.displaySurveyBottomPanel, action) {
 	switch (action.type) {
-		case types.HIDE_NAVIGATION_PANEL:
+		case types.HIDE_BOTTOM_PANEL:
 			return !state;
 		default:
 			return state;
