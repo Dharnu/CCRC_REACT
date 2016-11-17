@@ -8,13 +8,18 @@ import * as SurveyActions from './../actions/index';
 class SurveyOptions extends React.Component {
   constructor(props, context) {
     super(props, context);
+        this.nextQuestion = this.nextQuestion.bind(this);
+
+  }
+  nextQuestion(event) {
+    this.props.actions.incrementSurveyIndex();
   }
   render() {
 
     var optionsList = []
     if (this.props.surveyQuestions) {
       optionsList = this.props.surveyQuestions[this.props.index].options.map(option => {
-        return <div className="decision-key-options centerAll" id={option.id} key={option.id}>{option.option}</div>
+        return <div onClick={this.nextQuestion} className="decision-key-options centerAll" id={option.id} key={option.id}>{option.option}</div>
       });
     }
 

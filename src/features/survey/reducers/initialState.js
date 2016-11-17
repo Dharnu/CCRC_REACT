@@ -3,6 +3,6 @@ export default {
 	displaySurveyOptionsPanel: false,
 	displaySurveyNavigationPanel: false,
 	displaySurveyBottomPanel: true,
-	surveyIndex:0,
+	surveyIndex:-1,
 	surveyQuestions:[]
 }

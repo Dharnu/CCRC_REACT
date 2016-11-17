@@ -14,12 +14,12 @@ export function modifySurveyIndex(state = initialState.surveyIndex, action) {
 export function setSurveyQuestions(state = initialState.surveyQuestions, action) {
 	switch (action.type) {
 		case types.SURVEY_FETCH_SUCCESS:
-			return [{
-				'survey': 'there are ' + action.surveys.length + ' questions'
-			}, ...action.surveys]
-
+			return action.surveys
 		case types.DISPLAY_QUESTIONS:
-			state.shift()
+			return state
+		case types.DISPLAY_START_MESSAGE:			
+			return state
+		case types.DISPLAY_END_MESSAGE:		
 			return state
 		default:
 			return state;

@@ -13,6 +13,7 @@ class SurveyControls extends React.Component {
 
   }
   displayQuestions(event) {
+    this.props.actions.incrementSurveyIndex();
     this.props.actions.displaySurveyQuestions();
     this.props.actions.hideControlPanel(true);
     this.props.actions.hideOptionsPanel(false);
@@ -21,12 +22,20 @@ class SurveyControls extends React.Component {
   }
   render() {
 
-    return (
-        <div className = "surveyActionContainer displayFlex spaceBetween surevyControls" >
-      <div className = "decision-key-controls centerAll" 
+    var availableControls='';
+    if(this.props.index===-1){
+      availableControls=<div className="displayFlex spaceBetween initalAvailableControls"><div className = "decision-key-controls centerAll" 
       onClick = { this.displayQuestions}>Now </div> 
        <div className = "decision-key-controls centerAll" > Later</div> 
-       <div className = "decision-key-controls centerAll" >Exit </div>
+       </div>;
+    }
+    else {
+      availableControls=<div className = "decision-key-controls centerAll" >Exit </div>;
+    }
+
+    return (
+        <div className = "surveyActionContainer displayFlex spaceBetween surevyControls" >
+        {availableControls}
         </div>
         )
 
@@ -34,12 +43,13 @@ class SurveyControls extends React.Component {
 };
 
 SurveyControls.propTypes = {
-  actions: PropTypes.object.isRequired
+  actions: PropTypes.object.isRequired,
+  index:PropTypes.number.isRequired,
 };
 
 function mapStateToProps(state, ownProps) {
   return {
-    courses: state.courses
+    index: state.surveyIndex
   };
 }
 

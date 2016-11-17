@@ -1,6 +1,16 @@
 import * as types from './actionTypes';
 import SurveyApi from './../api/mockSurvey';
 
+export function displayStartMessage() {
+	return {
+		type: types.DISPLAY_START_MESSAGE
+	}
+}
+export function displayEndMessage() {
+	return {
+		type: types.DISPLAY_END_MESSAGE
+	}
+}
 export function displaySurveyQuestions() {
 	return {
 		type: types.DISPLAY_QUESTIONS

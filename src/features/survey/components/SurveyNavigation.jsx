@@ -12,7 +12,6 @@ class SurveyNavigation extends React.Component {
     this.previous = this.previous.bind(this);
   }
   skip(event) {
-
     this.props.actions.incrementSurveyIndex();
   }
   previous() {
@@ -28,9 +27,6 @@ class SurveyNavigation extends React.Component {
     } else if(this.props.index===0) {
       directions = <div className="nav-key centerAll" onClick={this.skip}>Skip</div>;
     }
-    
-
-
     return (
       <div className="surveyNavigation displayFlex spaceBetween">
             {directions}
