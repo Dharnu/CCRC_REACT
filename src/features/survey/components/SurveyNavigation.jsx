@@ -13,18 +13,15 @@ class SurveyNavigation extends React.Component {
   }
   skip(event) {
     this.props.actions.incrementSurveyIndex();
+    if(this.props.index === this.props.totalSurveys){
+      this.props.actions.surveyEnded();
+
+    }
   }
   previous() {
     this.props.actions.decrementSurveyIndex();
     this.props.actions.deregisterResponse();
     
-  }
-  componentWillUpdate(){
-    if(this.props.index === this.props.totalSurveys){
-      this.props.actions.hideNavigationPanel(true);
-      this.props.actions.surveyEnded();
-
-    }
   }
   
   render() {

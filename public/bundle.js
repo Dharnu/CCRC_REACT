@@ -69,7 +69,7 @@
 
 	var _index = __webpack_require__(200);
 
-	var _configureStore = __webpack_require__(211);
+	var _configureStore = __webpack_require__(214);
 
 	var _configureStore2 = _interopRequireDefault(_configureStore);
 
@@ -23814,20 +23814,15 @@
 	    key: 'skip',
 	    value: function skip(event) {
 	      this.props.actions.incrementSurveyIndex();
+	      if (this.props.index === this.props.totalSurveys) {
+	        this.props.actions.surveyEnded();
+	      }
 	    }
 	  }, {
 	    key: 'previous',
 	    value: function previous() {
 	      this.props.actions.decrementSurveyIndex();
 	      this.props.actions.deregisterResponse();
-	    }
-	  }, {
-	    key: 'componentWillUpdate',
-	    value: function componentWillUpdate() {
-	      if (this.props.index === this.props.totalSurveys) {
-	        this.props.actions.hideNavigationPanel(true);
-	        this.props.actions.surveyEnded();
-	      }
 	    }
 	  }, {
 	    key: 'render',
@@ -23937,19 +23932,13 @@
 	  }
 
 	  _createClass(SurveyOptions, [{
-	    key: 'componentWillUpdate',
-	    value: function componentWillUpdate() {
-	      if (this.props.index === this.props.surveyQuestions.length - 1) {
-
-	        this.props.actions.hideOptionsPanel(true);
-	        this.props.actions.surveyEnded();
-	      }
-	    }
-	  }, {
 	    key: 'nextQuestion',
 	    value: function nextQuestion(event) {
 	      this.props.actions.incrementSurveyIndex();
 	      this.props.actions.registerResponse(this.props.surveyQuestions[this.props.index].id);
+	      if (this.props.index === this.props.surveyQuestions.length - 1) {
+	        this.props.actions.surveyEnded();
+	      }
 	    }
 	  }, {
 	    key: 'render',
@@ -24028,7 +24017,7 @@
 	var content = __webpack_require__(208);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
-	var update = __webpack_require__(210)(content, {});
+	var update = __webpack_require__(213)(content, {});
 	if(content.locals) module.exports = content.locals;
 	// Hot Module Replacement
 	if(false) {
@@ -24053,7 +24042,7 @@
 
 
 	// module
-	exports.push([module.id, "\n/*\nTo change this license header, choose License Headers in Project Properties.\nTo change this template file, choose Tools | Templates\nand open the template in the editor.\n*/\n/* \n    Created on : Oct 31, 2016, 11:19:14 AM\n    Author     : dharani\n*/\n/* Font Style and families are listed*/\n/*@font-face {\n    font-family: 'Bryant';\n    font-style: normal;\n    font-weight: 500;\n    src: url(\"../../fonts/BryantPro-Medium.otf\");\n}\n@font-face {\n    font-family: 'Myriad-Bold';\n    font-style: normal;\n    font-weight: 500;\n    src: url(\"../../fonts/Myriad-Pro-Bold.ttf\");\n}\n@font-face {\n    font-family: 'Myriad-Regular';\n    font-style: normal;\n    font-weight: 500;\n    src: url(\"../../fonts/Myriad-Pro-Regular.ttf\");\n}*/\n\n.centerAll {\n    display: flex;\n    justify-content: center;\n    align-items: center;\n    display: -webkit-flex; /* Safari */\n    -webkit-justify-content: center; \n    -webkit-align-items: center;\n    display: -moz-flex; /* Mozilla */\n    -moz-justify-content: center; \n    -moz-align-items: center;\n}\n/* Display flex and its properties are grouped for particular use */\n.displayFlex {\n    display: flex;\n    display: -webkit-flex; /* Safari */\n    display: -moz-flex; /* Mozilla */\n\n}\n.centerAll {\n    display: flex;\n    justify-content: center;\n    align-items: center;\n    display: -webkit-flex; /* Safari */\n    -webkit-justify-content: center; \n    -webkit-align-items: center;\n    display: -moz-flex; /* Mozilla */\n    -moz-justify-content: center; \n    -moz-align-items: center;\n}\n.flexEnd {\n    display: flex;\n    justify-content: center;\n    align-items: flex-end;\n    display: -webkit-flex; /* Safari */\n    -webkit-justify-content: center; \n    -webkit-align-items: flex-end;\n    display: -moz-flex; /* Mozilla */\n    -moz-justify-content: center; \n    -moz-align-items: flex-end;\n}\n.flexEndAlign {\n    display: flex;\n    align-items: flex-end;\n    display: -webkit-flex; /* Safari */\n    -webkit-align-items: flex-end;\n    display: -moz-flex; /* Mozilla */\n    -moz-align-items: flex-end;\n}\n.flexAlignEnd {\n    display: flex;\n    justify-content: flex-end;\n    display: -webkit-flex; /* Safari */\n    -webkit-justify-content: flex-end;\n    display: -moz-flex; /* Mozilla */\n    -moz-justify-content: flex-end;\n}\n.flexEndAll {\n    display: flex;\n    justify-content: flex-end;\n    align-items: flex-end;\n    display: -webkit-flex; /* Safari */\n    -webkit-justify-content: flex-end; \n    -webkit-align-items: flex-end;\n    display: -moz-flex; /* Mozilla */\n    -moz-justify-content: flex-end; \n    -moz-align-items: flex-end;\n}\n.spaceAround {\n    display: flex;\n    justify-content: space-around;\n    align-items: center;\n    display: -webkit-flex; /* Safari */\n    -webkit-justify-content: space-around; \n    -webkit-align-items: center;\n    display: -moz-flex; /* Mozilla */\n    -moz-justify-content: space-around; \n    -moz-align-items: center;\n}\n.flexStart {\n    display: flex;\n    justify-content: flex-start;\n    align-items: center;\n    display: -webkit-flex; /* Safari */\n    -webkit-justify-content: flex-start; \n    -webkit-align-items: center;\n    display: -moz-flex; /* Mozilla */\n    -moz-justify-content: flex-start; \n    -moz-align-items: center;\n}\n.flexStartCenter {\n    display: flex;\n    justify-content: center;\n    align-items: flex-start;\n    display: -webkit-flex; /* Safari */\n    -webkit-justify-content: center; \n    -webkit-align-items: flex-start;\n    display: -moz-flex; /* Mozilla */\n    -moz-justify-content: center; \n    -moz-align-items: flex-start;\n}\n.centerItems {\n    display: flex;\n    align-items: center;\n    display: -webkit-flex; /* Safari */\n    -webkit-align-items: center;\n    display: -moz-flex; /* Mozilla */\n    -moz-align-items: center;\n}\n.justifyContent {\n    display: flex;\n    justify-content: center;\n    display: -webkit-flex; /* Safari */\n    -webkit-justify-content: center; \n    display: -moz-flex; /* Mozilla */\n    -moz-justify-content: center; \n}\n.spaceBetween {\n    display: flex;\n    justify-content: space-between;\n    align-items: center;\n    display: -webkit-flex; /* Safari */\n    -webkit-justify-content: space-between; \n    -webkit-align-items: center;\n    display: -moz-flex; /* Mozilla */\n    -moz-justify-content: space-between; \n    -moz-align-items: center;\n}\n.centerContent {\n    display: flex;\n    justify-content: center;\n    display: -webkit-flex; /* Safari */\n    -webkit-justify-content: center; \n    display: -moz-flex; /* Mozilla */\n    -moz-justify-content: center; \n}\n.flexDirection {\n    dispaly: flex;\n    flex-direction: column;\n    display: -webkit-flex; /* Safari */\n    -webkit-flex-direction: column; \n    display: -moz-flex; /* Mozilla */\n    -moz-flex-direction: column; \n}\n.wrap{\n    dispaly: flex;\n    flex-wrap: wrap;\n    display: -webkit-flex; /* Safari */\n    -webkit-flex-wrap: wrap; \n    display: -moz-flex; /* Mozilla */\n    -moz-flex-wrap: wrap; \n}\n\n/* Html layout header, section and footer speciivations*/\nheader {\n    height: 11%;\n    font-size: 35px;\n    font-family: 'Bryant';\n    width: 100%;\n    margin: 0 auto;\n}\n.header-title {\n    width: 50%;\n    display: flex;\n    justify-content: center;\n}\n.header-right {\n    width: 25%;\n}\nsection {\n    height:70%;\n}\nfooter {\n    height: 19%;\n    display: flex;\n}\n.footerClass {\n    width: 100%;\n    height: 100%;\n}\n.content-body {\n    background-color: #ffffff;\n    margin: 0 auto;\n    width: 97%;\n    height: 100%;\n}\n.container-main {\n    width: 94%;\n    height: 100%;\n    margin: 0 auto;\n}\n.main {\n    width: 100%;\n    height: 100%;\n}\n\nhtml, body {\n    background-color: #59c4bc;\n    height: 100%;\n    color: #ffffff;\n    margin: 0 auto;\n}\n.menu-div{\n    width:100%;\n    height:100%;\n}\n.cal-image {\n    width:50%;\n}\n.home-image {\n    width:50%;\n}\n.survey-alert-container{\n    width: 95%;\n    height: 80%;\n    margin: auto;\n}\n.survey-container{\n    width: 95%;\n    height: 58%;\n    margin: 0 auto;\n    background-color: #16bad6;\n    margin-bottom: 2%;\n    border-radius: 10px;\n}\n.decision-container{\n    width:100%;\n    height:35%;\n}\n.inner-container{\n    width: 85%;\n    height: 30%;\n    margin: auto;\n}\n.decision-key {\n    border-radius: 15px;\n    width:35%;\n    height:100%;\n    background-color: #F4B936;\n    color:#ffffff;\n    font-size: 22px;\n    font-family: 'Myriad-Bold';\n}\n.decision-key-controls {\n    border-radius: 15px;\n    width:30%;\n    height:45%;\n    background-color: #F4B936;\n    color:#ffffff;\n    font-size: 22px;\n    font-family: 'Myriad-Bold';\n}\n.nav-key {\n    border-radius: 15px;\n    width:45%;\n    height:73%;\n    background-color: #F4B936;\n    color:#ffffff;\n    font-size: 22px;\n    font-family: 'Myriad-Bold';\n}\n.decision-key-options {\n    border: 3px solid white;\n    border-radius: 15px;\n    width:45%;\n    height:45%;\n    background-color: #F4B936;\n    color:#ffffff;\n    font-size: 22px;\n    font-family: 'Myriad-Bold';\n}\n.survey-box-content {\n    width: 90%;\n    height: 75%;\n    margin: auto;\n    border: 4px solid white;\n    border-radius: 14px;\n    background-color: #16bad6;\n}\n.survey-box-main {\n    width: 90%;\n    height: 75%;\n    margin: 0 auto;\n    border: 4px solid white;\n    border-radius: 14px;\n    background-color: #16bad6;\n}\n.survey-msg-container{\n    width:100%;\n    margin: auto;\n    height:40%;\n}\n.survey-msg\n{ \n    height: 90%;\n    font-size: 30px;\n    font-family: 'Myriad-Bold';\n}\n.survey-check-container{\n    width:100%;\n    margin: auto;\n    height:40%;\n}\n.survey-check-text{\n    font-size: 27px;\n    font-family: 'Myriad-Bold';\n    height:100%;\n}\n.survey-navigation {\n    display: none;\n}\n.surevyControls {\n    //display: none;\n}\n.surveyOptions {\n    display: flex;\n}\n.survey-address-container  {\n    width:  100%;\n    height: 50%;\n}\n.address-time-date  {\n    height: 75%;\n    width: 95%;\n    margin: 0 auto;\n}\n.surveyNavContainer {\n    height: 15%;\n}\n.surveyNav {\n    height: 100%;\n    width: 70%;\n}\n\n.surveyNavigation {\n    width: 90%;\n    height: 15%;\n    margin: 0 auto;\n}\n.surveyActionContainer {\n    width: 80%;\n    height: 30%;\n    margin: 0 auto;\n}\n.prevNext {\n    width: 100%;\n    height: 100%;\n}\n.initalAvailableControls{\n    width: 100%;\n    height: 100%;\n}", ""]);
+	exports.push([module.id, "\n/*\nTo change this license header, choose License Headers in Project Properties.\nTo change this template file, choose Tools | Templates\nand open the template in the editor.\n*/\n/* \n    Created on : Oct 31, 2016, 11:19:14 AM\n    Author     : dharani\n*/\n/* Font Style and families are listed*/\n@font-face {\n    font-family: 'Bryant';\n    font-style: normal;\n    font-weight: 500;\n    src: url(" + __webpack_require__(210) + ");\n}\n@font-face {\n    font-family: 'Myriad-Bold';\n    font-style: normal;\n    font-weight: 500;\n    src: url(" + __webpack_require__(211) + ");\n}\n@font-face {\n    font-family: 'Myriad-Regular';\n    font-style: normal;\n    font-weight: 500;\n    src: url(" + __webpack_require__(212) + ");\n}\n\n.centerAll {\n    display: flex;\n    justify-content: center;\n    align-items: center;\n    display: -webkit-flex; /* Safari */\n    -webkit-justify-content: center; \n    -webkit-align-items: center;\n    display: -moz-flex; /* Mozilla */\n    -moz-justify-content: center; \n    -moz-align-items: center;\n}\n/* Display flex and its properties are grouped for particular use */\n.displayFlex {\n    display: flex;\n    display: -webkit-flex; /* Safari */\n    display: -moz-flex; /* Mozilla */\n\n}\n.centerAll {\n    display: flex;\n    justify-content: center;\n    align-items: center;\n    display: -webkit-flex; /* Safari */\n    -webkit-justify-content: center; \n    -webkit-align-items: center;\n    display: -moz-flex; /* Mozilla */\n    -moz-justify-content: center; \n    -moz-align-items: center;\n}\n.flexEnd {\n    display: flex;\n    justify-content: center;\n    align-items: flex-end;\n    display: -webkit-flex; /* Safari */\n    -webkit-justify-content: center; \n    -webkit-align-items: flex-end;\n    display: -moz-flex; /* Mozilla */\n    -moz-justify-content: center; \n    -moz-align-items: flex-end;\n}\n.flexEndAlign {\n    display: flex;\n    align-items: flex-end;\n    display: -webkit-flex; /* Safari */\n    -webkit-align-items: flex-end;\n    display: -moz-flex; /* Mozilla */\n    -moz-align-items: flex-end;\n}\n.flexAlignEnd {\n    display: flex;\n    justify-content: flex-end;\n    display: -webkit-flex; /* Safari */\n    -webkit-justify-content: flex-end;\n    display: -moz-flex; /* Mozilla */\n    -moz-justify-content: flex-end;\n}\n.flexEndAll {\n    display: flex;\n    justify-content: flex-end;\n    align-items: flex-end;\n    display: -webkit-flex; /* Safari */\n    -webkit-justify-content: flex-end; \n    -webkit-align-items: flex-end;\n    display: -moz-flex; /* Mozilla */\n    -moz-justify-content: flex-end; \n    -moz-align-items: flex-end;\n}\n.spaceAround {\n    display: flex;\n    justify-content: space-around;\n    align-items: center;\n    display: -webkit-flex; /* Safari */\n    -webkit-justify-content: space-around; \n    -webkit-align-items: center;\n    display: -moz-flex; /* Mozilla */\n    -moz-justify-content: space-around; \n    -moz-align-items: center;\n}\n.flexStart {\n    display: flex;\n    justify-content: flex-start;\n    align-items: center;\n    display: -webkit-flex; /* Safari */\n    -webkit-justify-content: flex-start; \n    -webkit-align-items: center;\n    display: -moz-flex; /* Mozilla */\n    -moz-justify-content: flex-start; \n    -moz-align-items: center;\n}\n.flexStartCenter {\n    display: flex;\n    justify-content: center;\n    align-items: flex-start;\n    display: -webkit-flex; /* Safari */\n    -webkit-justify-content: center; \n    -webkit-align-items: flex-start;\n    display: -moz-flex; /* Mozilla */\n    -moz-justify-content: center; \n    -moz-align-items: flex-start;\n}\n.centerItems {\n    display: flex;\n    align-items: center;\n    display: -webkit-flex; /* Safari */\n    -webkit-align-items: center;\n    display: -moz-flex; /* Mozilla */\n    -moz-align-items: center;\n}\n.justifyContent {\n    display: flex;\n    justify-content: center;\n    display: -webkit-flex; /* Safari */\n    -webkit-justify-content: center; \n    display: -moz-flex; /* Mozilla */\n    -moz-justify-content: center; \n}\n.spaceBetween {\n    display: flex;\n    justify-content: space-between;\n    align-items: center;\n    display: -webkit-flex; /* Safari */\n    -webkit-justify-content: space-between; \n    -webkit-align-items: center;\n    display: -moz-flex; /* Mozilla */\n    -moz-justify-content: space-between; \n    -moz-align-items: center;\n}\n.centerContent {\n    display: flex;\n    justify-content: center;\n    display: -webkit-flex; /* Safari */\n    -webkit-justify-content: center; \n    display: -moz-flex; /* Mozilla */\n    -moz-justify-content: center; \n}\n.flexDirection {\n    dispaly: flex;\n    flex-direction: column;\n    display: -webkit-flex; /* Safari */\n    -webkit-flex-direction: column; \n    display: -moz-flex; /* Mozilla */\n    -moz-flex-direction: column; \n}\n.wrap{\n    dispaly: flex;\n    flex-wrap: wrap;\n    display: -webkit-flex; /* Safari */\n    -webkit-flex-wrap: wrap; \n    display: -moz-flex; /* Mozilla */\n    -moz-flex-wrap: wrap; \n}\n\n/* Html layout header, section and footer speciivations*/\nheader {\n    height: 11%;\n    font-size: 35px;\n    font-family: 'Bryant';\n    width: 100%;\n    margin: 0 auto;\n}\n.header-title {\n    width: 50%;\n    display: flex;\n    justify-content: center;\n}\n.header-right {\n    width: 25%;\n}\nsection {\n    height:70%;\n}\nfooter {\n    height: 19%;\n    display: flex;\n}\n.footerClass {\n    width: 100%;\n    height: 100%;\n}\n.content-body {\n    background-color: #ffffff;\n    margin: 0 auto;\n    width: 97%;\n    height: 100%;\n}\n.container-main {\n    width: 94%;\n    height: 100%;\n    margin: 0 auto;\n}\n.main {\n    width: 100%;\n    height: 100%;\n}\n\nhtml, body {\n    background-color: #59c4bc;\n    height: 100%;\n    color: #ffffff;\n    margin: 0 auto;\n}\n.menu-div{\n    width:100%;\n    height:100%;\n}\n.cal-image {\n    width:50%;\n}\n.home-image {\n    width:50%;\n}\n.survey-alert-container{\n    width: 95%;\n    height: 80%;\n    margin: auto;\n}\n.survey-container{\n    width: 95%;\n    height: 58%;\n    margin: 0 auto;\n    background-color: #16bad6;\n    margin-bottom: 2%;\n    border-radius: 10px;\n}\n.decision-container{\n    width:100%;\n    height:35%;\n}\n.inner-container{\n    width: 85%;\n    height: 30%;\n    margin: auto;\n}\n.decision-key {\n    border-radius: 15px;\n    width:35%;\n    height:100%;\n    background-color: #F4B936;\n    color:#ffffff;\n    font-size: 22px;\n    font-family: 'Myriad-Bold';\n}\n.decision-key-controls {\n    border-radius: 15px;\n    width:30%;\n    height:45%;\n    background-color: #F4B936;\n    color:#ffffff;\n    font-size: 22px;\n    font-family: 'Myriad-Bold';\n}\n.nav-key {\n    border-radius: 15px;\n    width:45%;\n    height:73%;\n    background-color: #F4B936;\n    color:#ffffff;\n    font-size: 22px;\n    font-family: 'Myriad-Bold';\n}\n.decision-key-options {\n    border: 3px solid white;\n    border-radius: 15px;\n    width:45%;\n    height:45%;\n    background-color: #F4B936;\n    color:#ffffff;\n    font-size: 22px;\n    font-family: 'Myriad-Bold';\n}\n.survey-box-content {\n    width: 90%;\n    height: 75%;\n    margin: auto;\n    border: 4px solid white;\n    border-radius: 14px;\n    background-color: #16bad6;\n}\n.survey-box-main {\n    width: 90%;\n    height: 75%;\n    margin: 0 auto;\n    border: 4px solid white;\n    border-radius: 14px;\n    background-color: #16bad6;\n}\n.survey-msg-container{\n    width:100%;\n    margin: auto;\n    height:40%;\n}\n.survey-msg\n{ \n    height: 90%;\n    font-size: 30px;\n    font-family: 'Myriad-Bold';\n}\n.survey-check-container{\n    width:100%;\n    margin: auto;\n    height:40%;\n}\n.survey-check-text{\n    font-size: 27px;\n    font-family: 'Myriad-Bold';\n    height:100%;\n}\n.survey-navigation {\n    display: none;\n}\n.surevyControls {\n    //display: none;\n}\n.surveyOptions {\n    display: flex;\n}\n.survey-address-container  {\n    width:  100%;\n    height: 50%;\n}\n.address-time-date  {\n    height: 75%;\n    width: 95%;\n    margin: 0 auto;\n}\n.surveyNavContainer {\n    height: 15%;\n}\n.surveyNav {\n    height: 100%;\n    width: 70%;\n}\n\n.surveyNavigation {\n    width: 90%;\n    height: 15%;\n    margin: 0 auto;\n}\n.surveyActionContainer {\n    width: 80%;\n    height: 30%;\n    margin: 0 auto;\n}\n.prevNext {\n    width: 100%;\n    height: 100%;\n}\n.initalAvailableControls{\n    width: 100%;\n    height: 100%;\n}", ""]);
 
 	// exports
 
@@ -24116,6 +24105,24 @@
 
 /***/ },
 /* 210 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = __webpack_require__.p + "294ee30f32e38a75332715c2439aeeae.otf";
+
+/***/ },
+/* 211 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = __webpack_require__.p + "94084dc315a4ff8ca3ba6f765a38e717.ttf";
+
+/***/ },
+/* 212 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = __webpack_require__.p + "7ac043ce58c2e61adcf7ebac9625d31b.ttf";
+
+/***/ },
+/* 213 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/*
@@ -24367,7 +24374,7 @@
 
 
 /***/ },
-/* 211 */
+/* 214 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -24377,7 +24384,7 @@
 	});
 	exports.default = configureStore;
 
-	var _index = __webpack_require__(212);
+	var _index = __webpack_require__(215);
 
 	var _index2 = _interopRequireDefault(_index);
 
@@ -24390,7 +24397,7 @@
 	}
 
 /***/ },
-/* 212 */
+/* 215 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -24401,7 +24408,7 @@
 
 	var _redux = __webpack_require__(183);
 
-	var _reducers = __webpack_require__(213);
+	var _reducers = __webpack_require__(216);
 
 	var surveyReducers = _interopRequireWildcard(_reducers);
 
@@ -24421,7 +24428,7 @@
 	exports.default = rootReducer;
 
 /***/ },
-/* 213 */
+/* 216 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
