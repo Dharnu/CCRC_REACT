@@ -21671,10 +21671,10 @@
 /* 174 */
 /***/ function(module, exports, __webpack_require__) {
 
-	"use strict";
+	'use strict';
 
 	Object.defineProperty(exports, "__esModule", {
-	  value: true
+		value: true
 	});
 
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
@@ -21692,35 +21692,43 @@
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 	var SurveyBottom = function (_React$Component) {
-	  _inherits(SurveyBottom, _React$Component);
+		_inherits(SurveyBottom, _React$Component);
 
-	  function SurveyBottom() {
-	    _classCallCheck(this, SurveyBottom);
+		function SurveyBottom(props) {
+			_classCallCheck(this, SurveyBottom);
 
-	    return _possibleConstructorReturn(this, (SurveyBottom.__proto__ || Object.getPrototypeOf(SurveyBottom)).apply(this, arguments));
-	  }
+			var _this = _possibleConstructorReturn(this, (SurveyBottom.__proto__ || Object.getPrototypeOf(SurveyBottom)).call(this, props));
 
-	  _createClass(SurveyBottom, [{
-	    key: "render",
-	    value: function render() {
-	      return _react2.default.createElement(
-	        "div",
-	        { className: "spaceBetween displayFlex footerClass" },
-	        _react2.default.createElement(
-	          "div",
-	          { className: "home-icon" },
-	          _react2.default.createElement("img", { src: "assets/home.png", width: "150", height: "150", alt: "home" })
-	        ),
-	        _react2.default.createElement(
-	          "div",
-	          { className: "home-icon" },
-	          _react2.default.createElement("img", { src: "assets/back.png", width: "150", height: "150", alt: "back" })
-	        )
-	      );
-	    }
-	  }]);
+			_this.goHome.bind(_this);
+			return _this;
+		}
 
-	  return SurveyBottom;
+		_createClass(SurveyBottom, [{
+			key: 'goHome',
+			value: function goHome(event) {
+				window.open('http://www.google.com', "_self");
+			}
+		}, {
+			key: 'render',
+			value: function render() {
+				return _react2.default.createElement(
+					'div',
+					{ className: 'spaceBetween displayFlex footerClass' },
+					_react2.default.createElement(
+						'div',
+						{ className: 'home-icon', onClick: this.goHome },
+						_react2.default.createElement('img', { src: 'assets/home.png', width: '150', height: '150', alt: 'home' })
+					),
+					_react2.default.createElement(
+						'div',
+						{ className: 'home-icon', onClick: this.goHome },
+						_react2.default.createElement('img', { src: 'assets/back.png', width: '150', height: '150', alt: 'back' })
+					)
+				);
+			}
+		}]);
+
+		return SurveyBottom;
 	}(_react2.default.Component);
 
 	exports.default = SurveyBottom;
@@ -21773,11 +21781,16 @@
 	    var _this = _possibleConstructorReturn(this, (SurveyControls.__proto__ || Object.getPrototypeOf(SurveyControls)).call(this, props));
 
 	    _this.displayQuestions = _this.displayQuestions.bind(_this);
-
+	    _this.goHome.bind(_this);
 	    return _this;
 	  }
 
 	  _createClass(SurveyControls, [{
+	    key: 'goHome',
+	    value: function goHome(event) {
+	      window.open('http://www.google.com', "_self");
+	    }
+	  }, {
 	    key: 'displayQuestions',
 	    value: function displayQuestions(event) {
 	      this.props.actions.incrementSurveyIndex();
@@ -21810,7 +21823,7 @@
 	      } else {
 	        availableControls = _react2.default.createElement(
 	          'div',
-	          { className: 'decision-key-controls centerAll' },
+	          { className: 'decision-key-controls centerAll', onClick: this.goHome },
 	          'Exit '
 	        );
 	      }
@@ -23815,6 +23828,7 @@
 	    value: function skip(event) {
 	      this.props.actions.incrementSurveyIndex();
 	      if (this.props.index === this.props.totalSurveys) {
+
 	        this.props.actions.surveyEnded();
 	      }
 	    }
@@ -24107,19 +24121,19 @@
 /* 210 */
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports = __webpack_require__.p + "294ee30f32e38a75332715c2439aeeae.otf";
+	module.exports = __webpack_require__.p + "public/assets/fonts/BryantPro-Medium.otf";
 
 /***/ },
 /* 211 */
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports = __webpack_require__.p + "94084dc315a4ff8ca3ba6f765a38e717.ttf";
+	module.exports = __webpack_require__.p + "public/assets/fonts/Myriad-Pro-Bold.ttf";
 
 /***/ },
 /* 212 */
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports = __webpack_require__.p + "7ac043ce58c2e61adcf7ebac9625d31b.ttf";
+	module.exports = __webpack_require__.p + "public/assets/fonts/Myriad-Pro-Regular.ttf";
 
 /***/ },
 /* 213 */
