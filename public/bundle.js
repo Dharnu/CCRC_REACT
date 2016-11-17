@@ -23613,6 +23613,8 @@
 	Object.defineProperty(exports, "__esModule", {
 		value: true
 	});
+	exports.registerResponse = registerResponse;
+	exports.deregisterResponse = deregisterResponse;
 	exports.surveyEnded = surveyEnded;
 	exports.displaySurveyQuestions = displaySurveyQuestions;
 	exports.surveyFetchSuccess = surveyFetchSuccess;
@@ -23637,6 +23639,17 @@
 
 	function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
 
+	function registerResponse(id) {
+		return {
+			type: types.REGISTER_RESPONSE,
+			id: id
+		};
+	}
+	function deregisterResponse() {
+		return {
+			type: types.DEREGISTER_RESPONSE
+		};
+	}
 	function surveyEnded() {
 		return {
 			type: types.SURVEY_ENDED
@@ -23726,6 +23739,8 @@
 	var DISPLAY_START_MESSAGE = exports.DISPLAY_START_MESSAGE = 'DISPLAY_START_MESSAGE';
 	var DISPLAY_END_MESSAGE = exports.DISPLAY_END_MESSAGE = 'DISPLAY_END_MESSAGE';
 	var SURVEY_ENDED = exports.SURVEY_ENDED = 'SURVEY_ENDED';
+	var REGISTER_RESPONSE = exports.REGISTER_RESPONSE = 'REGISTER_RESPONSE';
+	var DEREGISTER_RESPONSE = exports.DEREGISTER_RESPONSE = 'DEREGISTER_RESPONSE';
 
 /***/ },
 /* 208 */
@@ -23862,7 +23877,7 @@
 				} else if (this.props.index === this.props.surveyQuestions.length) {
 					/** broadcast options hide and display control panel*/
 					//this.reachedSurveyEnd();
-					messageContent = 'there are ' + this.props.surveyQuestions.length + ' unanswered questions';
+					messageContent = 'there are ' + (this.props.surveyQuestions.length - this.props.surveyQuestionsAnswered).toString() + ' unanswered questions';
 				}
 				return _react2.default.createElement(
 					'div',
@@ -23881,6 +23896,7 @@
 
 	SurveyMessage.propType = {
 		surveyQuestions: _react2.default.PropTypes.array.isRequired,
+		surveyQuestionsAnswered: _react.PropTypes.number.isRequired,
 		index: _react.PropTypes.number.isRequired
 
 	};
@@ -23888,7 +23904,8 @@
 	function mapStateToProps(state, ownProps) {
 		return {
 			index: state.surveyIndex,
-			surveyQuestions: state.surveyQuestions
+			surveyQuestions: state.surveyQuestions,
+			surveyQuestionsAnswered: state.surveyQuestionsResponse.length
 		};
 	}
 
@@ -23956,6 +23973,7 @@
 	    key: 'previous',
 	    value: function previous() {
 	      this.props.actions.decrementSurveyIndex();
+	      this.props.actions.deregisterResponse();
 	    }
 	  }, {
 	    key: 'componentWillUpdate',
@@ -24090,9 +24108,7 @@
 	    key: 'nextQuestion',
 	    value: function nextQuestion(event) {
 	      this.props.actions.incrementSurveyIndex();
-	      // if(this.props.index===this.props.surveyQuestions.length-1){ 
-	      //   this.props.actions.surveyEnded();
-	      // }
+	      this.props.actions.registerResponse(this.props.surveyQuestions[this.props.index].id);
 	    }
 	  }, {
 	    key: 'render',
@@ -24157,7 +24173,8 @@
 		displaySurveyNavigationPanel: false,
 		displaySurveyBottomPanel: true,
 		surveyIndex: -1,
-		surveyQuestions: []
+		surveyQuestions: [],
+		surveyQuestionsResponse: []
 	};
 
 /***/ },
@@ -24555,7 +24572,8 @@
 		displayNavigationPanel: surveyReducers.displayNavigationPanel,
 		displayBottomPanel: surveyReducers.displayBottomPanel,
 		surveyIndex: surveyReducers.modifySurveyIndex,
-		surveyQuestions: surveyReducers.setSurveyQuestions
+		surveyQuestions: surveyReducers.setSurveyQuestions,
+		surveyQuestionsResponse: surveyReducers.manageSurveyResponse
 
 	});
 
@@ -24571,6 +24589,7 @@
 		value: true
 	});
 	exports.modifySurveyIndex = modifySurveyIndex;
+	exports.manageSurveyResponse = manageSurveyResponse;
 	exports.setSurveyQuestions = setSurveyQuestions;
 	exports.displayPanels = displayPanels;
 	exports.displayControlPanel = displayControlPanel;
@@ -24590,6 +24609,8 @@
 
 	function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
 
+	function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
+
 	function modifySurveyIndex() {
 		var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : _initialState2.default.surveyIndex;
 		var action = arguments[1];
@@ -24599,6 +24620,25 @@
 				return state + 1;
 			case types.DECREMENT_SURVEY_INDEX:
 				return state - 1;
+			default:
+				return state;
+		}
+	}
+	function manageSurveyResponse() {
+		var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : _initialState2.default.surveyQuestionsResponse;
+		var action = arguments[1];
+
+		switch (action.type) {
+			case types.REGISTER_RESPONSE:
+				return [].concat(_toConsumableArray(state), [action.id]);
+			case types.DEREGISTER_RESPONSE:
+				// var array = state;
+				// var index = array.indexOf(action.id);
+				// if (index > -1) {
+				// 	array.splice(index, 1);
+				// }
+				state.pop();
+				return state;
 			default:
 				return state;
 		}

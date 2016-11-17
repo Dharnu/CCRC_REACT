@@ -11,21 +11,38 @@ export function modifySurveyIndex(state = initialState.surveyIndex, action) {
 			return state;
 	}
 }
+export function manageSurveyResponse(state = initialState.surveyQuestionsResponse, action) {
+	switch (action.type) {
+		case types.REGISTER_RESPONSE:
+			return [...state, action.id];
+		case types.DEREGISTER_RESPONSE:
+			// var array = state;
+			// var index = array.indexOf(action.id);
+			// if (index > -1) {
+			// 	array.splice(index, 1);
+			// }
+			state.pop();
+			return state;
+		default:
+			return state;
+	}
+
+}
 export function setSurveyQuestions(state = initialState.surveyQuestions, action) {
 	switch (action.type) {
 		case types.SURVEY_FETCH_SUCCESS:
 			return action.surveys
 		case types.DISPLAY_QUESTIONS:
 			return state
-		case types.DISPLAY_START_MESSAGE:			
+		case types.DISPLAY_START_MESSAGE:
 			return state
-		case types.DISPLAY_END_MESSAGE:		
+		case types.DISPLAY_END_MESSAGE:
 			return state
 		default:
 			return state;
 	}
 };
-export function displayPanels(state,action){
+export function displayPanels(state, action) {
 
 }
 export function displayControlPanel(state = initialState.displaySurveyControlPanel, action) {

@@ -4,5 +4,6 @@ export default {
 	displaySurveyNavigationPanel: false,
 	displaySurveyBottomPanel: true,
 	surveyIndex:-1,
-	surveyQuestions:[]
+	surveyQuestions:[],
+	surveyQuestionsResponse:[]
 }

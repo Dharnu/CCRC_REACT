@@ -24,7 +24,7 @@ class SurveyMessage extends React.Component {
 		} else if (this.props.index === this.props.surveyQuestions.length) {
 			/** broadcast options hide and display control panel*/
 			//this.reachedSurveyEnd();
-			messageContent = 'there are ' + this.props.surveyQuestions.length + ' unanswered questions'
+			messageContent = 'there are ' + (this.props.surveyQuestions.length-this.props.surveyQuestionsAnswered).toString() + ' unanswered questions'
 		}
 		return (<div className="surveyHome flexAlignCenterJustifyCenter flexDirectionColumn ">
                             <div className="flexAlignCenterJustifyCenter">{messageContent}</div>
@@ -35,6 +35,7 @@ class SurveyMessage extends React.Component {
 }
 SurveyMessage.propType = {
 	surveyQuestions: React.PropTypes.array.isRequired,
+	surveyQuestionsAnswered:PropTypes.number.isRequired,
 	index: PropTypes.number.isRequired,
 
 }
@@ -42,7 +43,8 @@ SurveyMessage.propType = {
 function mapStateToProps(state, ownProps) {
 	return {
 		index: state.surveyIndex,
-		surveyQuestions: state.surveyQuestions
+		surveyQuestions: state.surveyQuestions,
+		surveyQuestionsAnswered:state.surveyQuestionsResponse.length
 	};
 }
 

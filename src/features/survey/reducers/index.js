@@ -7,7 +7,8 @@ var  rootReducer = combineReducers({
 	displayNavigationPanel:surveyReducers.displayNavigationPanel,
 	displayBottomPanel:surveyReducers.displayBottomPanel,
 	surveyIndex:surveyReducers.modifySurveyIndex,
-	surveyQuestions:surveyReducers.setSurveyQuestions
+	surveyQuestions:surveyReducers.setSurveyQuestions,
+	surveyQuestionsResponse:surveyReducers.manageSurveyResponse
 
 });
 

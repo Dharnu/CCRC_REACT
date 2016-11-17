@@ -1,6 +1,17 @@
 import * as types from './actionTypes';
 import SurveyApi from './../api/mockSurvey';
 
+export function registerResponse(id) {
+	return {
+		type: types.REGISTER_RESPONSE,
+		id
+	}
+}
+export function deregisterResponse() {
+	return {
+		type: types.DEREGISTER_RESPONSE
+	}
+}
 export function surveyEnded() {
 	return {
 		type: types.SURVEY_ENDED

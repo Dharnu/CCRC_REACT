@@ -16,6 +16,7 @@ class SurveyNavigation extends React.Component {
   }
   previous() {
     this.props.actions.decrementSurveyIndex();
+    this.props.actions.deregisterResponse();
     
   }
   componentWillUpdate(){
