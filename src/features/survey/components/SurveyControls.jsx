@@ -24,7 +24,7 @@ class SurveyControls extends React.Component {
 
     var availableControls='';
     if(this.props.index===-1){
-      availableControls=<div className="displayFlex spaceBetween initalAvailableControls"><div className = "decision-key-controls centerAll" 
+      availableControls=<div className="displayFlex spaceAround initalAvailableControls"><div className = "decision-key-controls centerAll" 
       onClick = { this.displayQuestions}>Now </div> 
        <div className = "decision-key-controls centerAll" > Later</div> 
        </div>;
@@ -34,7 +34,7 @@ class SurveyControls extends React.Component {
     }
 
     return (
-        <div className = "surveyActionContainer displayFlex spaceBetween surevyControls" >
+        <div className = "surveyActionContainer displayFlex spaceAround surevyControls" >
         {availableControls}
         </div>
         )
