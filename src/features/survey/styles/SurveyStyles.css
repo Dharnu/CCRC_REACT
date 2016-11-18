@@ -741,20 +741,20 @@ html, body {
     font-family: 'Bryant';
     font-style: normal;
     font-weight: 500;
-    src: url("../../fonts/BryantPro-Medium.otf");
+    src: url("./../../../fonts/BryantPro-Medium.otf");
 }
 @font-face {
     font-family: 'Myriad-Bold';
     font-style: normal;
     font-weight: 500;
-    src: url("../../fonts/Myriad-Pro-Bold.ttf");
+    src: url("./../../../fonts/Myriad-Pro-Bold.ttf");
 }
 @font-face {
     font-family: 'Myriad-Regular';
     font-style: normal;
     font-weight: 500;
-    src: url("../../fonts/Myriad-Pro-Regular.ttf");
-}
+    src: url("./../../../fonts/Myriad-Pro-Regular.ttf");
+}*/
 /*
 .centerAll {
     display: flex;
