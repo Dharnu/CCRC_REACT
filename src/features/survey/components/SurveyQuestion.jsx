@@ -1,15 +1,52 @@
 import React, {PropTypes} from 'react';
+import {connect} from 'react-redux';
+import {bindActionCreators} from 'redux';
+
+import * as SurveyActions from './../actions/index';
 
 class SurveyQuestion extends React.Component {
 
+constructor(props, context) {
+		super(props, context);
+	}
 
     render() {
+
+        var survey = this.props.surveyQuestions[this.props.index].survey;
+        console.log(survey);
         return (
             <div id="surveyQuestionContainer" className="surveyQuestionsContainer flexDirectionColumn">
-                Questions
+                <div className="surveyQuestion">
+                    <div>{this.props.surveyQuestions[this.props.index].survey}</div>
+                </div>
+                <div className="surveySignature flexAlignEnd">
+                    {this.props.surveyQuestions[this.props.index].signature}
+                </div>
             </div>
         )
     }
 };
 
-export default SurveyQuestion;
+
+SurveyQuestion.propType = {
+	surveyQuestions: React.PropTypes.array.isRequired,
+	surveyQuestionsAnswered:PropTypes.number.isRequired,
+	index: PropTypes.number.isRequired,
+
+}
+
+function mapStateToProps(state, ownProps) {
+	return {
+		index: state.surveyIndex,
+		surveyQuestions: state.surveyQuestions,
+		surveyQuestionsAnswered:state.surveyQuestionsResponse.length
+	};
+}
+
+function mapDispatchToProps(dispatch) {
+	return {
+		actions: bindActionCreators(SurveyActions, dispatch)
+	};
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(SurveyQuestion);

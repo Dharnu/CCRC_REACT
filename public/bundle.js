@@ -21704,7 +21704,7 @@
 /* 181 */
 /***/ function(module, exports, __webpack_require__) {
 
-	"use strict";
+	'use strict';
 
 	Object.defineProperty(exports, "__esModule", {
 	    value: true
@@ -21715,6 +21715,16 @@
 	var _react = __webpack_require__(2);
 
 	var _react2 = _interopRequireDefault(_react);
+
+	var _reactRedux = __webpack_require__(184);
+
+	var _redux = __webpack_require__(191);
+
+	var _index = __webpack_require__(214);
+
+	var SurveyActions = _interopRequireWildcard(_index);
+
+	function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -21727,27 +21737,42 @@
 	var SurveyNotifications = function (_React$Component) {
 	    _inherits(SurveyNotifications, _React$Component);
 
-	    function SurveyNotifications() {
+	    function SurveyNotifications(props, context) {
 	        _classCallCheck(this, SurveyNotifications);
 
-	        return _possibleConstructorReturn(this, (SurveyNotifications.__proto__ || Object.getPrototypeOf(SurveyNotifications)).apply(this, arguments));
+	        return _possibleConstructorReturn(this, (SurveyNotifications.__proto__ || Object.getPrototypeOf(SurveyNotifications)).call(this, props, context));
 	    }
 
 	    _createClass(SurveyNotifications, [{
-	        key: "render",
+	        key: 'render',
 	        value: function render() {
+
+	            var messageCount = '';
+	            var statusMessage = '';
+	            if (this.props.index === -1) {
+	                messageCount = this.props.surveyQuestions.length + ' New Survey(s) Available';
+	                statusMessage = 'Do you want to take it?';
+	            } else if (this.props.index < this.props.surveyQuestions.length) {
+	                messageCount = 'You answered all survey(s)';
+	                statusMessage = 'Thank you.';
+	            } else if (this.props.index === this.props.surveyQuestions.length) {
+	                /** broadcast options hide and display control panel*/
+	                messageCount = 'You skipped ' + this.props.index + ' survey(s)';
+	                statusMessage = 'Thank you.';
+	            }
+
 	            return _react2.default.createElement(
-	                "div",
-	                { id: "surveyHome", className: "surveyHome flexAlignCenterJustifyCenter flexDirectionColumn" },
+	                'div',
+	                { id: 'surveyHome', className: 'surveyHome flexAlignCenterJustifyCenter flexDirectionColumn' },
 	                _react2.default.createElement(
-	                    "div",
-	                    { className: "flexAlignCenterJustifyCenter" },
-	                    "2 New Survey(s) Available"
+	                    'div',
+	                    { className: 'flexAlignCenterJustifyCenter' },
+	                    messageCount
 	                ),
 	                _react2.default.createElement(
-	                    "div",
-	                    { className: "flexAlignCenterJustifyCenter" },
-	                    "Do you want to take it?"
+	                    'div',
+	                    { className: 'flexAlignCenterJustifyCenter' },
+	                    statusMessage
 	                )
 	            );
 	        }
@@ -21758,13 +21783,34 @@
 
 	;
 
-	exports.default = SurveyNotifications;
+	SurveyNotifications.propType = {
+	    surveyQuestions: _react2.default.PropTypes.array.isRequired,
+	    surveyQuestionsAnswered: _react.PropTypes.number.isRequired,
+	    index: _react.PropTypes.number.isRequired
+
+	};
+
+	function mapStateToProps(state, ownProps) {
+	    return {
+	        index: state.surveyIndex,
+	        surveyQuestions: state.surveyQuestions,
+	        surveyQuestionsAnswered: state.surveyQuestionsResponse.length
+	    };
+	}
+
+	function mapDispatchToProps(dispatch) {
+	    return {
+	        actions: (0, _redux.bindActionCreators)(SurveyActions, dispatch)
+	    };
+	}
+
+	exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(SurveyNotifications);
 
 /***/ },
 /* 182 */
 /***/ function(module, exports, __webpack_require__) {
 
-	"use strict";
+	'use strict';
 
 	Object.defineProperty(exports, "__esModule", {
 	    value: true
@@ -21775,6 +21821,16 @@
 	var _react = __webpack_require__(2);
 
 	var _react2 = _interopRequireDefault(_react);
+
+	var _reactRedux = __webpack_require__(184);
+
+	var _redux = __webpack_require__(191);
+
+	var _index = __webpack_require__(214);
+
+	var SurveyActions = _interopRequireWildcard(_index);
+
+	function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -21787,19 +21843,35 @@
 	var SurveyQuestion = function (_React$Component) {
 	    _inherits(SurveyQuestion, _React$Component);
 
-	    function SurveyQuestion() {
+	    function SurveyQuestion(props, context) {
 	        _classCallCheck(this, SurveyQuestion);
 
-	        return _possibleConstructorReturn(this, (SurveyQuestion.__proto__ || Object.getPrototypeOf(SurveyQuestion)).apply(this, arguments));
+	        return _possibleConstructorReturn(this, (SurveyQuestion.__proto__ || Object.getPrototypeOf(SurveyQuestion)).call(this, props, context));
 	    }
 
 	    _createClass(SurveyQuestion, [{
-	        key: "render",
+	        key: 'render',
 	        value: function render() {
+
+	            var survey = this.props.surveyQuestions[this.props.index].survey;
+	            console.log(survey);
 	            return _react2.default.createElement(
-	                "div",
-	                { id: "surveyQuestionContainer", className: "surveyQuestionsContainer flexDirectionColumn" },
-	                "Questions"
+	                'div',
+	                { id: 'surveyQuestionContainer', className: 'surveyQuestionsContainer flexDirectionColumn' },
+	                _react2.default.createElement(
+	                    'div',
+	                    { className: 'surveyQuestion' },
+	                    _react2.default.createElement(
+	                        'div',
+	                        null,
+	                        this.props.surveyQuestions[this.props.index].survey
+	                    )
+	                ),
+	                _react2.default.createElement(
+	                    'div',
+	                    { className: 'surveySignature flexAlignEnd' },
+	                    this.props.surveyQuestions[this.props.index].signature
+	                )
 	            );
 	        }
 	    }]);
@@ -21809,7 +21881,28 @@
 
 	;
 
-	exports.default = SurveyQuestion;
+	SurveyQuestion.propType = {
+	    surveyQuestions: _react2.default.PropTypes.array.isRequired,
+	    surveyQuestionsAnswered: _react.PropTypes.number.isRequired,
+	    index: _react.PropTypes.number.isRequired
+
+	};
+
+	function mapStateToProps(state, ownProps) {
+	    return {
+	        index: state.surveyIndex,
+	        surveyQuestions: state.surveyQuestions,
+	        surveyQuestionsAnswered: state.surveyQuestionsResponse.length
+	    };
+	}
+
+	function mapDispatchToProps(dispatch) {
+	    return {
+	        actions: (0, _redux.bindActionCreators)(SurveyActions, dispatch)
+	    };
+	}
+
+	exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(SurveyQuestion);
 
 /***/ },
 /* 183 */
@@ -21866,7 +21959,7 @@
 	            this.props.actions.hideNotificationsPanel(true);
 	            this.props.actions.hideOptionsPanel(false);
 	            this.props.actions.hideNavigationPanel(false);
-	            this.props.actions.displayQuestionsPanel(true);
+	            this.props.actions.displayQuestionsPanel(false);
 	        }
 	    }, {
 	        key: 'render',
@@ -23706,6 +23799,7 @@
 	exports.hideNotificationsPanel = hideNotificationsPanel;
 	exports.displayQuestionsPanel = displayQuestionsPanel;
 	exports.loadSurvey = loadSurvey;
+	exports.submitSurvey = submitSurvey;
 
 	var _actionTypes = __webpack_require__(215);
 
@@ -23806,7 +23900,7 @@
 	function displayQuestionsPanel(displayQuestionsPanel) {
 
 		return {
-			type: types.DISPALY_QUESTIONS_PANEL,
+			type: types.DISPLAY_QUESTIONS_PANEL,
 			displayQuestionsPanel: displayQuestionsPanel
 		};
 	};
@@ -23814,6 +23908,17 @@
 	function loadSurvey() {
 		return function (dispatch) {
 			return _mockSurveyApi2.default.getAllSurveys().then(function (response) {
+				console.log("hi");
+				dispatch(surveyFetchSuccess(response));
+			}).catch(function (error) {
+				throw error;
+			});
+		};
+	}
+
+	function submitSurvey() {
+		return function (dispatch) {
+			return _mockSurveyApi2.default.submitSurveys().then(function (response) {
 				console.log("hi");
 				dispatch(surveyFetchSuccess(response));
 			}).catch(function (error) {
@@ -23851,12 +23956,13 @@
 	var DISPLAY_QUESTIONS_PANEL = exports.DISPLAY_QUESTIONS_PANEL = "DISPLAY_QUESTIONS_PANEL";
 
 	var LOAD_SURVEY_SUCCESS = exports.LOAD_SURVEY_SUCCESS = 'LOAD_SURVEY_SUCCESS';
+	var SUBMIT_SURVEY = exports.SUBMIT_SURVEY = 'SUBMIT_SURVEY';
 
 /***/ },
 /* 216 */
 /***/ function(module, exports, __webpack_require__) {
 
-	"use strict";
+	'use strict';
 
 	Object.defineProperty(exports, "__esModule", {
 	    value: true
@@ -23867,6 +23973,16 @@
 	var _react = __webpack_require__(2);
 
 	var _react2 = _interopRequireDefault(_react);
+
+	var _reactRedux = __webpack_require__(184);
+
+	var _redux = __webpack_require__(191);
+
+	var _index = __webpack_require__(214);
+
+	var SurveyActions = _interopRequireWildcard(_index);
+
+	function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -23879,36 +23995,66 @@
 	var SurveyNavigation = function (_React$Component) {
 	    _inherits(SurveyNavigation, _React$Component);
 
-	    function SurveyNavigation() {
+	    function SurveyNavigation(props, context) {
 	        _classCallCheck(this, SurveyNavigation);
 
-	        return _possibleConstructorReturn(this, (SurveyNavigation.__proto__ || Object.getPrototypeOf(SurveyNavigation)).apply(this, arguments));
+	        var _this = _possibleConstructorReturn(this, (SurveyNavigation.__proto__ || Object.getPrototypeOf(SurveyNavigation)).call(this, props, context));
+
+	        _this.skip = _this.skip.bind(_this);
+	        _this.previous = _this.previous.bind(_this);
+	        return _this;
 	    }
 
 	    _createClass(SurveyNavigation, [{
-	        key: "render",
+	        key: 'skip',
+	        value: function skip(event) {
+	            this.props.actions.incrementSurveyIndex();
+	            if (this.props.index === this.props.totalSurveys) {
+	                this.props.actions.surveyEnded();
+	            }
+	        }
+	    }, {
+	        key: 'previous',
+	        value: function previous() {
+	            this.props.actions.decrementSurveyIndex();
+	            this.props.actions.deregisterResponse();
+	        }
+	    }, {
+	        key: 'render',
 	        value: function render() {
+	            var directions = [];
+
+	            if (this.props.index > 0 && this.props.index <= this.props.totalSurveys) {
+	                directions = _react2.default.createElement(
+	                    'div',
+	                    { className: 'prevNext displayFlex flexAlignCenterJustifySpaceBetween' },
+	                    _react2.default.createElement(
+	                        'div',
+	                        { className: 'nav-key flexAlignCenterJustifyCenter', onClick: this.previous },
+	                        'Previous'
+	                    ),
+	                    _react2.default.createElement(
+	                        'div',
+	                        { className: 'nav-key flexAlignCenterJustifyCenter', onClick: this.skip },
+	                        'Skip'
+	                    )
+	                );
+	            } else if (this.props.index === 0) {
+	                directions = _react2.default.createElement(
+	                    'div',
+	                    { className: 'prevNext displayFlex flexAlignCenterJustifyCenter' },
+	                    ' ',
+	                    _react2.default.createElement(
+	                        'div',
+	                        { className: 'nav-key flexAlignCenterJustifyCenter', onClick: this.skip },
+	                        'Skip'
+	                    )
+	                );
+	            }
 	            return _react2.default.createElement(
-	                "div",
-	                { id: "surveyNavigation", className: "surveyNavigation displayFlex" },
-	                _react2.default.createElement(
-	                    "div",
-	                    { className: "flexAlignStartJustifyStart" },
-	                    _react2.default.createElement(
-	                        "div",
-	                        { id: "previousSurvey", className: "flexAlignCenterJustifyCenter" },
-	                        "Previous"
-	                    )
-	                ),
-	                _react2.default.createElement(
-	                    "div",
-	                    { className: "flexAlignCenterJustifyEnd" },
-	                    _react2.default.createElement(
-	                        "div",
-	                        { id: "nextSurvey", className: "flexAlignCenterJustifyCenter" },
-	                        "Skip"
-	                    )
-	                )
+	                'div',
+	                { className: 'surveyNavigation displayFlex flexAlignCenterJustifySpaceAround' },
+	                directions
 	            );
 	        }
 	    }]);
@@ -23918,7 +24064,26 @@
 
 	;
 
-	exports.default = SurveyNavigation;
+	SurveyNavigation.proptypes = {
+	    index: _react.PropTypes.number.isRequired,
+	    totalSurveys: _react.PropTypes.number.isRequired,
+	    actions: _react.PropTypes.array.isRequired
+
+	};
+
+	function mapStateToProps(state, ownProps) {
+	    return {
+	        index: state.surveyIndex,
+	        totalSurveys: state.surveyQuestions.length - 1
+	    };
+	}
+
+	function mapDispatchToProps(dispatch) {
+	    return {
+	        actions: (0, _redux.bindActionCreators)(SurveyActions, dispatch)
+	    };
+	}
+	exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(SurveyNavigation);
 
 /***/ },
 /* 217 */
@@ -23970,6 +24135,7 @@
 	        key: 'nextQuestion',
 	        value: function nextQuestion(event) {
 	            this.props.actions.incrementSurveyIndex();
+	            this.props.actions.submitSurvey();
 	            this.props.actions.registerResponse(this.props.surveyQuestions[this.props.index].id);
 	            if (this.props.index === this.props.surveyQuestions.length - 1) {
 	                this.props.actions.surveyEnded();
@@ -24098,6 +24264,46 @@
 	                        response.json().then(function (data) {
 	                            console.log(data.surveys);
 	                            resolve(Object.assign([], data.surveys));
+	                        });
+	                    } else {
+	                        reject(new Error('error'));
+	                    }
+	                }, function (error) {
+	                    reject(new Error(error.message));
+	                });
+	            });
+	            //        return new Promise((resolve, reject)=> {
+	            //            console.log(surveys);
+	            //            resolve(Object.assign([],surveys));
+	            //        });
+	            //        
+	        }
+	    }, {
+	        key: 'submitSurveys',
+	        value: function submitSurveys() {
+	            console.log("submitSurvey");
+	            return new Promise(function (resolve, reject) {
+	                //            return fetch('http://10.10.1.166/CCRC_SPA/json.php').then(response => {
+	                //                if (response.ok) {
+	                //                    response.json().then(function(data) {  
+	                //                        console.log("Success");  
+	                //                      });  
+	                //                } else {
+	                //                    reject(new Error('error'))
+	                //                }
+	                //            }, error => {
+	                //                reject(new Error(error.message))
+	                //            })
+
+	                return fetch('http://10.10.1.166/CCRC_SPA/submitSurvey.php', {
+	                    method: 'post',
+	                    body: JSON.stringify({
+	                        roomNo: 101, id: 1, value: 'Good'
+	                    })
+	                }).then(function (response) {
+	                    if (response.ok) {
+	                        response.json().then(function (data) {
+	                            console.log("Success");
 	                        });
 	                    } else {
 	                        reject(new Error('error'));
@@ -24309,6 +24515,8 @@
 		switch (action.type) {
 			case types.HIDE_OPTIONS_PANEL:
 				return !state;
+			case types.SURVEY_ENDED:
+				return false;
 			default:
 				return state;
 		}
@@ -24320,6 +24528,8 @@
 		switch (action.type) {
 			case types.HIDE_NAVIGATION_PANEL:
 				return !state;
+			case types.SURVEY_ENDED:
+				return false;
 			default:
 				return state;
 		}
@@ -24345,7 +24555,6 @@
 
 				return !state;
 			case types.SURVEY_ENDED:
-
 				return true;
 			default:
 				return state;
@@ -24358,6 +24567,7 @@
 
 		switch (action.type) {
 			case types.DISPLAY_QUESTIONS_PANEL:
+				console.log(!state);
 				return !state;
 			default:
 				return state;

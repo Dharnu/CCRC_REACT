@@ -67,6 +67,8 @@ export function displayOptionsPanel(state = initialState.displaySurveyOptionsPan
 	switch (action.type) {
 		case types.HIDE_OPTIONS_PANEL:
 			return !state;
+                case types.SURVEY_ENDED:
+                        return false;
 		default:
 			return state;
 	}
@@ -75,6 +77,8 @@ export function displayNavigationPanel(state = initialState.displaySurveyNavigat
 	switch (action.type) {
 		case types.HIDE_NAVIGATION_PANEL:
 			return !state;
+                case types.SURVEY_ENDED:
+                        return false;
 		default:
 			return state;
 	}
@@ -94,7 +98,6 @@ export function displayNotificationsPanel(state = initialState.displaySurveyNoti
 
 			return !state;
 		case types.SURVEY_ENDED:
-
 			return true;
 		default:
 			return state;
@@ -104,6 +107,7 @@ export function displayNotificationsPanel(state = initialState.displaySurveyNoti
 export function displayQuestionsPanel(state = initialState.displaySurveyQuestionsPanel, action) {
 	switch (action.type) {
 		case types.DISPLAY_QUESTIONS_PANEL:
+                    console.log(!state);
 			return !state;
 		default:
 			return state;

@@ -17,7 +17,7 @@ class SurveyAction extends React.Component {
         this.props.actions.hideNotificationsPanel(true);
         this.props.actions.hideOptionsPanel(false);
         this.props.actions.hideNavigationPanel(false);
-        this.props.actions.displayQuestionsPanel(true);
+        this.props.actions.displayQuestionsPanel(false);
 
     }
 

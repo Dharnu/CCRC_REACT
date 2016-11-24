@@ -13,6 +13,7 @@ class SurveyOptions extends React.Component {
     
     nextQuestion(event) {
         this.props.actions.incrementSurveyIndex();
+        this.props.actions.submitSurvey();
         this.props.actions.registerResponse(this.props.surveyQuestions[this.props.index].id);
         if(this.props.index===this.props.surveyQuestions.length-1){
             this.props.actions.surveyEnded();

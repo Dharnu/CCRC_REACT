@@ -88,7 +88,7 @@ export function hideNotificationsPanel(hideNotificationsPanel) {
 export function displayQuestionsPanel(displayQuestionsPanel) {
 
 	return {
-		type: types.DISPALY_QUESTIONS_PANEL,
+		type: types.DISPLAY_QUESTIONS_PANEL,
 		displayQuestionsPanel: displayQuestionsPanel
 	};
 };
@@ -96,6 +96,17 @@ export function displayQuestionsPanel(displayQuestionsPanel) {
 export function loadSurvey(){
     return function(dispatch) {
         return SurveyApi.getAllSurveys().then(response => {
+            console.log("hi");
+            dispatch(surveyFetchSuccess(response));
+        }).catch(error => {
+            throw(error);
+        });
+    };
+}
+
+export function submitSurvey(){
+    return function(dispatch) {
+        return SurveyApi.submitSurveys().then(response => {
             console.log("hi");
             dispatch(surveyFetchSuccess(response));
         }).catch(error => {

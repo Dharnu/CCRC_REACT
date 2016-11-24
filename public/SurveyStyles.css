@@ -487,6 +487,7 @@ html, body {
     .surveyNavigation > div > div {
         font-size: 28px;
         height: 73%;
+        width: 33%;
     }
 }
 /*IPAD Portrait mode ends*/
