@@ -13,6 +13,13 @@ constructor(props, context) {
     render() {
 
         var survey = this.props.surveyQuestions[this.props.index].survey;
+        var signature = this.props.surveyQuestions[this.props.index].signature;
+        console.log(signature);
+       
+        var text = signature.replace(/<br.\s*.>/ig,"\n");
+
+       
+
         console.log(survey);
         return (
             <div id="surveyQuestionContainer" className="surveyQuestionsContainer flexDirectionColumn">
@@ -20,7 +27,7 @@ constructor(props, context) {
                     <div>{this.props.surveyQuestions[this.props.index].survey}</div>
                 </div>
                 <div className="surveySignature flexAlignEnd">
-                    {this.props.surveyQuestions[this.props.index].signature}
+                    {text}
                 </div>
             </div>
         )

@@ -67,9 +67,9 @@
 
 	var _Survey2 = _interopRequireDefault(_Survey);
 
-	var _index = __webpack_require__(214);
+	var _index = __webpack_require__(212);
 
-	var _configureStore = __webpack_require__(221);
+	var _configureStore = __webpack_require__(219);
 
 	var _configureStore2 = _interopRequireDefault(_configureStore);
 
@@ -81,7 +81,7 @@
 
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-	var _require = __webpack_require__(184),
+	var _require = __webpack_require__(182),
 	    Provider = _require.Provider;
 
 	var SurveyStore = (0, _configureStore2.default)();
@@ -21629,23 +21629,23 @@
 
 	var _SurveyNotifications2 = _interopRequireDefault(_SurveyNotifications);
 
-	var _SurveyQuestion = __webpack_require__(182);
+	var _SurveyQuestion = __webpack_require__(215);
 
 	var _SurveyQuestion2 = _interopRequireDefault(_SurveyQuestion);
 
-	var _SurveyAction = __webpack_require__(183);
+	var _SurveyAction = __webpack_require__(216);
 
 	var _SurveyAction2 = _interopRequireDefault(_SurveyAction);
 
-	var _SurveyNavigation = __webpack_require__(216);
+	var _SurveyNavigation = __webpack_require__(217);
 
 	var _SurveyNavigation2 = _interopRequireDefault(_SurveyNavigation);
 
-	var _SurveyOptions = __webpack_require__(217);
+	var _SurveyOptions = __webpack_require__(218);
 
 	var _SurveyOptions2 = _interopRequireDefault(_SurveyOptions);
 
-	var _reactRedux = __webpack_require__(184);
+	var _reactRedux = __webpack_require__(182);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -21716,11 +21716,11 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _reactRedux = __webpack_require__(184);
+	var _reactRedux = __webpack_require__(182);
 
-	var _redux = __webpack_require__(191);
+	var _redux = __webpack_require__(189);
 
-	var _index = __webpack_require__(214);
+	var _index = __webpack_require__(212);
 
 	var SurveyActions = _interopRequireWildcard(_index);
 
@@ -21812,234 +21812,14 @@
 
 	'use strict';
 
-	Object.defineProperty(exports, "__esModule", {
-	    value: true
-	});
-
-	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-	var _react = __webpack_require__(2);
-
-	var _react2 = _interopRequireDefault(_react);
-
-	var _reactRedux = __webpack_require__(184);
-
-	var _redux = __webpack_require__(191);
-
-	var _index = __webpack_require__(214);
-
-	var SurveyActions = _interopRequireWildcard(_index);
-
-	function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-	var SurveyQuestion = function (_React$Component) {
-	    _inherits(SurveyQuestion, _React$Component);
-
-	    function SurveyQuestion(props, context) {
-	        _classCallCheck(this, SurveyQuestion);
-
-	        return _possibleConstructorReturn(this, (SurveyQuestion.__proto__ || Object.getPrototypeOf(SurveyQuestion)).call(this, props, context));
-	    }
-
-	    _createClass(SurveyQuestion, [{
-	        key: 'render',
-	        value: function render() {
-
-	            var survey = this.props.surveyQuestions[this.props.index].survey;
-	            console.log(survey);
-	            return _react2.default.createElement(
-	                'div',
-	                { id: 'surveyQuestionContainer', className: 'surveyQuestionsContainer flexDirectionColumn' },
-	                _react2.default.createElement(
-	                    'div',
-	                    { className: 'surveyQuestion' },
-	                    _react2.default.createElement(
-	                        'div',
-	                        null,
-	                        this.props.surveyQuestions[this.props.index].survey
-	                    )
-	                ),
-	                _react2.default.createElement(
-	                    'div',
-	                    { className: 'surveySignature flexAlignEnd' },
-	                    this.props.surveyQuestions[this.props.index].signature
-	                )
-	            );
-	        }
-	    }]);
-
-	    return SurveyQuestion;
-	}(_react2.default.Component);
-
-	;
-
-	SurveyQuestion.propType = {
-	    surveyQuestions: _react2.default.PropTypes.array.isRequired,
-	    surveyQuestionsAnswered: _react.PropTypes.number.isRequired,
-	    index: _react.PropTypes.number.isRequired
-
-	};
-
-	function mapStateToProps(state, ownProps) {
-	    return {
-	        index: state.surveyIndex,
-	        surveyQuestions: state.surveyQuestions,
-	        surveyQuestionsAnswered: state.surveyQuestionsResponse.length
-	    };
-	}
-
-	function mapDispatchToProps(dispatch) {
-	    return {
-	        actions: (0, _redux.bindActionCreators)(SurveyActions, dispatch)
-	    };
-	}
-
-	exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(SurveyQuestion);
-
-/***/ },
-/* 183 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-
-	Object.defineProperty(exports, "__esModule", {
-	    value: true
-	});
-
-	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-	var _react = __webpack_require__(2);
-
-	var _react2 = _interopRequireDefault(_react);
-
-	var _reactRedux = __webpack_require__(184);
-
-	var _redux = __webpack_require__(191);
-
-	var _index = __webpack_require__(214);
-
-	var SurveyActions = _interopRequireWildcard(_index);
-
-	function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-	var SurveyAction = function (_React$Component) {
-	    _inherits(SurveyAction, _React$Component);
-
-	    function SurveyAction(props) {
-	        _classCallCheck(this, SurveyAction);
-
-	        var _this = _possibleConstructorReturn(this, (SurveyAction.__proto__ || Object.getPrototypeOf(SurveyAction)).call(this, props));
-
-	        _this.displayQuestions = _this.displayQuestions.bind(_this);
-	        return _this;
-	    }
-
-	    _createClass(SurveyAction, [{
-	        key: 'displayQuestions',
-	        value: function displayQuestions(event) {
-	            this.props.actions.incrementSurveyIndex();
-	            this.props.actions.displaySurveyQuestions();
-	            this.props.actions.hideControlPanel(true);
-	            this.props.actions.hideNotificationsPanel(true);
-	            this.props.actions.hideOptionsPanel(false);
-	            this.props.actions.hideNavigationPanel(false);
-	            this.props.actions.displayQuestionsPanel(false);
-	        }
-	    }, {
-	        key: 'render',
-	        value: function render() {
-
-	            var availableControls = '';
-	            if (this.props.index === -1) {
-	                availableControls = _react2.default.createElement(
-	                    'div',
-	                    { id: 'surveyActions', className: 'surveyActions flexAlignCenterJustifySpaceAround' },
-	                    _react2.default.createElement(
-	                        'div',
-	                        { id: 'takeSurvey', className: 'flexAlignCenterJustifyCenter', onClick: this.displayQuestions },
-	                        'Now '
-	                    ),
-	                    _react2.default.createElement(
-	                        'div',
-	                        { id: 'skipSurvey', className: 'flexAlignCenterJustifyCenter' },
-	                        'Later'
-	                    )
-	                );
-	            } else {
-	                availableControls = _react2.default.createElement(
-	                    'div',
-	                    { id: 'surveyActions', className: 'surveyActions flexAlignCenterJustifySpaceAround' },
-	                    _react2.default.createElement(
-	                        'div',
-	                        { id: 'exitSurvey', className: 'flexAlignCenterJustifyCenter' },
-	                        'Exit'
-	                    )
-	                );
-	            }
-
-	            return _react2.default.createElement(
-	                'div',
-	                { className: 'surveyActionContainer' },
-	                availableControls
-	            );
-	        }
-	    }]);
-
-	    return SurveyAction;
-	}(_react2.default.Component);
-
-	;
-
-	SurveyAction.propTypes = {
-	    actions: _react.PropTypes.object.isRequired,
-	    index: _react.PropTypes.number.isRequired,
-	    totalSurveys: _react.PropTypes.number.isRequired
-	};
-
-	function mapStateToProps(state, ownProps) {
-	    return {
-	        index: state.surveyIndex,
-	        totalSurveys: state.surveyQuestions.length - 1
-	    };
-	}
-
-	function mapDispatchToProps(dispatch) {
-	    return {
-	        actions: (0, _redux.bindActionCreators)(SurveyActions, dispatch)
-	    };
-	}
-	exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(SurveyAction);
-
-/***/ },
-/* 184 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-
 	exports.__esModule = true;
 	exports.connect = exports.Provider = undefined;
 
-	var _Provider = __webpack_require__(185);
+	var _Provider = __webpack_require__(183);
 
 	var _Provider2 = _interopRequireDefault(_Provider);
 
-	var _connect = __webpack_require__(188);
+	var _connect = __webpack_require__(186);
 
 	var _connect2 = _interopRequireDefault(_connect);
 
@@ -22049,7 +21829,7 @@
 	exports.connect = _connect2["default"];
 
 /***/ },
-/* 185 */
+/* 183 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {'use strict';
@@ -22059,11 +21839,11 @@
 
 	var _react = __webpack_require__(2);
 
-	var _storeShape = __webpack_require__(186);
+	var _storeShape = __webpack_require__(184);
 
 	var _storeShape2 = _interopRequireDefault(_storeShape);
 
-	var _warning = __webpack_require__(187);
+	var _warning = __webpack_require__(185);
 
 	var _warning2 = _interopRequireDefault(_warning);
 
@@ -22133,7 +21913,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4)))
 
 /***/ },
-/* 186 */
+/* 184 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -22149,7 +21929,7 @@
 	});
 
 /***/ },
-/* 187 */
+/* 185 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -22179,7 +21959,7 @@
 	}
 
 /***/ },
-/* 188 */
+/* 186 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {'use strict';
@@ -22192,31 +21972,31 @@
 
 	var _react = __webpack_require__(2);
 
-	var _storeShape = __webpack_require__(186);
+	var _storeShape = __webpack_require__(184);
 
 	var _storeShape2 = _interopRequireDefault(_storeShape);
 
-	var _shallowEqual = __webpack_require__(189);
+	var _shallowEqual = __webpack_require__(187);
 
 	var _shallowEqual2 = _interopRequireDefault(_shallowEqual);
 
-	var _wrapActionCreators = __webpack_require__(190);
+	var _wrapActionCreators = __webpack_require__(188);
 
 	var _wrapActionCreators2 = _interopRequireDefault(_wrapActionCreators);
 
-	var _warning = __webpack_require__(187);
+	var _warning = __webpack_require__(185);
 
 	var _warning2 = _interopRequireDefault(_warning);
 
-	var _isPlainObject = __webpack_require__(193);
+	var _isPlainObject = __webpack_require__(191);
 
 	var _isPlainObject2 = _interopRequireDefault(_isPlainObject);
 
-	var _hoistNonReactStatics = __webpack_require__(212);
+	var _hoistNonReactStatics = __webpack_require__(210);
 
 	var _hoistNonReactStatics2 = _interopRequireDefault(_hoistNonReactStatics);
 
-	var _invariant = __webpack_require__(213);
+	var _invariant = __webpack_require__(211);
 
 	var _invariant2 = _interopRequireDefault(_invariant);
 
@@ -22580,7 +22360,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4)))
 
 /***/ },
-/* 189 */
+/* 187 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -22611,7 +22391,7 @@
 	}
 
 /***/ },
-/* 190 */
+/* 188 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -22619,7 +22399,7 @@
 	exports.__esModule = true;
 	exports["default"] = wrapActionCreators;
 
-	var _redux = __webpack_require__(191);
+	var _redux = __webpack_require__(189);
 
 	function wrapActionCreators(actionCreators) {
 	  return function (dispatch) {
@@ -22628,7 +22408,7 @@
 	}
 
 /***/ },
-/* 191 */
+/* 189 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {'use strict';
@@ -22636,27 +22416,27 @@
 	exports.__esModule = true;
 	exports.compose = exports.applyMiddleware = exports.bindActionCreators = exports.combineReducers = exports.createStore = undefined;
 
-	var _createStore = __webpack_require__(192);
+	var _createStore = __webpack_require__(190);
 
 	var _createStore2 = _interopRequireDefault(_createStore);
 
-	var _combineReducers = __webpack_require__(207);
+	var _combineReducers = __webpack_require__(205);
 
 	var _combineReducers2 = _interopRequireDefault(_combineReducers);
 
-	var _bindActionCreators = __webpack_require__(209);
+	var _bindActionCreators = __webpack_require__(207);
 
 	var _bindActionCreators2 = _interopRequireDefault(_bindActionCreators);
 
-	var _applyMiddleware = __webpack_require__(210);
+	var _applyMiddleware = __webpack_require__(208);
 
 	var _applyMiddleware2 = _interopRequireDefault(_applyMiddleware);
 
-	var _compose = __webpack_require__(211);
+	var _compose = __webpack_require__(209);
 
 	var _compose2 = _interopRequireDefault(_compose);
 
-	var _warning = __webpack_require__(208);
+	var _warning = __webpack_require__(206);
 
 	var _warning2 = _interopRequireDefault(_warning);
 
@@ -22680,7 +22460,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4)))
 
 /***/ },
-/* 192 */
+/* 190 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -22689,11 +22469,11 @@
 	exports.ActionTypes = undefined;
 	exports['default'] = createStore;
 
-	var _isPlainObject = __webpack_require__(193);
+	var _isPlainObject = __webpack_require__(191);
 
 	var _isPlainObject2 = _interopRequireDefault(_isPlainObject);
 
-	var _symbolObservable = __webpack_require__(203);
+	var _symbolObservable = __webpack_require__(201);
 
 	var _symbolObservable2 = _interopRequireDefault(_symbolObservable);
 
@@ -22946,12 +22726,12 @@
 	}
 
 /***/ },
-/* 193 */
+/* 191 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var baseGetTag = __webpack_require__(194),
-	    getPrototype = __webpack_require__(200),
-	    isObjectLike = __webpack_require__(202);
+	var baseGetTag = __webpack_require__(192),
+	    getPrototype = __webpack_require__(198),
+	    isObjectLike = __webpack_require__(200);
 
 	/** `Object#toString` result references. */
 	var objectTag = '[object Object]';
@@ -23014,12 +22794,12 @@
 
 
 /***/ },
-/* 194 */
+/* 192 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var Symbol = __webpack_require__(195),
-	    getRawTag = __webpack_require__(198),
-	    objectToString = __webpack_require__(199);
+	var Symbol = __webpack_require__(193),
+	    getRawTag = __webpack_require__(196),
+	    objectToString = __webpack_require__(197);
 
 	/** `Object#toString` result references. */
 	var nullTag = '[object Null]',
@@ -23049,10 +22829,10 @@
 
 
 /***/ },
-/* 195 */
+/* 193 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var root = __webpack_require__(196);
+	var root = __webpack_require__(194);
 
 	/** Built-in value references. */
 	var Symbol = root.Symbol;
@@ -23061,10 +22841,10 @@
 
 
 /***/ },
-/* 196 */
+/* 194 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var freeGlobal = __webpack_require__(197);
+	var freeGlobal = __webpack_require__(195);
 
 	/** Detect free variable `self`. */
 	var freeSelf = typeof self == 'object' && self && self.Object === Object && self;
@@ -23076,7 +22856,7 @@
 
 
 /***/ },
-/* 197 */
+/* 195 */
 /***/ function(module, exports) {
 
 	/* WEBPACK VAR INJECTION */(function(global) {/** Detect free variable `global` from Node.js. */
@@ -23087,10 +22867,10 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, (function() { return this; }())))
 
 /***/ },
-/* 198 */
+/* 196 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var Symbol = __webpack_require__(195);
+	var Symbol = __webpack_require__(193);
 
 	/** Used for built-in method references. */
 	var objectProto = Object.prototype;
@@ -23139,7 +22919,7 @@
 
 
 /***/ },
-/* 199 */
+/* 197 */
 /***/ function(module, exports) {
 
 	/** Used for built-in method references. */
@@ -23167,10 +22947,10 @@
 
 
 /***/ },
-/* 200 */
+/* 198 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var overArg = __webpack_require__(201);
+	var overArg = __webpack_require__(199);
 
 	/** Built-in value references. */
 	var getPrototype = overArg(Object.getPrototypeOf, Object);
@@ -23179,7 +22959,7 @@
 
 
 /***/ },
-/* 201 */
+/* 199 */
 /***/ function(module, exports) {
 
 	/**
@@ -23200,7 +22980,7 @@
 
 
 /***/ },
-/* 202 */
+/* 200 */
 /***/ function(module, exports) {
 
 	/**
@@ -23235,14 +23015,14 @@
 
 
 /***/ },
-/* 203 */
+/* 201 */
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports = __webpack_require__(204);
+	module.exports = __webpack_require__(202);
 
 
 /***/ },
-/* 204 */
+/* 202 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(global, module) {'use strict';
@@ -23251,7 +23031,7 @@
 	  value: true
 	});
 
-	var _ponyfill = __webpack_require__(206);
+	var _ponyfill = __webpack_require__(204);
 
 	var _ponyfill2 = _interopRequireDefault(_ponyfill);
 
@@ -23274,10 +23054,10 @@
 
 	var result = (0, _ponyfill2['default'])(root);
 	exports['default'] = result;
-	/* WEBPACK VAR INJECTION */}.call(exports, (function() { return this; }()), __webpack_require__(205)(module)))
+	/* WEBPACK VAR INJECTION */}.call(exports, (function() { return this; }()), __webpack_require__(203)(module)))
 
 /***/ },
-/* 205 */
+/* 203 */
 /***/ function(module, exports) {
 
 	module.exports = function(module) {
@@ -23293,7 +23073,7 @@
 
 
 /***/ },
-/* 206 */
+/* 204 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -23321,7 +23101,7 @@
 	};
 
 /***/ },
-/* 207 */
+/* 205 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {'use strict';
@@ -23329,13 +23109,13 @@
 	exports.__esModule = true;
 	exports['default'] = combineReducers;
 
-	var _createStore = __webpack_require__(192);
+	var _createStore = __webpack_require__(190);
 
-	var _isPlainObject = __webpack_require__(193);
+	var _isPlainObject = __webpack_require__(191);
 
 	var _isPlainObject2 = _interopRequireDefault(_isPlainObject);
 
-	var _warning = __webpack_require__(208);
+	var _warning = __webpack_require__(206);
 
 	var _warning2 = _interopRequireDefault(_warning);
 
@@ -23469,7 +23249,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4)))
 
 /***/ },
-/* 208 */
+/* 206 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -23499,7 +23279,7 @@
 	}
 
 /***/ },
-/* 209 */
+/* 207 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -23555,7 +23335,7 @@
 	}
 
 /***/ },
-/* 210 */
+/* 208 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -23566,7 +23346,7 @@
 
 	exports['default'] = applyMiddleware;
 
-	var _compose = __webpack_require__(211);
+	var _compose = __webpack_require__(209);
 
 	var _compose2 = _interopRequireDefault(_compose);
 
@@ -23618,7 +23398,7 @@
 	}
 
 /***/ },
-/* 211 */
+/* 209 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -23661,7 +23441,7 @@
 	}
 
 /***/ },
-/* 212 */
+/* 210 */
 /***/ function(module, exports) {
 
 	/**
@@ -23717,7 +23497,7 @@
 
 
 /***/ },
-/* 213 */
+/* 211 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {/**
@@ -23775,7 +23555,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4)))
 
 /***/ },
-/* 214 */
+/* 212 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -23798,16 +23578,17 @@
 	exports.hideBottomPanel = hideBottomPanel;
 	exports.hideNotificationsPanel = hideNotificationsPanel;
 	exports.displayQuestionsPanel = displayQuestionsPanel;
+	exports.surveyCount = surveyCount;
 	exports.loadSurvey = loadSurvey;
 	exports.submitSurvey = submitSurvey;
 
-	var _actionTypes = __webpack_require__(215);
+	var _actionTypes = __webpack_require__(213);
 
 	var types = _interopRequireWildcard(_actionTypes);
 
-	var _mockSurveyApi = __webpack_require__(219);
+	var _SurveyApi = __webpack_require__(214);
 
-	var _mockSurveyApi2 = _interopRequireDefault(_mockSurveyApi);
+	var _SurveyApi2 = _interopRequireDefault(_SurveyApi);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -23841,7 +23622,7 @@
 		};
 	}
 	function fetchSurveyQuestions() {
-		return _mockSurveyApi2.default.fetchSurveys();
+		return _SurveyApi2.default.fetchSurveys();
 	}
 	function incrementSurveyIndex() {
 
@@ -23905,10 +23686,21 @@
 		};
 	};
 
+	function surveyCount() {
+		return function (dispatch) {
+			return _SurveyApi2.default.getSurveyCount().then(function (response) {
+				console.log("Get Survey Count");
+				dispatch(surveyFetchSuccess(response));
+			}).catch(function (error) {
+				throw error;
+			});
+		};
+	}
+
 	function loadSurvey() {
 		return function (dispatch) {
-			return _mockSurveyApi2.default.getAllSurveys().then(function (response) {
-				console.log("hi");
+			return _SurveyApi2.default.getAllSurveys().then(function (response) {
+				console.log("Get all survey");
 				dispatch(surveyFetchSuccess(response));
 			}).catch(function (error) {
 				throw error;
@@ -23918,8 +23710,8 @@
 
 	function submitSurvey() {
 		return function (dispatch) {
-			return _mockSurveyApi2.default.submitSurveys().then(function (response) {
-				console.log("hi");
+			return _SurveyApi2.default.submitSurveys().then(function (response) {
+				console.log("Submit survey");
 				dispatch(surveyFetchSuccess(response));
 			}).catch(function (error) {
 				throw error;
@@ -23928,7 +23720,7 @@
 	}
 
 /***/ },
-/* 215 */
+/* 213 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -23959,6 +23751,298 @@
 	var SUBMIT_SURVEY = exports.SUBMIT_SURVEY = 'SUBMIT_SURVEY';
 
 /***/ },
+/* 214 */
+/***/ function(module, exports) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	var SurveyApi = function () {
+	    function SurveyApi() {
+	        _classCallCheck(this, SurveyApi);
+	    }
+
+	    _createClass(SurveyApi, null, [{
+	        key: 'getSurveyCount',
+	        value: function getSurveyCount() {
+	            var dummyUrl = 'http://10.10.1.166/CCRC_SPA/surveyCount.php';
+	            var surveyUrl = 'http://10.10.1.140:8080/catie/rest/device/survey/surveyInit.json?roomNumber=101';
+
+	            // Return a new promise.
+	            return new Promise(function (resolve, reject) {
+	                // Do the usual XHR stuff
+	                var req = new XMLHttpRequest();
+	                req.open('POST', dummyUrl);
+
+	                req.onload = function () {
+	                    // This is called even on 404 etc
+	                    // so check the status
+	                    if (req.status == 200) {
+	                        // Resolve the promise with the response text
+	                        var res = JSON.parse(req.response);
+	                        //console.log(JSON.parse(req.response).surveys);
+	                        console.log(JSON.parse(req.response));
+	                        resolve(Object.assign([], res.data));
+	                    } else {
+	                        // Otherwise reject with the status text
+	                        // which will hopefully be a meaningful error
+	                        reject(Error(req.statusText));
+	                    }
+	                };
+
+	                // Handle network errors
+	                req.onerror = function () {
+	                    alert("Network error");
+	                    //reject(Error("Network Error"));
+	                };
+
+	                // Make the request
+	                req.send();
+	            });
+	        }
+	    }, {
+	        key: 'getAllSurveys',
+	        value: function getAllSurveys() {
+	            var dummySurveyListUrl = 'http://10.10.1.166/CCRC_SPA/surveyList.php';
+	            var surveyListUrl = 'http://10.10.1.140:8080/catie/rest/device/survey/surveyQuestions.json?roomNumber=101&lastSurveyId=0';
+
+	            // Return a new promise.
+	            return new Promise(function (resolve, reject) {
+	                // Do the usual XHR stuff
+	                var req = new XMLHttpRequest();
+	                req.open('POST', dummySurveyListUrl);
+
+	                req.onload = function () {
+	                    // This is called even on 404 etc
+	                    // so check the status
+	                    if (req.status == 200) {
+	                        // Resolve the promise with the response text
+	                        var res = JSON.parse(req.response);
+	                        //console.log(JSON.parse(req.response).surveys);
+	                        console.log(JSON.parse(req.response));
+	                        resolve(Object.assign([], res.data));
+	                    } else {
+	                        // Otherwise reject with the status text
+	                        // which will hopefully be a meaningful error
+	                        reject(Error(req.statusText));
+	                    }
+	                };
+
+	                // Handle network errors
+	                req.onerror = function () {
+	                    alert("Network error");
+	                    //reject(Error("Network Error"));
+	                };
+
+	                // Make the request
+	                req.send();
+	            });
+	        }
+	    }, {
+	        key: 'submitSurveys',
+	        value: function submitSurveys() {
+	            var dummySubmitSurveyUrl = 'http://10.10.1.166/CCRC_SPA/submitSurvey.php';
+	            var submitSurveyUrl = 'http://10.10.1.140:8080/catie/rest/device/survey/surveyAns.json?roomNumber=101&surveyId=1&optionId=5';
+
+	            // Return a new promise.
+	            return new Promise(function (resolve, reject) {
+	                var req = new XMLHttpRequest();
+	                req.open('POST', urls);
+
+	                req.onload = function () {
+	                    if (req.status == 200) {
+	                        // Resolve the promise with the response text
+	                        var res = JSON.parse(req.response);
+	                        console.log(JSON.parse(req.response));
+	                        resolve(Object.assign([], res.data));
+	                    } else {
+	                        // Otherwise reject with the status text
+	                        reject(Error(req.statusText));
+	                    }
+	                };
+
+	                // Handle network errors
+	                req.onerror = function () {
+	                    alert("Network error");
+	                    //reject(Error("Network Error"));
+	                };
+
+	                // Make the request
+	                req.send();
+	            });
+	        }
+
+	        //Using Fetch API
+	        //    static getAllSurveys(){
+	        //        console.log("dharani");
+	        //        var aa = 'roomNumber=101&lastSurveyId=0';
+	        //         return new Promise((resolve, reject) => {
+	        //            return fetch('http://10.10.1.166/CCRC_SPA/json.php', {
+	        //                method: 'post',
+	        //                mode: 'cors',
+	        //                body: JSON.stringify({
+	        //                        roomNumber:101,lastSurveyId: 0
+	        //                })
+	        //            }).then(response => {
+	        //                if (response.ok) {
+	        //                    response.json().then(function(data) {  
+	        //                        console.log(data.surveys);  
+	        //                        resolve(Object.assign([],data.surveys));
+	        //                      });  
+	        //                } else {
+	        //                    reject(new Error('error'))
+	        //                }
+	        //            }, error => {
+	        //                reject(new Error(error))
+	        //            })
+	        //        })
+	        //       
+	        //    }
+
+
+	        //    static submitSurveys(){
+	        //        console.log("submitSurvey");
+	        //         return new Promise((resolve, reject) => {
+	        //            return fetch('http://10.10.1.166/CCRC_SPA/submitSurvey.php', {
+	        //                method: 'post',
+	        //                mode: 'cors',
+	        //                body: JSON.stringify({
+	        //                        roomNo:101,id: 1,value: 'Good'
+	        //                })
+	        //            }).then(response => {
+	        //                if (response.ok) {
+	        //                    response.json().then(function(data) {  
+	        //                        console.log("Success");  
+	        //                      });  
+	        //                } else {
+	        //                    reject(new Error('error'))
+	        //                }
+	        //            }, error => {
+	        //                reject(new Error(error.message))
+	        //            })
+	        //        })
+	        //       
+	        //    }
+
+
+	    }]);
+
+	    return SurveyApi;
+	}();
+
+	exports.default = SurveyApi;
+
+/***/ },
+/* 215 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _react = __webpack_require__(2);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _reactRedux = __webpack_require__(182);
+
+	var _redux = __webpack_require__(189);
+
+	var _index = __webpack_require__(212);
+
+	var SurveyActions = _interopRequireWildcard(_index);
+
+	function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var SurveyQuestion = function (_React$Component) {
+	    _inherits(SurveyQuestion, _React$Component);
+
+	    function SurveyQuestion(props, context) {
+	        _classCallCheck(this, SurveyQuestion);
+
+	        return _possibleConstructorReturn(this, (SurveyQuestion.__proto__ || Object.getPrototypeOf(SurveyQuestion)).call(this, props, context));
+	    }
+
+	    _createClass(SurveyQuestion, [{
+	        key: 'render',
+	        value: function render() {
+
+	            var survey = this.props.surveyQuestions[this.props.index].survey;
+	            var signature = this.props.surveyQuestions[this.props.index].signature;
+	            console.log(signature);
+
+	            var text = signature.replace(/<br.\s*.>/ig, "\n");
+
+	            console.log(survey);
+	            return _react2.default.createElement(
+	                'div',
+	                { id: 'surveyQuestionContainer', className: 'surveyQuestionsContainer flexDirectionColumn' },
+	                _react2.default.createElement(
+	                    'div',
+	                    { className: 'surveyQuestion' },
+	                    _react2.default.createElement(
+	                        'div',
+	                        null,
+	                        this.props.surveyQuestions[this.props.index].survey
+	                    )
+	                ),
+	                _react2.default.createElement(
+	                    'div',
+	                    { className: 'surveySignature flexAlignEnd' },
+	                    text
+	                )
+	            );
+	        }
+	    }]);
+
+	    return SurveyQuestion;
+	}(_react2.default.Component);
+
+	;
+
+	SurveyQuestion.propType = {
+	    surveyQuestions: _react2.default.PropTypes.array.isRequired,
+	    surveyQuestionsAnswered: _react.PropTypes.number.isRequired,
+	    index: _react.PropTypes.number.isRequired
+
+	};
+
+	function mapStateToProps(state, ownProps) {
+	    return {
+	        index: state.surveyIndex,
+	        surveyQuestions: state.surveyQuestions,
+	        surveyQuestionsAnswered: state.surveyQuestionsResponse.length
+	    };
+	}
+
+	function mapDispatchToProps(dispatch) {
+	    return {
+	        actions: (0, _redux.bindActionCreators)(SurveyActions, dispatch)
+	    };
+	}
+
+	exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(SurveyQuestion);
+
+/***/ },
 /* 216 */
 /***/ function(module, exports, __webpack_require__) {
 
@@ -23974,11 +24058,133 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _reactRedux = __webpack_require__(184);
+	var _reactRedux = __webpack_require__(182);
 
-	var _redux = __webpack_require__(191);
+	var _redux = __webpack_require__(189);
 
-	var _index = __webpack_require__(214);
+	var _index = __webpack_require__(212);
+
+	var SurveyActions = _interopRequireWildcard(_index);
+
+	function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var SurveyAction = function (_React$Component) {
+	    _inherits(SurveyAction, _React$Component);
+
+	    function SurveyAction(props) {
+	        _classCallCheck(this, SurveyAction);
+
+	        var _this = _possibleConstructorReturn(this, (SurveyAction.__proto__ || Object.getPrototypeOf(SurveyAction)).call(this, props));
+
+	        _this.displayQuestions = _this.displayQuestions.bind(_this);
+	        return _this;
+	    }
+
+	    _createClass(SurveyAction, [{
+	        key: 'displayQuestions',
+	        value: function displayQuestions(event) {
+	            this.props.actions.incrementSurveyIndex();
+	            this.props.actions.displaySurveyQuestions();
+	            this.props.actions.hideControlPanel(true);
+	            this.props.actions.hideNotificationsPanel(true);
+	            this.props.actions.hideOptionsPanel(false);
+	            this.props.actions.hideNavigationPanel(false);
+	            this.props.actions.displayQuestionsPanel(false);
+	        }
+	    }, {
+	        key: 'render',
+	        value: function render() {
+
+	            var availableControls = '';
+	            if (this.props.index === -1) {
+	                availableControls = _react2.default.createElement(
+	                    'div',
+	                    { id: 'surveyActions', className: 'surveyActions flexAlignCenterJustifySpaceAround' },
+	                    _react2.default.createElement(
+	                        'div',
+	                        { id: 'takeSurvey', className: 'flexAlignCenterJustifyCenter', onClick: this.displayQuestions },
+	                        'Now '
+	                    ),
+	                    _react2.default.createElement(
+	                        'div',
+	                        { id: 'skipSurvey', className: 'flexAlignCenterJustifyCenter' },
+	                        'Later'
+	                    )
+	                );
+	            } else {
+	                availableControls = _react2.default.createElement(
+	                    'div',
+	                    { id: 'surveyActions', className: 'surveyActions flexAlignCenterJustifySpaceAround' },
+	                    _react2.default.createElement(
+	                        'div',
+	                        { id: 'exitSurvey', className: 'flexAlignCenterJustifyCenter' },
+	                        'Exit'
+	                    )
+	                );
+	            }
+
+	            return _react2.default.createElement(
+	                'div',
+	                { className: 'surveyActionContainer' },
+	                availableControls
+	            );
+	        }
+	    }]);
+
+	    return SurveyAction;
+	}(_react2.default.Component);
+
+	;
+
+	SurveyAction.propTypes = {
+	    actions: _react.PropTypes.object.isRequired,
+	    index: _react.PropTypes.number.isRequired,
+	    totalSurveys: _react.PropTypes.number.isRequired
+	};
+
+	function mapStateToProps(state, ownProps) {
+	    return {
+	        index: state.surveyIndex,
+	        totalSurveys: state.surveyQuestions.length - 1
+	    };
+	}
+
+	function mapDispatchToProps(dispatch) {
+	    return {
+	        actions: (0, _redux.bindActionCreators)(SurveyActions, dispatch)
+	    };
+	}
+	exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(SurveyAction);
+
+/***/ },
+/* 217 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _react = __webpack_require__(2);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _reactRedux = __webpack_require__(182);
+
+	var _redux = __webpack_require__(189);
+
+	var _index = __webpack_require__(212);
 
 	var SurveyActions = _interopRequireWildcard(_index);
 
@@ -24086,7 +24292,7 @@
 	exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(SurveyNavigation);
 
 /***/ },
-/* 217 */
+/* 218 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -24101,11 +24307,11 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _reactRedux = __webpack_require__(184);
+	var _reactRedux = __webpack_require__(182);
 
-	var _redux = __webpack_require__(191);
+	var _redux = __webpack_require__(189);
 
-	var _index = __webpack_require__(214);
+	var _index = __webpack_require__(212);
 
 	var SurveyActions = _interopRequireWildcard(_index);
 
@@ -24191,153 +24397,7 @@
 	exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(SurveyOptions);
 
 /***/ },
-/* 218 */,
 /* 219 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-
-	Object.defineProperty(exports, "__esModule", {
-	    value: true
-	});
-
-	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-	var _delay = __webpack_require__(220);
-
-	var _delay2 = _interopRequireDefault(_delay);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-	var surveys = [{
-	    'id': 69,
-	    'survey': 'Test1',
-	    'date': 'October 21, 2016 12:09:07 PM',
-	    'signature': '- StatusSolutionAdministrator8668467272',
-	    'options': [{
-	        'id': 4,
-	        'option': 'Good'
-	    }, {
-	        'id': 7,
-	        'option': 'No'
-	    }, {
-	        'id': 5,
-	        'option': 'Bad'
-	    }, {
-	        'id': 3,
-	        'option': 'Excellent'
-	    }]
-	}, {
-	    'id': 70,
-	    'survey': 'Test2',
-	    'date': 'October 21, 2016 12:09:07 PM',
-	    'signature': '- StatusSolutionAdministrator8668467272',
-	    'options': [{
-	        'id': 4,
-	        'option': 'Good'
-	    }, {
-	        'id': 7,
-	        'option': 'No'
-	    }, {
-	        'id': 5,
-	        'option': 'Bad'
-	    }, {
-	        'id': 3,
-	        'option': 'Excellent'
-	    }]
-	}];
-
-	var SurveyApi = function () {
-	    function SurveyApi() {
-	        _classCallCheck(this, SurveyApi);
-	    }
-
-	    _createClass(SurveyApi, null, [{
-	        key: 'getAllSurveys',
-	        value: function getAllSurveys() {
-	            console.log("hello");
-	            return new Promise(function (resolve, reject) {
-	                return fetch('http://10.10.1.166/CCRC_SPA/json.php').then(function (response) {
-	                    if (response.ok) {
-	                        response.json().then(function (data) {
-	                            console.log(data.surveys);
-	                            resolve(Object.assign([], data.surveys));
-	                        });
-	                    } else {
-	                        reject(new Error('error'));
-	                    }
-	                }, function (error) {
-	                    reject(new Error(error.message));
-	                });
-	            });
-	            //        return new Promise((resolve, reject)=> {
-	            //            console.log(surveys);
-	            //            resolve(Object.assign([],surveys));
-	            //        });
-	            //        
-	        }
-	    }, {
-	        key: 'submitSurveys',
-	        value: function submitSurveys() {
-	            console.log("submitSurvey");
-	            return new Promise(function (resolve, reject) {
-	                //            return fetch('http://10.10.1.166/CCRC_SPA/json.php').then(response => {
-	                //                if (response.ok) {
-	                //                    response.json().then(function(data) {  
-	                //                        console.log("Success");  
-	                //                      });  
-	                //                } else {
-	                //                    reject(new Error('error'))
-	                //                }
-	                //            }, error => {
-	                //                reject(new Error(error.message))
-	                //            })
-
-	                return fetch('http://10.10.1.166/CCRC_SPA/submitSurvey.php', {
-	                    method: 'post',
-	                    body: JSON.stringify({
-	                        roomNo: 101, id: 1, value: 'Good'
-	                    })
-	                }).then(function (response) {
-	                    if (response.ok) {
-	                        response.json().then(function (data) {
-	                            console.log("Success");
-	                        });
-	                    } else {
-	                        reject(new Error('error'));
-	                    }
-	                }, function (error) {
-	                    reject(new Error(error.message));
-	                });
-	            });
-	            //        return new Promise((resolve, reject)=> {
-	            //            console.log(surveys);
-	            //            resolve(Object.assign([],surveys));
-	            //        });
-	            //        
-	        }
-	    }]);
-
-	    return SurveyApi;
-	}();
-
-	exports.default = SurveyApi;
-
-/***/ },
-/* 220 */
-/***/ function(module, exports) {
-
-	"use strict";
-
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	exports.default = 1000;
-
-/***/ },
-/* 221 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -24347,13 +24407,13 @@
 	});
 	exports.default = configureStore;
 
-	var _redux = __webpack_require__(191);
+	var _redux = __webpack_require__(189);
 
-	var _index = __webpack_require__(222);
+	var _index = __webpack_require__(220);
 
 	var _index2 = _interopRequireDefault(_index);
 
-	var _reduxThunk = __webpack_require__(225);
+	var _reduxThunk = __webpack_require__(223);
 
 	var _reduxThunk2 = _interopRequireDefault(_reduxThunk);
 
@@ -24370,7 +24430,7 @@
 	//}
 
 /***/ },
-/* 222 */
+/* 220 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -24379,9 +24439,9 @@
 		value: true
 	});
 
-	var _redux = __webpack_require__(191);
+	var _redux = __webpack_require__(189);
 
-	var _reducers = __webpack_require__(223);
+	var _reducers = __webpack_require__(221);
 
 	var surveyReducers = _interopRequireWildcard(_reducers);
 
@@ -24403,7 +24463,7 @@
 	exports.default = rootReducer;
 
 /***/ },
-/* 223 */
+/* 221 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -24423,11 +24483,11 @@
 	exports.displayQuestionsPanel = displayQuestionsPanel;
 	exports.default = surveyReducer;
 
-	var _actionTypes = __webpack_require__(215);
+	var _actionTypes = __webpack_require__(213);
 
 	var types = _interopRequireWildcard(_actionTypes);
 
-	var _initialState = __webpack_require__(224);
+	var _initialState = __webpack_require__(222);
 
 	var _initialState2 = _interopRequireDefault(_initialState);
 
@@ -24588,7 +24648,7 @@
 	}
 
 /***/ },
-/* 224 */
+/* 222 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -24609,7 +24669,7 @@
 	};
 
 /***/ },
-/* 225 */
+/* 223 */
 /***/ function(module, exports) {
 
 	'use strict';

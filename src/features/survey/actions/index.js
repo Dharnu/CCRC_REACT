@@ -1,5 +1,5 @@
 import * as types from './actionTypes';
-import SurveyApi from '../api/mockSurveyApi';
+import SurveyApi from '../api/SurveyApi';
 
 export function registerResponse(id) {
 	return {
@@ -93,10 +93,21 @@ export function displayQuestionsPanel(displayQuestionsPanel) {
 	};
 };
 
+export function surveyCount() {
+    return function(dispatch) {
+        return SurveyApi.getSurveyCount().then(response => {
+            console.log("Get Survey Count");
+            dispatch(surveyFetchSuccess(response));
+        }).catch(error => {
+            throw(error);
+        });
+    };
+}
+
 export function loadSurvey(){
     return function(dispatch) {
         return SurveyApi.getAllSurveys().then(response => {
-            console.log("hi");
+            console.log("Get all survey");
             dispatch(surveyFetchSuccess(response));
         }).catch(error => {
             throw(error);
@@ -107,7 +118,7 @@ export function loadSurvey(){
 export function submitSurvey(){
     return function(dispatch) {
         return SurveyApi.submitSurveys().then(response => {
-            console.log("hi");
+            console.log("Submit survey");
             dispatch(surveyFetchSuccess(response));
         }).catch(error => {
             throw(error);
