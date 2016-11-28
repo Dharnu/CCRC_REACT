@@ -21796,10 +21796,7 @@
 	    key: 'displayQuestions',
 	    value: function displayQuestions(event) {
 	      this.props.actions.incrementSurveyIndex();
-	      this.props.actions.displaySurveyQuestions();
-	      this.props.actions.hideControlPanel(true);
-	      this.props.actions.hideOptionsPanel(false);
-	      this.props.actions.hideNavigationPanel(false);
+	      this.props.actions.fetchSurveyQuestions();
 	    }
 	  }, {
 	    key: 'render',
@@ -23509,15 +23506,10 @@
 			}).catch(function (error) {
 				debugger;
 			});
-			// .then(result=>{
-			// 	debugger;
-			// }).catch(err=>{
-			// 	debugger;
-			// });
 		};
 	}
 	function setSurveyCount(count) {
-		debugger;
+
 		return {
 			type: types.FETCH_SURVEY_COUNT,
 			count: count
@@ -23551,7 +23543,18 @@
 		};
 	}
 	function fetchSurveyQuestions() {
-		return _surveyApi2.default.fetchSurveys();
+		debugger;
+		return function (dispatch) {
+			return _surveyApi2.default.fetchSurveys().then(function (result) {
+				dispatch(surveyFetchSuccess(result));
+				dispatch(displaySurveyQuestions());
+				dispatch(hideControlPanel(true));
+				dispatch(hideOptionsPanel(false));
+				dispatch(hideNavigationPanel(false));
+			}).catch(function (error) {
+				debugger;
+			});
+		};
 	}
 	function incrementSurveyIndex() {
 
@@ -23651,13 +23654,6 @@
 		}
 
 		_createClass(SurveyApi, [{
-			key: 'fetchSurveys',
-			value: function fetchSurveys() {
-				return fetch(this.url).then(function (response) {
-					return response.json();
-				});
-			}
-		}, {
 			key: 'submitSurveys',
 			value: function submitSurveys() {}
 		}], [{
@@ -23665,6 +23661,15 @@
 			value: function fetchCount() {
 				console.log(document.querySelector('#roomno').innerHTML);
 				return fetch('http://10.10.1.167/survey/survey.php').then(function (response) {
+					return response.json();
+				}).catch(function (error) {
+					debugger;
+				});
+			}
+		}, {
+			key: 'fetchSurveys',
+			value: function fetchSurveys() {
+				return fetch('http://10.10.1.167/survey/survey1.php').then(function (response) {
 					return response.json();
 				}).catch(function (error) {
 					debugger;
@@ -24547,7 +24552,7 @@
 
 		switch (action.type) {
 			case types.FETCH_SURVEY_COUNT:
-				debugger;
+
 				return action.count;
 			default:
 				return state;
@@ -24612,7 +24617,7 @@
 		switch (action.type) {
 			case types.HIDE_CONTROL_PANEL:
 
-				return action.hideControlPanel;
+				return !action.hideControlPanel;
 			case types.SURVEY_ENDED:
 
 				return true;
@@ -24630,7 +24635,7 @@
 
 		switch (action.type) {
 			case types.HIDE_OPTIONS_PANEL:
-				return action.hideOptionsPanel;
+				return !action.hideOptionsPanel;
 			default:
 				return state;
 		}
@@ -24641,7 +24646,7 @@
 
 		switch (action.type) {
 			case types.HIDE_NAVIGATION_PANEL:
-				return action.hideNavigationPanel;
+				return !action.hideNavigationPanel;
 			default:
 				return state;
 		}
@@ -24652,7 +24657,7 @@
 
 		switch (action.type) {
 			case types.HIDE_BOTTOM_PANEL:
-				return action.hideBottomPanel;
+				return !action.hideBottomPanel;
 			default:
 				return state;
 		}

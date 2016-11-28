@@ -18,10 +18,7 @@ class SurveyControls extends React.Component {
 
   displayQuestions(event) {
     this.props.actions.incrementSurveyIndex();
-    this.props.actions.displaySurveyQuestions();
-    this.props.actions.hideControlPanel(true);
-    this.props.actions.hideOptionsPanel(false);
-    this.props.actions.hideNavigationPanel(false);
+    this.props.actions.fetchSurveyQuestions();
 
   }
 

@@ -4,7 +4,7 @@ import initialState from './initialState';
 export function setSurveyCount(state = initialState.surveyQuestionsCount, action) {
 	switch (action.type) {
 		case types.FETCH_SURVEY_COUNT:
-			debugger;
+			
 			return action.count;
 		default:
 			return state;
@@ -58,7 +58,7 @@ export function displayControlPanel(state = initialState.displaySurveyControlPan
 	switch (action.type) {
 		case types.HIDE_CONTROL_PANEL:
 
-			return action.hideControlPanel;
+			return !action.hideControlPanel;
 		case types.SURVEY_ENDED:
 
 			return true;
@@ -73,7 +73,7 @@ export function displayControlPanel(state = initialState.displaySurveyControlPan
 export function displayOptionsPanel(state = initialState.displaySurveyOptionsPanel, action) {
 	switch (action.type) {
 		case types.HIDE_OPTIONS_PANEL:
-			return action.hideOptionsPanel;
+			return !action.hideOptionsPanel;
 		default:
 			return state;
 	}
@@ -81,7 +81,7 @@ export function displayOptionsPanel(state = initialState.displaySurveyOptionsPan
 export function displayNavigationPanel(state = initialState.displaySurveyNavigationPanel, action) {
 	switch (action.type) {
 		case types.HIDE_NAVIGATION_PANEL:
-			return action.hideNavigationPanel;
+			return !action.hideNavigationPanel;
 		default:
 			return state;
 	}
@@ -89,7 +89,7 @@ export function displayNavigationPanel(state = initialState.displaySurveyNavigat
 export function displayBottomPanel(state = initialState.displaySurveyBottomPanel, action) {
 	switch (action.type) {
 		case types.HIDE_BOTTOM_PANEL:
-			return action.hideBottomPanel;
+			return !action.hideBottomPanel;
 		default:
 			return state;
 	}

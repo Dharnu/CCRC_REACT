@@ -10,16 +10,11 @@ export function fetchSurveyCount() {
 			})
 			.catch(error => {
 				debugger
-			})
-			// .then(result=>{
-			// 	debugger;
-			// }).catch(err=>{
-			// 	debugger;
-			// });
+			});
 	}
 }
 export function setSurveyCount(count) {
-	debugger;
+	
 	return {
 		type: types.FETCH_SURVEY_COUNT,
 		count
@@ -53,7 +48,21 @@ export function surveyFetchSuccess(surveys) {
 	}
 }
 export function fetchSurveyQuestions() {
-	return SurveyApi.fetchSurveys()
+	debugger;
+	return function(dispatch) {
+		return SurveyApi.fetchSurveys()
+			.then(result => {
+				dispatch(surveyFetchSuccess(result));
+				dispatch(displaySurveyQuestions());
+				dispatch(hideControlPanel(true));
+				dispatch(hideOptionsPanel(false));
+				dispatch(hideNavigationPanel(false));
+
+			})
+			.catch(error => {
+				debugger
+			});
+	}
 }
 export function incrementSurveyIndex() {
 

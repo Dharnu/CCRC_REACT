@@ -16,9 +16,14 @@ class SurveyApi {
 			})
 
 	}
-	fetchSurveys() {
-		return fetch(this.url)
-			.then(response => response.json())
+	static fetchSurveys() {
+		return fetch('http://10.10.1.167/survey/survey1.php')
+			.then(response => 
+				response.json()
+			)
+			.catch(error => {
+				debugger
+			})
 	}
 
 	submitSurveys() {
