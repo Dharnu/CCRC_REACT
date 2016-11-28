@@ -1,16 +1,11 @@
-import React, {
-  PropTypes
-} from 'react';
+import React, {PropTypes} from 'react';
 import SurveyBottom from './SurveyBottom';
 import SurveyControls from './SurveyControls';
 import SurveyMessage from './SurveyMessage';
 import SurveyNavigation from './SurveyNavigation';
 import SurveyOptions from './SurveyOptions';
 import initialState from './../reducers/initialState';
-
-import {
-  connect
-} from 'react-redux';
+import {connect} from 'react-redux';
 
 
 require('style!css!../styles/SurveyStyles.css');

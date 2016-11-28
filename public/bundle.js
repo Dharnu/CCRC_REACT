@@ -24453,7 +24453,6 @@
 	exports.modifySurveyIndex = modifySurveyIndex;
 	exports.manageSurveyResponse = manageSurveyResponse;
 	exports.setSurveyQuestions = setSurveyQuestions;
-	exports.displayPanels = displayPanels;
 	exports.displayControlPanel = displayControlPanel;
 	exports.displayOptionsPanel = displayOptionsPanel;
 	exports.displayNavigationPanel = displayNavigationPanel;
@@ -24522,7 +24521,7 @@
 				return state;
 		}
 	};
-	function displayPanels(state, action) {}
+
 	function displayControlPanel() {
 		var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : _initialState2.default.displaySurveyControlPanel;
 		var action = arguments[1];
