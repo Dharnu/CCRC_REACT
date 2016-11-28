@@ -8,7 +8,8 @@ var  rootReducer = combineReducers({
 	displayBottomPanel:surveyReducers.displayBottomPanel,
 	surveyIndex:surveyReducers.modifySurveyIndex,
 	surveyQuestions:surveyReducers.setSurveyQuestions,
-	surveyQuestionsResponse:surveyReducers.manageSurveyResponse
+	surveyQuestionsResponse:surveyReducers.manageSurveyResponse,
+	surveyQuestionsCount:surveyReducers.setSurveyCount
 
 });
 

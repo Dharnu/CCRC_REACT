@@ -9,16 +9,11 @@ class SurveyMessage extends React.Component {
 		super(props, context);
 	}
 
-	// reachedSurveyEnd(){
-	// 	this.props.actions.hideControlPanel(false);
-	// 	this.props.actions.hideOptionsPanel(true);
-	// 	this.props.actions.hideNavigationPanel(true);
-	// }
 	render() {
 
 		var messageContent = '';
 		if (this.props.index === -1) {
-			messageContent = 'there are ' + this.props.surveyQuestions.length + ' questions';
+			messageContent = 'there are ' + this.props.surveyQuestionsCount + ' questions';
 		} else if (this.props.index < this.props.surveyQuestions.length) {
 			messageContent = this.props.surveyQuestions[this.props.index].survey;
 		} else if (this.props.index === this.props.surveyQuestions.length) {
@@ -36,6 +31,7 @@ class SurveyMessage extends React.Component {
 SurveyMessage.propType = {
 	surveyQuestions: React.PropTypes.array.isRequired,
 	surveyQuestionsAnswered:PropTypes.number.isRequired,
+	surveyQuestionsCount:PropTypes.number.isRequired,
 	index: PropTypes.number.isRequired,
 
 }
@@ -44,6 +40,7 @@ function mapStateToProps(state, ownProps) {
 	return {
 		index: state.surveyIndex,
 		surveyQuestions: state.surveyQuestions,
+		surveyQuestionsCount: state.surveyQuestionsCount,
 		surveyQuestionsAnswered:state.surveyQuestionsResponse.length
 	};
 }
