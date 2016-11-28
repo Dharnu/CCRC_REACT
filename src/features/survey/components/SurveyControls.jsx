@@ -13,15 +13,12 @@ class SurveyControls extends React.Component {
     this.goHome.bind(this);
   }
   goHome(event) {
-    window.open('http://www.google.com', "_self");
+    window.open('http://10.10.1.166/react/demo/public/', "_self");
   }
 
   displayQuestions(event) {
     this.props.actions.incrementSurveyIndex();
-    this.props.actions.displaySurveyQuestions();
-    this.props.actions.hideControlPanel(true);
-    this.props.actions.hideOptionsPanel(false);
-    this.props.actions.hideNavigationPanel(false);
+    this.props.actions.fetchSurveyQuestions();
 
   }
 

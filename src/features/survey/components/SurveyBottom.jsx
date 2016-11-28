@@ -6,7 +6,7 @@ constructor(props){
 	this.goHome.bind(this);
 }
 goHome(event){
-	window.open('http://10.10.1.166/CCRC_UI_DESIGN/',"_self");
+	window.open('http://10.10.1.166/react/demo/public/',"_self");
 }
 
 	render() {

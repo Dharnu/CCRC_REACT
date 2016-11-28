@@ -1,6 +1,25 @@
 import * as types from './actionTypes';
-import SurveyApi from './../api/mockSurvey';
+import SurveyApi from './../api/surveyApi';
 
+
+export function fetchSurveyCount() {
+	return function(dispatch) {
+		return SurveyApi.fetchCount()
+			.then(result => {
+				dispatch(setSurveyCount(result.data));
+			})
+			.catch(error => {
+				debugger
+			});
+	}
+}
+export function setSurveyCount(count) {
+	
+	return {
+		type: types.FETCH_SURVEY_COUNT,
+		count
+	}
+}
 export function registerResponse(id) {
 	return {
 		type: types.REGISTER_RESPONSE,
@@ -29,7 +48,20 @@ export function surveyFetchSuccess(surveys) {
 	}
 }
 export function fetchSurveyQuestions() {
-	return SurveyApi.fetchSurveys()
+	return function(dispatch) {
+		return SurveyApi.fetchSurveys()
+			.then(result => {
+				dispatch(surveyFetchSuccess(result.data));
+				dispatch(displaySurveyQuestions());
+				dispatch(hideControlPanel(true));
+				dispatch(hideOptionsPanel(false));
+				dispatch(hideNavigationPanel(false));
+
+			})
+			.catch(error => {
+				debugger
+			});
+	}
 }
 export function incrementSurveyIndex() {
 

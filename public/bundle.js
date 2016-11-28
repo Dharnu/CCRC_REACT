@@ -69,7 +69,7 @@
 
 	var _index = __webpack_require__(206);
 
-	var _configureStore = __webpack_require__(217);
+	var _configureStore = __webpack_require__(218);
 
 	var _configureStore2 = _interopRequireDefault(_configureStore);
 
@@ -85,100 +85,33 @@
 	    Provider = _require.Provider;
 
 	var SurveyStore = (0, _configureStore2.default)();
-	// fetchSurveyQuestions()
-	// .then(surveys=> {
-	// 				SurveyStore.dispatch(surveyFetchSuccess(surveys));
-	// 			})
-	SurveyStore.subscribe(function () {
-		console.log(SurveyStore.getState());
-	});
 
-	SurveyStore.dispatch((0, _index.surveyFetchSuccess)([{
-		'id': 69,
-		'survey': 'Test1',
-		'date': 'October 21, 2016 12:09:07 PM',
-		'signature': '- StatusSolution<br/>Administrator<br/>(866) 846-7272<br/>',
-		'options': [{
-			'id': 4,
-			'option': 'Good'
-		}, {
-			'id': 7,
-			'option': 'No'
-		}, {
-			'id': 5,
-			'option': 'Bad'
-		}, {
-			'id': 3,
-			'option': 'Excellent'
-		}]
-	}, {
-		'id': 71,
-		'survey': 'Test2',
-		'date': 'October 21, 2016 12:09:07 PM',
-		'signature': '- StatusSolution<br/>Administrator<br/>(866) 846-7272<br/>',
-		'options': [{
-			'id': 4,
-			'option': 'Good'
-		}, {
-			'id': 7,
-			'option': 'No'
-		}, {
-			'id': 5,
-			'option': 'Bad'
-		}]
-	}, {
-		'id': 74,
-		'survey': 'Test3',
-		'date': 'October 21, 2016 12:09:07 PM',
-		'signature': '- StatusSolution<br/>Administrator<br/>(866) 846-7272<br/>',
-		'options': [{
-			'id': 4,
-			'option': 'Good'
-		}, {
-			'id': 7,
-			'option': 'No'
-		}, {
-			'id': 5,
-			'option': 'Bad'
-		}]
-	}, {
-		'id': 75,
-		'survey': 'Test4',
-		'date': 'October 21, 2016 12:09:07 PM',
-		'signature': '- StatusSolution<br/>Administrator<br/>(866) 846-7272<br/>',
-		'options': [{
-			'id': 4,
-			'option': 'Good'
-		}, {
-			'id': 7,
-			'option': 'No'
-		}, {
-			'id': 5,
-			'option': 'Bad'
-		}]
-	}]));
+	SurveyStore.subscribe(function () {
+	  console.log(SurveyStore.getState());
+	});
+	SurveyStore.dispatch((0, _index.fetchSurveyCount)());
 
 	var App = function (_Component) {
-		_inherits(App, _Component);
+	  _inherits(App, _Component);
 
-		function App() {
-			_classCallCheck(this, App);
+	  function App() {
+	    _classCallCheck(this, App);
 
-			return _possibleConstructorReturn(this, (App.__proto__ || Object.getPrototypeOf(App)).apply(this, arguments));
-		}
+	    return _possibleConstructorReturn(this, (App.__proto__ || Object.getPrototypeOf(App)).apply(this, arguments));
+	  }
 
-		_createClass(App, [{
-			key: 'render',
-			value: function render() {
-				return _react2.default.createElement(
-					Provider,
-					{ store: SurveyStore },
-					_react2.default.createElement(_SurveyApp2.default, null)
-				);
-			}
-		}]);
+	  _createClass(App, [{
+	    key: 'render',
+	    value: function render() {
+	      return _react2.default.createElement(
+	        Provider,
+	        { store: SurveyStore },
+	        _react2.default.createElement(_SurveyApp2.default, null)
+	      );
+	    }
+	  }]);
 
-		return App;
+	  return App;
 	}(_react.Component);
 
 	;
@@ -21576,19 +21509,19 @@
 
 	var _SurveyControls2 = _interopRequireDefault(_SurveyControls);
 
-	var _SurveyMessage = __webpack_require__(209);
+	var _SurveyMessage = __webpack_require__(210);
 
 	var _SurveyMessage2 = _interopRequireDefault(_SurveyMessage);
 
-	var _SurveyNavigation = __webpack_require__(210);
+	var _SurveyNavigation = __webpack_require__(211);
 
 	var _SurveyNavigation2 = _interopRequireDefault(_SurveyNavigation);
 
-	var _SurveyOptions = __webpack_require__(211);
+	var _SurveyOptions = __webpack_require__(212);
 
 	var _SurveyOptions2 = _interopRequireDefault(_SurveyOptions);
 
-	var _initialState = __webpack_require__(212);
+	var _initialState = __webpack_require__(213);
 
 	var _initialState2 = _interopRequireDefault(_initialState);
 
@@ -21602,7 +21535,7 @@
 
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-	__webpack_require__(213);
+	__webpack_require__(214);
 
 	var SurveyApp = function (_React$Component) {
 	  _inherits(SurveyApp, _React$Component);
@@ -21706,7 +21639,7 @@
 		_createClass(SurveyBottom, [{
 			key: 'goHome',
 			value: function goHome(event) {
-				window.open('http://10.10.1.166/CCRC_UI_DESIGN/', "_self");
+				window.open('http://10.10.1.166/react/demo/public/', "_self");
 			}
 		}, {
 			key: 'render',
@@ -21758,7 +21691,7 @@
 
 	var SurveyActions = _interopRequireWildcard(_index);
 
-	var _mockSurvey = __webpack_require__(208);
+	var _mockSurvey = __webpack_require__(209);
 
 	var _mockSurvey2 = _interopRequireDefault(_mockSurvey);
 
@@ -21788,16 +21721,13 @@
 	  _createClass(SurveyControls, [{
 	    key: 'goHome',
 	    value: function goHome(event) {
-	      window.open('http://www.google.com', "_self");
+	      window.open('http://10.10.1.166/react/demo/public/', "_self");
 	    }
 	  }, {
 	    key: 'displayQuestions',
 	    value: function displayQuestions(event) {
 	      this.props.actions.incrementSurveyIndex();
-	      this.props.actions.displaySurveyQuestions();
-	      this.props.actions.hideControlPanel(true);
-	      this.props.actions.hideOptionsPanel(false);
-	      this.props.actions.hideNavigationPanel(false);
+	      this.props.actions.fetchSurveyQuestions();
 	    }
 	  }, {
 	    key: 'render',
@@ -23622,6 +23552,8 @@
 	Object.defineProperty(exports, "__esModule", {
 		value: true
 	});
+	exports.fetchSurveyCount = fetchSurveyCount;
+	exports.setSurveyCount = setSurveyCount;
 	exports.registerResponse = registerResponse;
 	exports.deregisterResponse = deregisterResponse;
 	exports.surveyEnded = surveyEnded;
@@ -23640,14 +23572,30 @@
 
 	var types = _interopRequireWildcard(_actionTypes);
 
-	var _mockSurvey = __webpack_require__(208);
+	var _surveyApi = __webpack_require__(208);
 
-	var _mockSurvey2 = _interopRequireDefault(_mockSurvey);
+	var _surveyApi2 = _interopRequireDefault(_surveyApi);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
 
+	function fetchSurveyCount() {
+		return function (dispatch) {
+			return _surveyApi2.default.fetchCount().then(function (result) {
+				dispatch(setSurveyCount(result.data));
+			}).catch(function (error) {
+				debugger;
+			});
+		};
+	}
+	function setSurveyCount(count) {
+
+		return {
+			type: types.FETCH_SURVEY_COUNT,
+			count: count
+		};
+	}
 	function registerResponse(id) {
 		return {
 			type: types.REGISTER_RESPONSE,
@@ -23676,7 +23624,17 @@
 		};
 	}
 	function fetchSurveyQuestions() {
-		return _mockSurvey2.default.fetchSurveys();
+		return function (dispatch) {
+			return _surveyApi2.default.fetchSurveys().then(function (result) {
+				dispatch(surveyFetchSuccess(result.data));
+				dispatch(displaySurveyQuestions());
+				dispatch(hideControlPanel(true));
+				dispatch(hideOptionsPanel(false));
+				dispatch(hideNavigationPanel(false));
+			}).catch(function (error) {
+				debugger;
+			});
+		};
 	}
 	function incrementSurveyIndex() {
 
@@ -23741,7 +23699,7 @@
 	var HIDE_BOTTOM_PANEL = exports.HIDE_BOTTOM_PANEL = 'HIDE_BOTTOM_PANEL';
 	var INCREMENT_SURVEY_INDEX = exports.INCREMENT_SURVEY_INDEX = 'INCREMENT_SURVEY_INDEX';
 	var DECREMENT_SURVEY_INDEX = exports.DECREMENT_SURVEY_INDEX = 'DECREMENT_SURVEY_INDEX';
-	var FETCH_QUESTIONS = exports.FETCH_QUESTIONS = 'FETCH_QUESTIONS';
+
 	var SURVEY_FETCH_SUCCESS = exports.SURVEY_FETCH_SUCCESS = 'SURVEY_FETCH_SUCCESS';
 	var DISPLAY_SURVEY_QUESTIONS = exports.DISPLAY_SURVEY_QUESTIONS = 'DISPLAY_SURVEY_QUESTIONS';
 	var DISPLAY_QUESTIONS = exports.DISPLAY_QUESTIONS = 'DISPLAY_QUESTIONS';
@@ -23751,8 +23709,61 @@
 	var REGISTER_RESPONSE = exports.REGISTER_RESPONSE = 'REGISTER_RESPONSE';
 	var DEREGISTER_RESPONSE = exports.DEREGISTER_RESPONSE = 'DEREGISTER_RESPONSE';
 
+	var FETCH_SURVEY_COUNT = exports.FETCH_SURVEY_COUNT = 'FETCH_SURVEY_COUNT';
+	var FETCH_QUESTIONS = exports.FETCH_QUESTIONS = 'FETCH_QUESTIONS';
+
 /***/ },
 /* 208 */
+/***/ function(module, exports) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	var surveyQuestionsURL = 'https://10.10.1.103:8443/catie/rest/device/survey/surveyQuestions.json?roomNumber=101&lastSurveyId=0';
+
+	var SurveyApi = function () {
+		function SurveyApi() {
+			_classCallCheck(this, SurveyApi);
+		}
+
+		_createClass(SurveyApi, [{
+			key: 'submitSurveys',
+			value: function submitSurveys() {}
+		}], [{
+			key: 'fetchCount',
+			value: function fetchCount() {
+				console.log(document.querySelector('#roomno').innerHTML);
+				return fetch('http://10.10.1.166/catie/rest/device/survey/surveyInit.json?roomNumber=101').then(function (response) {
+					return response.json();
+				}).catch(function (error) {
+					debugger;
+				});
+			}
+		}, {
+			key: 'fetchSurveys',
+			value: function fetchSurveys() {
+				return fetch('http://10.10.1.166/catie/rest/device/survey/surveyQuestions.json?roomNumber=101&lastSurveyId=0').then(function (response) {
+					return response.json();
+				}).catch(function (error) {
+					debugger;
+				});
+			}
+		}]);
+
+		return SurveyApi;
+	}();
+
+	exports.default = SurveyApi;
+
+/***/ },
+/* 209 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -23802,6 +23813,7 @@
 			'option': 'Excellent'
 		}]
 	}];
+	var count = { "data": 2, "status": "success" };
 
 	var mockSurvey = function () {
 		function mockSurvey() {
@@ -23815,6 +23827,9 @@
 					resolve(Object.assign([], surveys));
 				});
 			}
+		}, {
+			key: 'fetchCount',
+			value: function fetchCount() {}
 		}]);
 
 		return mockSurvey;
@@ -23825,13 +23840,13 @@
 	exports.default = mockSurvey;
 
 /***/ },
-/* 209 */
+/* 210 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 
 	Object.defineProperty(exports, "__esModule", {
-	    value: true
+	  value: true
 	});
 
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
@@ -23859,138 +23874,133 @@
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 	var SurveyMessage = function (_React$Component) {
-	    _inherits(SurveyMessage, _React$Component);
+	  _inherits(SurveyMessage, _React$Component);
 
-	    function SurveyMessage(props, context) {
-	        _classCallCheck(this, SurveyMessage);
+	  function SurveyMessage(props, context) {
+	    _classCallCheck(this, SurveyMessage);
 
-	        return _possibleConstructorReturn(this, (SurveyMessage.__proto__ || Object.getPrototypeOf(SurveyMessage)).call(this, props, context));
-	    }
+	    return _possibleConstructorReturn(this, (SurveyMessage.__proto__ || Object.getPrototypeOf(SurveyMessage)).call(this, props, context));
+	  }
 
-	    //reachedSurveyEnd(){
-	    //	this.props.actions.hideControlPanel(true);
-	    //	this.props.actions.hideOptionsPanel(true);
-	    //	this.props.actions.hideNavigationPanel(true);
-	    //}
+	  _createClass(SurveyMessage, [{
+	    key: 'render',
+	    value: function render() {
 
-
-	    _createClass(SurveyMessage, [{
-	        key: 'render',
-	        value: function render() {
-
-	            var messageContent = '';
-	            if (this.props.index === -1) {
-	                messageContent = _react2.default.createElement(
-	                    'div',
-	                    { id: 'surveyHome', className: 'surveyHome flexAlignCenterJustifyCenter flexDirectionColumn' },
-	                    _react2.default.createElement(
-	                        'div',
-	                        { className: 'flexAlignCenterJustifyCenter' },
-	                        this.props.surveyQuestions.length,
-	                        ' New Survey(s) Available'
-	                    ),
-	                    _react2.default.createElement(
-	                        'div',
-	                        { className: 'flexAlignCenterJustifyCenter' },
-	                        'Do you want to take it?'
-	                    )
-	                );
-	            } else if (this.props.index < this.props.surveyQuestions.length) {
-	                messageContent = _react2.default.createElement(
-	                    'div',
-	                    { id: 'surveyQuestionContainer', className: 'surveyQuestionsContainer flexDirectionColumn' },
-	                    _react2.default.createElement(
-	                        'div',
-	                        { className: 'surveyQuestion' },
-	                        _react2.default.createElement(
-	                            'div',
-	                            null,
-	                            this.props.index + 1 + ') ' + this.props.surveyQuestions[this.props.index].survey
-	                        )
-	                    ),
-	                    _react2.default.createElement(
-	                        'div',
-	                        { className: 'surveySignature flexAlignEnd' },
-	                        _react2.default.createElement(
-	                            'div',
-	                            null,
-	                            this.props.surveyQuestions[this.props.index].signature
-	                        )
-	                    )
-	                );
-	            } else if (this.props.index === this.props.surveyQuestions.length) {
-	                /** broadcast options hide and display control panel*/
-	                //this.reachedSurveyEnd();
-	                if (this.props.surveyQuestions.length - this.props.surveyQuestionsAnswered === 0) {
-	                    messageContent = _react2.default.createElement(
-	                        'div',
-	                        { id: 'surveyHome', className: 'surveyHome flexAlignCenterJustifyCenter flexDirectionColumn' },
-	                        _react2.default.createElement(
-	                            'div',
-	                            { className: 'flexAlignCenterJustifyCenter' },
-	                            'You answered all Survey(s)'
-	                        ),
-	                        _react2.default.createElement(
-	                            'div',
-	                            { className: 'flexAlignCenterJustifyCenter' },
-	                            'Thank You.'
-	                        )
-	                    );
-	                } else {
-	                    messageContent = _react2.default.createElement(
-	                        'div',
-	                        { id: 'surveyHome', className: 'surveyHome flexAlignCenterJustifyCenter flexDirectionColumn' },
-	                        _react2.default.createElement(
-	                            'div',
-	                            { className: 'flexAlignCenterJustifyCenter' },
-	                            'You skipped ',
-	                            (this.props.surveyQuestions.length - this.props.surveyQuestionsAnswered).toString(),
-	                            ' Survey(s)'
-	                        ),
-	                        _react2.default.createElement(
-	                            'div',
-	                            { className: 'flexAlignCenterJustifyCenter' },
-	                            'Thank You.'
-	                        )
-	                    );
-	                }
-	            }
-	            return _react2.default.createElement(
-	                'div',
-	                { className: 'surveyContent flexAlignCenterJustifyCenter' },
-	                messageContent
-	            );
+	      var messageContent = '';
+	      if (this.props.index === -1) {
+	        messageContent = _react2.default.createElement(
+	          'div',
+	          { id: 'surveyHome', className: 'surveyHome flexAlignCenterJustifyCenter flexDirectionColumn' },
+	          _react2.default.createElement(
+	            'div',
+	            { className: 'flexAlignCenterJustifyCenter' },
+	            this.props.surveyQuestionsCount,
+	            ' New Survey(s) Available'
+	          ),
+	          _react2.default.createElement(
+	            'div',
+	            { className: 'flexAlignCenterJustifyCenter' },
+	            'Do you want to take it?'
+	          )
+	        );
+	      } else if (this.props.index < this.props.surveyQuestions.length) {
+	        messageContent = _react2.default.createElement(
+	          'div',
+	          { id: 'surveyQuestionContainer', className: 'surveyQuestionsContainer flexDirectionColumn' },
+	          _react2.default.createElement(
+	            'div',
+	            { className: 'surveyQuestion' },
+	            _react2.default.createElement(
+	              'div',
+	              null,
+	              this.props.index + 1 + ') ' + this.props.surveyQuestions[this.props.index].survey
+	            )
+	          ),
+	          _react2.default.createElement(
+	            'div',
+	            { className: 'surveySignature flexAlignEnd' },
+	            _react2.default.createElement(
+	              'div',
+	              null,
+	              this.props.surveyQuestions[this.props.index].signature
+	            )
+	          )
+	        );
+	      } else if (this.props.index === this.props.surveyQuestions.length) {
+	        /** broadcast options hide and display control panel*/
+	        //this.reachedSurveyEnd();
+	        if (this.props.surveyQuestions.length - this.props.surveyQuestionsAnswered === 0) {
+	          messageContent = _react2.default.createElement(
+	            'div',
+	            { id: 'surveyHome', className: 'surveyHome flexAlignCenterJustifyCenter flexDirectionColumn' },
+	            _react2.default.createElement(
+	              'div',
+	              { className: 'flexAlignCenterJustifyCenter' },
+	              'You answered all Survey(s)'
+	            ),
+	            _react2.default.createElement(
+	              'div',
+	              { className: 'flexAlignCenterJustifyCenter' },
+	              'Thank You.'
+	            )
+	          );
+	        } else {
+	          messageContent = _react2.default.createElement(
+	            'div',
+	            { id: 'surveyHome', className: 'surveyHome flexAlignCenterJustifyCenter flexDirectionColumn' },
+	            _react2.default.createElement(
+	              'div',
+	              { className: 'flexAlignCenterJustifyCenter' },
+	              'You skipped ',
+	              (this.props.surveyQuestions.length - this.props.surveyQuestionsAnswered).toString(),
+	              ' Survey(s)'
+	            ),
+	            _react2.default.createElement(
+	              'div',
+	              { className: 'flexAlignCenterJustifyCenter' },
+	              'Thank You.'
+	            )
+	          );
 	        }
-	    }]);
+	      }
+	      return _react2.default.createElement(
+	        'div',
+	        { className: 'surveyContent flexAlignCenterJustifyCenter' },
+	        messageContent
+	      );
+	    }
+	  }]);
 
-	    return SurveyMessage;
+	  return SurveyMessage;
 	}(_react2.default.Component);
 
 	SurveyMessage.propType = {
-	    surveyQuestions: _react2.default.PropTypes.array.isRequired,
-	    surveyQuestionsAnswered: _react.PropTypes.number.isRequired,
-	    index: _react.PropTypes.number.isRequired
+	  surveyQuestions: _react2.default.PropTypes.array.isRequired,
+	  surveyQuestionsAnswered: _react.PropTypes.number.isRequired,
+	  surveyQuestionsCount: _react.PropTypes.number.isRequired,
+	  index: _react.PropTypes.number.isRequired
 
 	};
 
 	function mapStateToProps(state, ownProps) {
-	    return {
-	        index: state.surveyIndex,
-	        surveyQuestions: state.surveyQuestions,
-	        surveyQuestionsAnswered: state.surveyQuestionsResponse.length
-	    };
+	  return {
+	    index: state.surveyIndex,
+	    surveyQuestions: state.surveyQuestions,
+	    surveyQuestionsCount: state.surveyQuestionsCount,
+	    surveyQuestionsAnswered: state.surveyQuestionsResponse.length
+	  };
 	}
 
 	function mapDispatchToProps(dispatch) {
-	    return {
-	        actions: (0, _redux.bindActionCreators)(SurveyActions, dispatch)
-	    };
+	  return {
+	    actions: (0, _redux.bindActionCreators)(SurveyActions, dispatch)
+	  };
 	}
 
 	exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(SurveyMessage);
 
 /***/ },
-/* 210 */
+/* 211 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -24129,7 +24139,7 @@
 	exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(SurveyNavigation);
 
 /***/ },
-/* 211 */
+/* 212 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -24233,7 +24243,7 @@
 	exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(SurveyOptions);
 
 /***/ },
-/* 212 */
+/* 213 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -24248,20 +24258,21 @@
 		displaySurveyBottomPanel: true,
 		surveyIndex: -1,
 		surveyQuestions: [],
-		surveyQuestionsResponse: []
+		surveyQuestionsResponse: [],
+		surveyQuestionsCount: -1
 	};
 
 /***/ },
-/* 213 */
+/* 214 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(214);
+	var content = __webpack_require__(215);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
-	var update = __webpack_require__(216)(content, {});
+	var update = __webpack_require__(217)(content, {});
 	if(content.locals) module.exports = content.locals;
 	// Hot Module Replacement
 	if(false) {
@@ -24278,10 +24289,10 @@
 	}
 
 /***/ },
-/* 214 */
+/* 215 */
 /***/ function(module, exports, __webpack_require__) {
 
-	exports = module.exports = __webpack_require__(215)();
+	exports = module.exports = __webpack_require__(216)();
 	// imports
 
 
@@ -24292,7 +24303,7 @@
 
 
 /***/ },
-/* 215 */
+/* 216 */
 /***/ function(module, exports) {
 
 	/*
@@ -24348,7 +24359,7 @@
 
 
 /***/ },
-/* 216 */
+/* 217 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/*
@@ -24600,7 +24611,7 @@
 
 
 /***/ },
-/* 217 */
+/* 218 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -24610,20 +24621,24 @@
 	});
 	exports.default = configureStore;
 
-	var _index = __webpack_require__(218);
+	var _index = __webpack_require__(219);
 
 	var _index2 = _interopRequireDefault(_index);
+
+	var _reduxThunk = __webpack_require__(221);
+
+	var _reduxThunk2 = _interopRequireDefault(_reduxThunk);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	var redux = __webpack_require__(183);
 	function configureStore(initialState) {
 
-		return redux.createStore(_index2.default, initialState);
+		return redux.createStore(_index2.default, initialState, redux.applyMiddleware(_reduxThunk2.default));
 	}
 
 /***/ },
-/* 218 */
+/* 219 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -24634,7 +24649,7 @@
 
 	var _redux = __webpack_require__(183);
 
-	var _reducers = __webpack_require__(219);
+	var _reducers = __webpack_require__(220);
 
 	var surveyReducers = _interopRequireWildcard(_reducers);
 
@@ -24647,14 +24662,14 @@
 		displayBottomPanel: surveyReducers.displayBottomPanel,
 		surveyIndex: surveyReducers.modifySurveyIndex,
 		surveyQuestions: surveyReducers.setSurveyQuestions,
-		surveyQuestionsResponse: surveyReducers.manageSurveyResponse
-
+		surveyQuestionsResponse: surveyReducers.manageSurveyResponse,
+		surveyQuestionsCount: surveyReducers.setSurveyCount
 	});
 
 	exports.default = rootReducer;
 
 /***/ },
-/* 219 */
+/* 220 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -24662,10 +24677,10 @@
 	Object.defineProperty(exports, "__esModule", {
 		value: true
 	});
+	exports.setSurveyCount = setSurveyCount;
 	exports.modifySurveyIndex = modifySurveyIndex;
 	exports.manageSurveyResponse = manageSurveyResponse;
 	exports.setSurveyQuestions = setSurveyQuestions;
-	exports.displayPanels = displayPanels;
 	exports.displayControlPanel = displayControlPanel;
 	exports.displayOptionsPanel = displayOptionsPanel;
 	exports.displayNavigationPanel = displayNavigationPanel;
@@ -24675,7 +24690,7 @@
 
 	var types = _interopRequireWildcard(_actionTypes);
 
-	var _initialState = __webpack_require__(212);
+	var _initialState = __webpack_require__(213);
 
 	var _initialState2 = _interopRequireDefault(_initialState);
 
@@ -24684,6 +24699,19 @@
 	function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
 
 	function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
+
+	function setSurveyCount() {
+		var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : _initialState2.default.surveyQuestionsCount;
+		var action = arguments[1];
+
+		switch (action.type) {
+			case types.FETCH_SURVEY_COUNT:
+
+				return action.count;
+			default:
+				return state;
+		}
+	}
 
 	function modifySurveyIndex() {
 		var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : _initialState2.default.surveyIndex;
@@ -24734,7 +24762,7 @@
 				return state;
 		}
 	};
-	function displayPanels(state, action) {}
+
 	function displayControlPanel() {
 		var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : _initialState2.default.displaySurveyControlPanel;
 		var action = arguments[1];
@@ -24742,7 +24770,7 @@
 		switch (action.type) {
 			case types.HIDE_CONTROL_PANEL:
 
-				return !state;
+				return !action.hideControlPanel;
 			case types.SURVEY_ENDED:
 
 				return true;
@@ -24760,7 +24788,7 @@
 
 		switch (action.type) {
 			case types.HIDE_OPTIONS_PANEL:
-				return !state;
+				return !action.hideOptionsPanel;
 			default:
 				return state;
 		}
@@ -24771,7 +24799,7 @@
 
 		switch (action.type) {
 			case types.HIDE_NAVIGATION_PANEL:
-				return !state;
+				return !action.hideNavigationPanel;
 			default:
 				return state;
 		}
@@ -24782,11 +24810,39 @@
 
 		switch (action.type) {
 			case types.HIDE_BOTTOM_PANEL:
-				return !state;
+				return !action.hideBottomPanel;
 			default:
 				return state;
 		}
 	};
+
+/***/ },
+/* 221 */
+/***/ function(module, exports) {
+
+	'use strict';
+
+	exports.__esModule = true;
+	function createThunkMiddleware(extraArgument) {
+	  return function (_ref) {
+	    var dispatch = _ref.dispatch;
+	    var getState = _ref.getState;
+	    return function (next) {
+	      return function (action) {
+	        if (typeof action === 'function') {
+	          return action(dispatch, getState, extraArgument);
+	        }
+
+	        return next(action);
+	      };
+	    };
+	  };
+	}
+
+	var thunk = createThunkMiddleware();
+	thunk.withExtraArgument = createThunkMiddleware;
+
+	exports['default'] = thunk;
 
 /***/ }
 /******/ ]);

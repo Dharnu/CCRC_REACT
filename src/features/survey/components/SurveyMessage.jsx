@@ -9,17 +9,12 @@ class SurveyMessage extends React.Component {
             super(props, context);
 	}
 
-	 //reachedSurveyEnd(){
-	 //	this.props.actions.hideControlPanel(true);
-	 //	this.props.actions.hideOptionsPanel(true);
-	 //	this.props.actions.hideNavigationPanel(true);
-	 //}
 	render() {
 
 		var messageContent = '';
 		if (this.props.index === -1) {
 			messageContent = <div id="surveyHome" className="surveyHome flexAlignCenterJustifyCenter flexDirectionColumn">
-                                            <div className="flexAlignCenterJustifyCenter">{this.props.surveyQuestions.length} New Survey(s) Available</div>
+                                            <div className="flexAlignCenterJustifyCenter">{this.props.surveyQuestionsCount} New Survey(s) Available</div>
                                             <div className="flexAlignCenterJustifyCenter">Do you want to take it?</div>
                                         </div>;
 		} else if (this.props.index < this.props.surveyQuestions.length) {
@@ -51,16 +46,18 @@ class SurveyMessage extends React.Component {
 SurveyMessage.propType = {
     surveyQuestions: React.PropTypes.array.isRequired,
     surveyQuestionsAnswered:PropTypes.number.isRequired,
+    surveyQuestionsCount:PropTypes.number.isRequired,
     index: PropTypes.number.isRequired,
 
 }
 
 function mapStateToProps(state, ownProps) {
-    return {
-            index: state.surveyIndex,
-            surveyQuestions: state.surveyQuestions,
-            surveyQuestionsAnswered:state.surveyQuestionsResponse.length
-    };
+	return {
+		index: state.surveyIndex,
+		surveyQuestions: state.surveyQuestions,
+		surveyQuestionsCount: state.surveyQuestionsCount,
+		surveyQuestionsAnswered:state.surveyQuestionsResponse.length
+	};
 }
 
 function mapDispatchToProps(dispatch) {

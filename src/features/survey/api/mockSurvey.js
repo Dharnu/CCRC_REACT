@@ -36,7 +36,7 @@ const surveys = [{
 			'option': 'Excellent'
 		}]
 	}];
-
+const count ={"data":2,"status":"success"};
 class mockSurvey {
 	static fetchSurveys() {
 		return new Promise((resolve, reject) => {
@@ -45,6 +45,10 @@ class mockSurvey {
 
 		})
 	}
+
+	 static fetchCount(){
+	 	
+	 }
 };
 
 export default mockSurvey;

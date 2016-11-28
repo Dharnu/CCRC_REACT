@@ -5,5 +5,6 @@ export default {
 	displaySurveyBottomPanel: true,
 	surveyIndex:-1,
 	surveyQuestions:[],
-	surveyQuestionsResponse:[]
+	surveyQuestionsResponse:[],
+	surveyQuestionsCount:-1
 }
