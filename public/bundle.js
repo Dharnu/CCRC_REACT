@@ -67,9 +67,9 @@
 
 	var _SurveyApp2 = _interopRequireDefault(_SurveyApp);
 
-	var _index = __webpack_require__(200);
+	var _index = __webpack_require__(206);
 
-	var _configureStore = __webpack_require__(214);
+	var _configureStore = __webpack_require__(217);
 
 	var _configureStore2 = _interopRequireDefault(_configureStore);
 
@@ -21576,19 +21576,19 @@
 
 	var _SurveyControls2 = _interopRequireDefault(_SurveyControls);
 
-	var _SurveyMessage = __webpack_require__(203);
+	var _SurveyMessage = __webpack_require__(209);
 
 	var _SurveyMessage2 = _interopRequireDefault(_SurveyMessage);
 
-	var _SurveyNavigation = __webpack_require__(204);
+	var _SurveyNavigation = __webpack_require__(210);
 
 	var _SurveyNavigation2 = _interopRequireDefault(_SurveyNavigation);
 
-	var _SurveyOptions = __webpack_require__(205);
+	var _SurveyOptions = __webpack_require__(211);
 
 	var _SurveyOptions2 = _interopRequireDefault(_SurveyOptions);
 
-	var _initialState = __webpack_require__(206);
+	var _initialState = __webpack_require__(212);
 
 	var _initialState2 = _interopRequireDefault(_initialState);
 
@@ -21602,7 +21602,7 @@
 
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-	__webpack_require__(207);
+	__webpack_require__(213);
 
 	var SurveyApp = function (_React$Component) {
 	  _inherits(SurveyApp, _React$Component);
@@ -21619,10 +21619,10 @@
 
 	      return _react2.default.createElement(
 	        'div',
-	        { className: 'main' },
+	        { className: 'containerMain' },
 	        _react2.default.createElement(
 	          'header',
-	          { className: 'centerAll' },
+	          { className: 'flexAlignCenterJustifyCenter' },
 	          'SURVEY'
 	        ),
 	        _react2.default.createElement(
@@ -21630,19 +21630,23 @@
 	          null,
 	          _react2.default.createElement(
 	            'div',
-	            { className: 'content-body content-shadow displayFlex flexDirection' },
+	            { className: 'displayFlex contentContainer' },
 	            _react2.default.createElement(
 	              'div',
-	              { className: 'survey-alert-container flexDirection' },
+	              { className: 'contentBody contentShadow flexAlignCenterJustifyCenter flexDirectionColumn' },
 	              _react2.default.createElement(
 	                'div',
-	                { className: 'survey-container centerAll' },
-	                _react2.default.createElement(_SurveyMessage2.default, null)
+	                { className: 'surveyContentContainer flexAlignCenterJustifyCenter flexDirectionColumn' },
+	                _react2.default.createElement(
+	                  'div',
+	                  { className: 'surveyContent flexAlignCenterJustifyCenter' },
+	                  _react2.default.createElement(_SurveyMessage2.default, null)
+	                ),
+	                this.props.state.displayControlPanel ? _react2.default.createElement(_SurveyControls2.default, null) : '',
+	                this.props.state.displayOptionsPanel ? _react2.default.createElement(_SurveyOptions2.default, null) : ''
 	              ),
-	              this.props.state.displayControlPanel ? _react2.default.createElement(_SurveyControls2.default, null) : '',
-	              this.props.state.displayOptionsPanel ? _react2.default.createElement(_SurveyOptions2.default, null) : ''
-	            ),
-	            this.props.state.displayNavigationPanel ? _react2.default.createElement(_SurveyNavigation2.default, null) : ''
+	              this.props.state.displayNavigationPanel ? _react2.default.createElement(_SurveyNavigation2.default, null) : ''
+	            )
 	          )
 	        ),
 	        _react2.default.createElement(
@@ -21706,14 +21710,14 @@
 		_createClass(SurveyBottom, [{
 			key: 'goHome',
 			value: function goHome(event) {
-				window.open('http://www.google.com', "_self");
+				window.open('http://10.10.1.166/CCRC_UI_DESIGN/', "_self");
 			}
 		}, {
 			key: 'render',
 			value: function render() {
 				return _react2.default.createElement(
 					'div',
-					{ className: 'spaceBetween displayFlex footerClass' },
+					{ className: 'footerMain flexAlignCenterJustifySpaceBetween displayFlex' },
 					_react2.default.createElement(
 						'div',
 						{ className: 'home-icon', onClick: this.goHome },
@@ -21754,11 +21758,11 @@
 
 	var _redux = __webpack_require__(183);
 
-	var _index = __webpack_require__(200);
+	var _index = __webpack_require__(206);
 
 	var SurveyActions = _interopRequireWildcard(_index);
 
-	var _mockSurvey = __webpack_require__(202);
+	var _mockSurvey = __webpack_require__(208);
 
 	var _mockSurvey2 = _interopRequireDefault(_mockSurvey);
 
@@ -21807,30 +21811,34 @@
 	      if (this.props.index === -1) {
 	        availableControls = _react2.default.createElement(
 	          'div',
-	          { className: 'displayFlex spaceBetween initalAvailableControls' },
+	          { className: 'displayFlex flexAlignCenterJustifySpaceAround surveyActions' },
 	          _react2.default.createElement(
 	            'div',
-	            { className: 'decision-key-controls centerAll',
+	            { className: 'decision-key-controls flexAlignCenterJustifyCenter',
 	              onClick: this.displayQuestions },
 	            'Now '
 	          ),
 	          _react2.default.createElement(
 	            'div',
-	            { className: 'decision-key-controls centerAll' },
+	            { className: 'decision-key-controls flexAlignCenterJustifyCenter' },
 	            ' Later'
 	          )
 	        );
 	      } else {
 	        availableControls = _react2.default.createElement(
 	          'div',
-	          { className: 'decision-key-controls centerAll', onClick: this.goHome },
-	          'Exit '
+	          { className: 'displayFlex flexAlignCenterJustifySpaceAround surveyActions' },
+	          _react2.default.createElement(
+	            'div',
+	            { className: 'decision-key-controls flexAlignCenterJustifyCenter', onClick: this.goHome },
+	            ' Exit '
+	          )
 	        );
 	      }
 
 	      return _react2.default.createElement(
 	        'div',
-	        { className: 'surveyActionContainer displayFlex spaceBetween surevyControls' },
+	        { className: 'surveyActionContainer displayFlex flexAlignCenterJustifySpaceAround surevyControls' },
 	        availableControls
 	      );
 	    }
@@ -21937,9 +21945,7 @@
 	  }
 
 	  Provider.prototype.render = function render() {
-	    var children = this.props.children;
-
-	    return _react.Children.only(children);
+	    return _react.Children.only(this.props.children);
 	  };
 
 	  return Provider;
@@ -21947,10 +21953,12 @@
 
 	exports["default"] = Provider;
 
+
 	if (process.env.NODE_ENV !== 'production') {
 	  Provider.prototype.componentWillReceiveProps = function (nextProps) {
 	    var store = this.store;
 	    var nextStore = nextProps.store;
+
 
 	    if (store !== nextStore) {
 	      warnAboutReceivingStore();
@@ -22004,8 +22012,9 @@
 	  }
 	  /* eslint-enable no-console */
 	  try {
-	    // This error was thrown as a convenience so that you can use this stack
-	    // to find the callsite that caused this warning to fire.
+	    // This error was thrown as a convenience so that if you enable
+	    // "break on all exceptions" in your console,
+	    // it would pause the execution at this line.
 	    throw new Error(message);
 	    /* eslint-disable no-empty */
 	  } catch (e) {}
@@ -22018,9 +22027,10 @@
 
 	/* WEBPACK VAR INJECTION */(function(process) {'use strict';
 
+	exports.__esModule = true;
+
 	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
-	exports.__esModule = true;
 	exports["default"] = connect;
 
 	var _react = __webpack_require__(2);
@@ -22045,11 +22055,11 @@
 
 	var _isPlainObject2 = _interopRequireDefault(_isPlainObject);
 
-	var _hoistNonReactStatics = __webpack_require__(198);
+	var _hoistNonReactStatics = __webpack_require__(204);
 
 	var _hoistNonReactStatics2 = _interopRequireDefault(_hoistNonReactStatics);
 
-	var _invariant = __webpack_require__(199);
+	var _invariant = __webpack_require__(205);
 
 	var _invariant2 = _interopRequireDefault(_invariant);
 
@@ -22089,12 +22099,12 @@
 	var nextVersion = 0;
 
 	function connect(mapStateToProps, mapDispatchToProps, mergeProps) {
-	  var options = arguments.length <= 3 || arguments[3] === undefined ? {} : arguments[3];
+	  var options = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : {};
 
 	  var shouldSubscribe = Boolean(mapStateToProps);
 	  var mapState = mapStateToProps || defaultMapStateToProps;
 
-	  var mapDispatch = undefined;
+	  var mapDispatch = void 0;
 	  if (typeof mapDispatchToProps === 'function') {
 	    mapDispatch = mapDispatchToProps;
 	  } else if (!mapDispatchToProps) {
@@ -22104,10 +22114,10 @@
 	  }
 
 	  var finalMergeProps = mergeProps || defaultMergeProps;
-	  var _options$pure = options.pure;
-	  var pure = _options$pure === undefined ? true : _options$pure;
-	  var _options$withRef = options.withRef;
-	  var withRef = _options$withRef === undefined ? false : _options$withRef;
+	  var _options$pure = options.pure,
+	      pure = _options$pure === undefined ? true : _options$pure,
+	      _options$withRef = options.withRef,
+	      withRef = _options$withRef === undefined ? false : _options$withRef;
 
 	  var checkMergedEquals = pure && finalMergeProps !== defaultMergeProps;
 
@@ -22326,11 +22336,12 @@
 	      };
 
 	      Connect.prototype.render = function render() {
-	        var haveOwnPropsChanged = this.haveOwnPropsChanged;
-	        var hasStoreStateChanged = this.hasStoreStateChanged;
-	        var haveStatePropsBeenPrecalculated = this.haveStatePropsBeenPrecalculated;
-	        var statePropsPrecalculationError = this.statePropsPrecalculationError;
-	        var renderedElement = this.renderedElement;
+	        var haveOwnPropsChanged = this.haveOwnPropsChanged,
+	            hasStoreStateChanged = this.hasStoreStateChanged,
+	            haveStatePropsBeenPrecalculated = this.haveStatePropsBeenPrecalculated,
+	            statePropsPrecalculationError = this.statePropsPrecalculationError,
+	            renderedElement = this.renderedElement;
+
 
 	        this.haveOwnPropsChanged = false;
 	        this.hasStoreStateChanged = false;
@@ -22472,23 +22483,23 @@
 
 	var _createStore2 = _interopRequireDefault(_createStore);
 
-	var _combineReducers = __webpack_require__(193);
+	var _combineReducers = __webpack_require__(199);
 
 	var _combineReducers2 = _interopRequireDefault(_combineReducers);
 
-	var _bindActionCreators = __webpack_require__(195);
+	var _bindActionCreators = __webpack_require__(201);
 
 	var _bindActionCreators2 = _interopRequireDefault(_bindActionCreators);
 
-	var _applyMiddleware = __webpack_require__(196);
+	var _applyMiddleware = __webpack_require__(202);
 
 	var _applyMiddleware2 = _interopRequireDefault(_applyMiddleware);
 
-	var _compose = __webpack_require__(197);
+	var _compose = __webpack_require__(203);
 
 	var _compose2 = _interopRequireDefault(_compose);
 
-	var _warning = __webpack_require__(194);
+	var _warning = __webpack_require__(200);
 
 	var _warning2 = _interopRequireDefault(_warning);
 
@@ -22525,7 +22536,7 @@
 
 	var _isPlainObject2 = _interopRequireDefault(_isPlainObject);
 
-	var _symbolObservable = __webpack_require__(189);
+	var _symbolObservable = __webpack_require__(195);
 
 	var _symbolObservable2 = _interopRequireDefault(_symbolObservable);
 
@@ -22781,8 +22792,9 @@
 /* 185 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var getPrototype = __webpack_require__(186),
-	    isObjectLike = __webpack_require__(188);
+	var baseGetTag = __webpack_require__(186),
+	    getPrototype = __webpack_require__(192),
+	    isObjectLike = __webpack_require__(194);
 
 	/** `Object#toString` result references. */
 	var objectTag = '[object Object]';
@@ -22799,13 +22811,6 @@
 
 	/** Used to infer the `Object` constructor. */
 	var objectCtorString = funcToString.call(Object);
-
-	/**
-	 * Used to resolve the
-	 * [`toStringTag`](http://ecma-international.org/ecma-262/7.0/#sec-object.prototype.tostring)
-	 * of values.
-	 */
-	var objectToString = objectProto.toString;
 
 	/**
 	 * Checks if `value` is a plain object, that is, an object created by the
@@ -22836,7 +22841,7 @@
 	 * // => true
 	 */
 	function isPlainObject(value) {
-	  if (!isObjectLike(value) || objectToString.call(value) != objectTag) {
+	  if (!isObjectLike(value) || baseGetTag(value) != objectTag) {
 	    return false;
 	  }
 	  var proto = getPrototype(value);
@@ -22844,8 +22849,8 @@
 	    return true;
 	  }
 	  var Ctor = hasOwnProperty.call(proto, 'constructor') && proto.constructor;
-	  return (typeof Ctor == 'function' &&
-	    Ctor instanceof Ctor && funcToString.call(Ctor) == objectCtorString);
+	  return typeof Ctor == 'function' && Ctor instanceof Ctor &&
+	    funcToString.call(Ctor) == objectCtorString;
 	}
 
 	module.exports = isPlainObject;
@@ -22855,7 +22860,160 @@
 /* 186 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var overArg = __webpack_require__(187);
+	var Symbol = __webpack_require__(187),
+	    getRawTag = __webpack_require__(190),
+	    objectToString = __webpack_require__(191);
+
+	/** `Object#toString` result references. */
+	var nullTag = '[object Null]',
+	    undefinedTag = '[object Undefined]';
+
+	/** Built-in value references. */
+	var symToStringTag = Symbol ? Symbol.toStringTag : undefined;
+
+	/**
+	 * The base implementation of `getTag` without fallbacks for buggy environments.
+	 *
+	 * @private
+	 * @param {*} value The value to query.
+	 * @returns {string} Returns the `toStringTag`.
+	 */
+	function baseGetTag(value) {
+	  if (value == null) {
+	    return value === undefined ? undefinedTag : nullTag;
+	  }
+	  value = Object(value);
+	  return (symToStringTag && symToStringTag in value)
+	    ? getRawTag(value)
+	    : objectToString(value);
+	}
+
+	module.exports = baseGetTag;
+
+
+/***/ },
+/* 187 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var root = __webpack_require__(188);
+
+	/** Built-in value references. */
+	var Symbol = root.Symbol;
+
+	module.exports = Symbol;
+
+
+/***/ },
+/* 188 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var freeGlobal = __webpack_require__(189);
+
+	/** Detect free variable `self`. */
+	var freeSelf = typeof self == 'object' && self && self.Object === Object && self;
+
+	/** Used as a reference to the global object. */
+	var root = freeGlobal || freeSelf || Function('return this')();
+
+	module.exports = root;
+
+
+/***/ },
+/* 189 */
+/***/ function(module, exports) {
+
+	/* WEBPACK VAR INJECTION */(function(global) {/** Detect free variable `global` from Node.js. */
+	var freeGlobal = typeof global == 'object' && global && global.Object === Object && global;
+
+	module.exports = freeGlobal;
+
+	/* WEBPACK VAR INJECTION */}.call(exports, (function() { return this; }())))
+
+/***/ },
+/* 190 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var Symbol = __webpack_require__(187);
+
+	/** Used for built-in method references. */
+	var objectProto = Object.prototype;
+
+	/** Used to check objects for own properties. */
+	var hasOwnProperty = objectProto.hasOwnProperty;
+
+	/**
+	 * Used to resolve the
+	 * [`toStringTag`](http://ecma-international.org/ecma-262/7.0/#sec-object.prototype.tostring)
+	 * of values.
+	 */
+	var nativeObjectToString = objectProto.toString;
+
+	/** Built-in value references. */
+	var symToStringTag = Symbol ? Symbol.toStringTag : undefined;
+
+	/**
+	 * A specialized version of `baseGetTag` which ignores `Symbol.toStringTag` values.
+	 *
+	 * @private
+	 * @param {*} value The value to query.
+	 * @returns {string} Returns the raw `toStringTag`.
+	 */
+	function getRawTag(value) {
+	  var isOwn = hasOwnProperty.call(value, symToStringTag),
+	      tag = value[symToStringTag];
+
+	  try {
+	    value[symToStringTag] = undefined;
+	    var unmasked = true;
+	  } catch (e) {}
+
+	  var result = nativeObjectToString.call(value);
+	  if (unmasked) {
+	    if (isOwn) {
+	      value[symToStringTag] = tag;
+	    } else {
+	      delete value[symToStringTag];
+	    }
+	  }
+	  return result;
+	}
+
+	module.exports = getRawTag;
+
+
+/***/ },
+/* 191 */
+/***/ function(module, exports) {
+
+	/** Used for built-in method references. */
+	var objectProto = Object.prototype;
+
+	/**
+	 * Used to resolve the
+	 * [`toStringTag`](http://ecma-international.org/ecma-262/7.0/#sec-object.prototype.tostring)
+	 * of values.
+	 */
+	var nativeObjectToString = objectProto.toString;
+
+	/**
+	 * Converts `value` to a string using `Object.prototype.toString`.
+	 *
+	 * @private
+	 * @param {*} value The value to convert.
+	 * @returns {string} Returns the converted string.
+	 */
+	function objectToString(value) {
+	  return nativeObjectToString.call(value);
+	}
+
+	module.exports = objectToString;
+
+
+/***/ },
+/* 192 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var overArg = __webpack_require__(193);
 
 	/** Built-in value references. */
 	var getPrototype = overArg(Object.getPrototypeOf, Object);
@@ -22864,7 +23022,7 @@
 
 
 /***/ },
-/* 187 */
+/* 193 */
 /***/ function(module, exports) {
 
 	/**
@@ -22885,7 +23043,7 @@
 
 
 /***/ },
-/* 188 */
+/* 194 */
 /***/ function(module, exports) {
 
 	/**
@@ -22920,14 +23078,14 @@
 
 
 /***/ },
-/* 189 */
+/* 195 */
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports = __webpack_require__(190);
+	module.exports = __webpack_require__(196);
 
 
 /***/ },
-/* 190 */
+/* 196 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(global, module) {'use strict';
@@ -22936,7 +23094,7 @@
 	  value: true
 	});
 
-	var _ponyfill = __webpack_require__(192);
+	var _ponyfill = __webpack_require__(198);
 
 	var _ponyfill2 = _interopRequireDefault(_ponyfill);
 
@@ -22959,10 +23117,10 @@
 
 	var result = (0, _ponyfill2['default'])(root);
 	exports['default'] = result;
-	/* WEBPACK VAR INJECTION */}.call(exports, (function() { return this; }()), __webpack_require__(191)(module)))
+	/* WEBPACK VAR INJECTION */}.call(exports, (function() { return this; }()), __webpack_require__(197)(module)))
 
 /***/ },
-/* 191 */
+/* 197 */
 /***/ function(module, exports) {
 
 	module.exports = function(module) {
@@ -22978,7 +23136,7 @@
 
 
 /***/ },
-/* 192 */
+/* 198 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -23006,7 +23164,7 @@
 	};
 
 /***/ },
-/* 193 */
+/* 199 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {'use strict';
@@ -23020,7 +23178,7 @@
 
 	var _isPlainObject2 = _interopRequireDefault(_isPlainObject);
 
-	var _warning = __webpack_require__(194);
+	var _warning = __webpack_require__(200);
 
 	var _warning2 = _interopRequireDefault(_warning);
 
@@ -23154,7 +23312,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4)))
 
 /***/ },
-/* 194 */
+/* 200 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -23184,7 +23342,7 @@
 	}
 
 /***/ },
-/* 195 */
+/* 201 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -23240,7 +23398,7 @@
 	}
 
 /***/ },
-/* 196 */
+/* 202 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -23251,7 +23409,7 @@
 
 	exports['default'] = applyMiddleware;
 
-	var _compose = __webpack_require__(197);
+	var _compose = __webpack_require__(203);
 
 	var _compose2 = _interopRequireDefault(_compose);
 
@@ -23303,7 +23461,7 @@
 	}
 
 /***/ },
-/* 197 */
+/* 203 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -23346,7 +23504,7 @@
 	}
 
 /***/ },
-/* 198 */
+/* 204 */
 /***/ function(module, exports) {
 
 	/**
@@ -23402,7 +23560,7 @@
 
 
 /***/ },
-/* 199 */
+/* 205 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {/**
@@ -23460,7 +23618,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4)))
 
 /***/ },
-/* 200 */
+/* 206 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -23482,11 +23640,11 @@
 	exports.hideOptionsPanel = hideOptionsPanel;
 	exports.hideBottomPanel = hideBottomPanel;
 
-	var _actionTypes = __webpack_require__(201);
+	var _actionTypes = __webpack_require__(207);
 
 	var types = _interopRequireWildcard(_actionTypes);
 
-	var _mockSurvey = __webpack_require__(202);
+	var _mockSurvey = __webpack_require__(208);
 
 	var _mockSurvey2 = _interopRequireDefault(_mockSurvey);
 
@@ -23572,7 +23730,7 @@
 	};
 
 /***/ },
-/* 201 */
+/* 207 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -23598,7 +23756,7 @@
 	var DEREGISTER_RESPONSE = exports.DEREGISTER_RESPONSE = 'DEREGISTER_RESPONSE';
 
 /***/ },
-/* 202 */
+/* 208 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -23671,7 +23829,7 @@
 	exports.default = mockSurvey;
 
 /***/ },
-/* 203 */
+/* 209 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -23690,7 +23848,7 @@
 
 	var _redux = __webpack_require__(183);
 
-	var _index = __webpack_require__(200);
+	var _index = __webpack_require__(206);
 
 	var SurveyActions = _interopRequireWildcard(_index);
 
@@ -23736,15 +23894,11 @@
 				}
 				return _react2.default.createElement(
 					'div',
-					{ className: 'survey-box-main flexDirection spaceAround ' },
+					{ className: 'surveyHome flexAlignCenterJustifyCenter flexDirectionColumn ' },
 					_react2.default.createElement(
 						'div',
-						{ className: 'survey-check-container centerAll' },
-						_react2.default.createElement(
-							'div',
-							{ className: 'survey-check-text' },
-							messageContent
-						)
+						{ className: 'flexAlignCenterJustifyCenter' },
+						messageContent
 					)
 				);
 			}
@@ -23777,7 +23931,7 @@
 	exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(SurveyMessage);
 
 /***/ },
-/* 204 */
+/* 210 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -23796,7 +23950,7 @@
 
 	var _redux = __webpack_require__(183);
 
-	var _index = __webpack_require__(200);
+	var _index = __webpack_require__(206);
 
 	var SurveyActions = _interopRequireWildcard(_index);
 
@@ -23846,15 +24000,15 @@
 	      if (this.props.index > 0 && this.props.index <= this.props.totalSurveys) {
 	        directions = _react2.default.createElement(
 	          'div',
-	          { className: 'prevNext displayFlex spaceBetween' },
+	          { className: 'prevNext displayFlex flexAlignCenterJustifySpaceBetween' },
 	          _react2.default.createElement(
 	            'div',
-	            { className: 'nav-key centerAll', onClick: this.previous },
-	            'Previuos'
+	            { className: 'nav-key flexAlignCenterJustifyCenter', onClick: this.previous },
+	            'Previous'
 	          ),
 	          _react2.default.createElement(
 	            'div',
-	            { className: 'nav-key centerAll', onClick: this.skip },
+	            { className: 'nav-key flexAlignCenterJustifyCenter', onClick: this.skip },
 	            'Skip'
 	          ),
 	          ';'
@@ -23862,13 +24016,18 @@
 	      } else if (this.props.index === 0) {
 	        directions = _react2.default.createElement(
 	          'div',
-	          { className: 'nav-key centerAll', onClick: this.skip },
-	          'Skip'
+	          { className: 'prevNext displayFlex flexAlignCenterJustifyCenter' },
+	          ' ',
+	          _react2.default.createElement(
+	            'div',
+	            { className: 'nav-key flexAlignCenterJustifyCenter', onClick: this.skip },
+	            'Skip'
+	          )
 	        );
 	      }
 	      return _react2.default.createElement(
 	        'div',
-	        { className: 'surveyNavigation displayFlex spaceBetween' },
+	        { className: 'surveyNavigation displayFlex flexAlignCenterJustifySpaceAround' },
 	        directions
 	      );
 	    }
@@ -23899,7 +24058,7 @@
 	exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(SurveyNavigation);
 
 /***/ },
-/* 205 */
+/* 211 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -23918,7 +24077,7 @@
 
 	var _redux = __webpack_require__(183);
 
-	var _index = __webpack_require__(200);
+	var _index = __webpack_require__(206);
 
 	var SurveyActions = _interopRequireWildcard(_index);
 
@@ -23964,7 +24123,7 @@
 	        optionsList = this.props.surveyQuestions[this.props.index].options.map(function (option) {
 	          return _react2.default.createElement(
 	            'div',
-	            { onClick: _this2.nextQuestion, className: 'decision-key-options centerAll', id: option.id, key: option.id },
+	            { onClick: _this2.nextQuestion, className: 'flexAlignCenterJustifyCenter', id: option.id, key: option.id },
 	            option.option
 	          );
 	        });
@@ -23972,7 +24131,7 @@
 
 	      return _react2.default.createElement(
 	        'div',
-	        { className: 'inner-container displayFlex spaceBetween wrap surveyOptions' },
+	        { className: 'surveyOptions flexAlignCenterJustifySpaceBetween flexWrap' },
 	        optionsList
 	      );
 	    }
@@ -24003,7 +24162,7 @@
 	exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(SurveyOptions);
 
 /***/ },
-/* 206 */
+/* 212 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -24022,16 +24181,16 @@
 	};
 
 /***/ },
-/* 207 */
+/* 213 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(208);
+	var content = __webpack_require__(214);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
-	var update = __webpack_require__(213)(content, {});
+	var update = __webpack_require__(216)(content, {});
 	if(content.locals) module.exports = content.locals;
 	// Hot Module Replacement
 	if(false) {
@@ -24048,21 +24207,21 @@
 	}
 
 /***/ },
-/* 208 */
+/* 214 */
 /***/ function(module, exports, __webpack_require__) {
 
-	exports = module.exports = __webpack_require__(209)();
+	exports = module.exports = __webpack_require__(215)();
 	// imports
 
 
 	// module
-	exports.push([module.id, "\n/*\nTo change this license header, choose License Headers in Project Properties.\nTo change this template file, choose Tools | Templates\nand open the template in the editor.\n*/\n/* \n    Created on : Oct 31, 2016, 11:19:14 AM\n    Author     : dharani\n*/\n/* Font Style and families are listed*/\n@font-face {\n    font-family: 'Bryant';\n    font-style: normal;\n    font-weight: 500;\n    src: url(" + __webpack_require__(210) + ");\n}\n@font-face {\n    font-family: 'Myriad-Bold';\n    font-style: normal;\n    font-weight: 500;\n    src: url(" + __webpack_require__(211) + ");\n}\n@font-face {\n    font-family: 'Myriad-Regular';\n    font-style: normal;\n    font-weight: 500;\n    src: url(" + __webpack_require__(212) + ");\n}\n\n.centerAll {\n    display: flex;\n    justify-content: center;\n    align-items: center;\n    display: -webkit-flex; /* Safari */\n    -webkit-justify-content: center; \n    -webkit-align-items: center;\n    display: -moz-flex; /* Mozilla */\n    -moz-justify-content: center; \n    -moz-align-items: center;\n}\n/* Display flex and its properties are grouped for particular use */\n.displayFlex {\n    display: flex;\n    display: -webkit-flex; /* Safari */\n    display: -moz-flex; /* Mozilla */\n\n}\n.centerAll {\n    display: flex;\n    justify-content: center;\n    align-items: center;\n    display: -webkit-flex; /* Safari */\n    -webkit-justify-content: center; \n    -webkit-align-items: center;\n    display: -moz-flex; /* Mozilla */\n    -moz-justify-content: center; \n    -moz-align-items: center;\n}\n.flexEnd {\n    display: flex;\n    justify-content: center;\n    align-items: flex-end;\n    display: -webkit-flex; /* Safari */\n    -webkit-justify-content: center; \n    -webkit-align-items: flex-end;\n    display: -moz-flex; /* Mozilla */\n    -moz-justify-content: center; \n    -moz-align-items: flex-end;\n}\n.flexEndAlign {\n    display: flex;\n    align-items: flex-end;\n    display: -webkit-flex; /* Safari */\n    -webkit-align-items: flex-end;\n    display: -moz-flex; /* Mozilla */\n    -moz-align-items: flex-end;\n}\n.flexAlignEnd {\n    display: flex;\n    justify-content: flex-end;\n    display: -webkit-flex; /* Safari */\n    -webkit-justify-content: flex-end;\n    display: -moz-flex; /* Mozilla */\n    -moz-justify-content: flex-end;\n}\n.flexEndAll {\n    display: flex;\n    justify-content: flex-end;\n    align-items: flex-end;\n    display: -webkit-flex; /* Safari */\n    -webkit-justify-content: flex-end; \n    -webkit-align-items: flex-end;\n    display: -moz-flex; /* Mozilla */\n    -moz-justify-content: flex-end; \n    -moz-align-items: flex-end;\n}\n.spaceAround {\n    display: flex;\n    justify-content: space-around;\n    align-items: center;\n    display: -webkit-flex; /* Safari */\n    -webkit-justify-content: space-around; \n    -webkit-align-items: center;\n    display: -moz-flex; /* Mozilla */\n    -moz-justify-content: space-around; \n    -moz-align-items: center;\n}\n.flexStart {\n    display: flex;\n    justify-content: flex-start;\n    align-items: center;\n    display: -webkit-flex; /* Safari */\n    -webkit-justify-content: flex-start; \n    -webkit-align-items: center;\n    display: -moz-flex; /* Mozilla */\n    -moz-justify-content: flex-start; \n    -moz-align-items: center;\n}\n.flexStartCenter {\n    display: flex;\n    justify-content: center;\n    align-items: flex-start;\n    display: -webkit-flex; /* Safari */\n    -webkit-justify-content: center; \n    -webkit-align-items: flex-start;\n    display: -moz-flex; /* Mozilla */\n    -moz-justify-content: center; \n    -moz-align-items: flex-start;\n}\n.centerItems {\n    display: flex;\n    align-items: center;\n    display: -webkit-flex; /* Safari */\n    -webkit-align-items: center;\n    display: -moz-flex; /* Mozilla */\n    -moz-align-items: center;\n}\n.justifyContent {\n    display: flex;\n    justify-content: center;\n    display: -webkit-flex; /* Safari */\n    -webkit-justify-content: center; \n    display: -moz-flex; /* Mozilla */\n    -moz-justify-content: center; \n}\n.spaceBetween {\n    display: flex;\n    justify-content: space-between;\n    align-items: center;\n    display: -webkit-flex; /* Safari */\n    -webkit-justify-content: space-between; \n    -webkit-align-items: center;\n    display: -moz-flex; /* Mozilla */\n    -moz-justify-content: space-between; \n    -moz-align-items: center;\n}\n.centerContent {\n    display: flex;\n    justify-content: center;\n    display: -webkit-flex; /* Safari */\n    -webkit-justify-content: center; \n    display: -moz-flex; /* Mozilla */\n    -moz-justify-content: center; \n}\n.flexDirection {\n    dispaly: flex;\n    flex-direction: column;\n    display: -webkit-flex; /* Safari */\n    -webkit-flex-direction: column; \n    display: -moz-flex; /* Mozilla */\n    -moz-flex-direction: column; \n}\n.wrap{\n    dispaly: flex;\n    flex-wrap: wrap;\n    display: -webkit-flex; /* Safari */\n    -webkit-flex-wrap: wrap; \n    display: -moz-flex; /* Mozilla */\n    -moz-flex-wrap: wrap; \n}\n\n/* Html layout header, section and footer speciivations*/\nheader {\n    height: 11%;\n    font-size: 35px;\n    font-family: 'Bryant';\n    width: 100%;\n    margin: 0 auto;\n}\n.header-title {\n    width: 50%;\n    display: flex;\n    justify-content: center;\n}\n.header-right {\n    width: 25%;\n}\nsection {\n    height:70%;\n}\nfooter {\n    height: 19%;\n    display: flex;\n}\n.footerClass {\n    width: 100%;\n    height: 100%;\n}\n.content-body {\n    background-color: #ffffff;\n    margin: 0 auto;\n    width: 97%;\n    height: 100%;\n}\n.container-main {\n    width: 94%;\n    height: 100%;\n    margin: 0 auto;\n}\n.main {\n    width: 100%;\n    height: 100%;\n}\n\nhtml, body {\n    background-color: #59c4bc;\n    height: 100%;\n    color: #ffffff;\n    margin: 0 auto;\n}\n.menu-div{\n    width:100%;\n    height:100%;\n}\n.cal-image {\n    width:50%;\n}\n.home-image {\n    width:50%;\n}\n.survey-alert-container{\n    width: 95%;\n    height: 80%;\n    margin: auto;\n}\n.survey-container{\n    width: 95%;\n    height: 58%;\n    margin: 0 auto;\n    background-color: #16bad6;\n    margin-bottom: 2%;\n    border-radius: 10px;\n}\n.decision-container{\n    width:100%;\n    height:35%;\n}\n.inner-container{\n    width: 85%;\n    height: 30%;\n    margin: auto;\n}\n.decision-key {\n    border-radius: 15px;\n    width:35%;\n    height:100%;\n    background-color: #F4B936;\n    color:#ffffff;\n    font-size: 22px;\n    font-family: 'Myriad-Bold';\n}\n.decision-key-controls {\n    border-radius: 15px;\n    width:30%;\n    height:45%;\n    background-color: #F4B936;\n    color:#ffffff;\n    font-size: 22px;\n    font-family: 'Myriad-Bold';\n}\n.nav-key {\n    border-radius: 15px;\n    width:45%;\n    height:73%;\n    background-color: #F4B936;\n    color:#ffffff;\n    font-size: 22px;\n    font-family: 'Myriad-Bold';\n}\n.decision-key-options {\n    border: 3px solid white;\n    border-radius: 15px;\n    width:45%;\n    height:45%;\n    background-color: #F4B936;\n    color:#ffffff;\n    font-size: 22px;\n    font-family: 'Myriad-Bold';\n}\n.survey-box-content {\n    width: 90%;\n    height: 75%;\n    margin: auto;\n    border: 4px solid white;\n    border-radius: 14px;\n    background-color: #16bad6;\n}\n.survey-box-main {\n    width: 90%;\n    height: 75%;\n    margin: 0 auto;\n    border: 4px solid white;\n    border-radius: 14px;\n    background-color: #16bad6;\n}\n.survey-msg-container{\n    width:100%;\n    margin: auto;\n    height:40%;\n}\n.survey-msg\n{ \n    height: 90%;\n    font-size: 30px;\n    font-family: 'Myriad-Bold';\n}\n.survey-check-container{\n    width:100%;\n    margin: auto;\n    height:40%;\n}\n.survey-check-text{\n    font-size: 27px;\n    font-family: 'Myriad-Bold';\n    height:100%;\n}\n.survey-navigation {\n    display: none;\n}\n.surevyControls {\n    //display: none;\n}\n.surveyOptions {\n    display: flex;\n}\n.survey-address-container  {\n    width:  100%;\n    height: 50%;\n}\n.address-time-date  {\n    height: 75%;\n    width: 95%;\n    margin: 0 auto;\n}\n.surveyNavContainer {\n    height: 15%;\n}\n.surveyNav {\n    height: 100%;\n    width: 70%;\n}\n\n.surveyNavigation {\n    width: 90%;\n    height: 15%;\n    margin: 0 auto;\n}\n.surveyActionContainer {\n    width: 80%;\n    height: 30%;\n    margin: 0 auto;\n}\n.prevNext {\n    width: 100%;\n    height: 100%;\n}\n.initalAvailableControls{\n    width: 100%;\n    height: 100%;\n}", ""]);
+	exports.push([module.id, "\r\n/*\r\nTo change this license header, choose License Headers in Project Properties.\r\nTo change this template file, choose Tools | Templates\r\nand open the template in the editor.\r\n*/\r\n/* \r\n    Created on : Oct 31, 2016, 11:19:14 AM\r\n    Author     : dharani\r\n*/\r\n\r\n.container-main {\r\n    width: 94%;\r\n    height: 100%;\r\n    margin: 0 auto;\r\n}\r\n.containerMain {\r\n    width: 100%;\r\n    height: 100%;\r\n}\r\n\r\nheader {\r\n    width: 100%;\r\n    height: 9%;\r\n    font-size: 35px;\r\n    font-family: 'Bryant';\r\n    margin: 0 auto;\r\n}\r\n.headerTitle {\r\n    width: 50%;\r\n    display: flex;\r\n    display: -webkit-flex; /* Safari */\r\n    display: -moz-flex; /* Mozilla */\r\n    justify-content: center;\r\n}\r\n.headerRight {\r\n    width: 25%;\r\n}\r\n/*Display resident name*/\r\n.displayResidentName {\r\n    width: 25%;\r\n    display: flex;\r\n    display: -webkit-flex; /* Safari */\r\n    display: -moz-flex; /* Mozilla */\r\n    align-items: center;\r\n}\r\n.residentName {\r\n    font-family: Times New Roman; \r\n    font-weight: bold;\r\n    font-size: 25px; \r\n    color: red;\r\n}\r\n/*Dispay resident name ends*/\r\n\r\nsection {\r\n    height: 76%;\r\n}\r\nfooter {\r\n    height: 15%;\r\n}\r\n.footerMain {\r\n    width: 100%;\r\n    height: 100%;\r\n}\r\nfooter > div > div > img {\r\n    width: 130px;\r\n    height: 130px;\r\n}\r\n.sideFooter {\r\n    display: none;\r\n}\r\n.sideFooter > div {\r\n    width: 100%;\r\n    height: 100%;\r\n}\r\n.contentBody {\r\n    background-color: #ffffff;\r\n    margin: 0 auto;\r\n    width: 97%;\r\n    height: 100%;\r\n}\r\n.contentContainer {\r\n    width: 100%;\r\n    height: 100%;\r\n}\r\n.contentEmpty {\r\n    background-color: #ffffff;\r\n    margin: 0 auto;\r\n    width: 97%;\r\n    height: 100%;\r\n    color: #fcb040;\r\n    font-family: 'Myriad-Regular';\r\n    font-size: 30px;\r\n    text-align: center;\r\n}\r\n\r\n/* Scroll bar Style starts */\r\n::-webkit-scrollbar {\r\n    width: 5px;\r\n}\r\n::-webkit-scrollbar-thumb {\r\n    border-radius: 4px;\r\n    background-color: #FCB040;\r\n}\r\n/* Scroll bar Style ends*/\r\n\r\n/* Display flex and its properties are grouped for particular use */\r\n.displayFlex {\r\n    display: flex;\r\n    display: -webkit-flex; /* Safari */\r\n    display: -moz-flex; /* Mozilla */\r\n}\r\n/*centerAll*/\r\n.flexAlignCenterJustifyCenter {  \r\n    display: flex;\r\n    justify-content: center;\r\n    align-items: center;\r\n    display: -webkit-flex; /* Safari */\r\n    -webkit-justify-content: center; \r\n    -webkit-align-items: center;\r\n    display: -moz-flex; /* Mozilla */\r\n    -moz-justify-content: center; \r\n    -moz-align-items: center;\r\n}\r\n/*flexEnd*/\r\n.flexAlignEndJustifyCenter {       \r\n    display: flex;\r\n    justify-content: center;\r\n    align-items: flex-end;\r\n    display: -webkit-flex; /* Safari */\r\n    -webkit-justify-content: center; \r\n    -webkit-align-items: flex-end;\r\n    display: -moz-flex; /* Mozilla */\r\n    -moz-justify-content: center; \r\n    -moz-align-items: flex-end;\r\n}\r\n.flexAlignEndJustifySapceBetween {\r\n    display: flex;\r\n    justify-content: space-between;\r\n    align-items: flex-end;\r\n    display: -webkit-flex; /* Safari */\r\n    -webkit-justify-content: space-between; \r\n    -webkit-align-items: flex-end;\r\n    display: -moz-flex; /* Mozilla */\r\n    -moz-justify-content: space-between; \r\n    -moz-align-items: flex-end;\r\n}\r\n/*flexEndAlign*/\r\n.flexAlignEnd {   \r\n    display: flex;\r\n    align-items: flex-end;\r\n    display: -webkit-flex; /* Safari */\r\n    -webkit-align-items: flex-end;\r\n    display: -moz-flex; /* Mozilla */\r\n    -moz-align-items: flex-end;\r\n}\r\n/*flexJustifyCenter*/\r\n.flexAlignCenterJustifyEnd {       \r\n    display: -webkit-flex; /* Safari */\r\n    justify-content: flex-end;\r\n    align-items: center;\r\n    display: -webkit-flex; /* Safari */\r\n    -webkit-justify-content: flex-end;\r\n    -webkit-align-items: center;\r\n    display: -moz-flex; /* Mozilla */\r\n    -moz-justify-content: flex-end;\r\n    -moz-align-items: center;\r\n}\r\n.flexAlignStartJustifyStart {   \r\n    display: -webkit-flex; /* Safari */\r\n    justify-content: flex-start;\r\n    align-items: center;\r\n    display: -webkit-flex; /* Safari */\r\n    -webkit-justify-content: flex-start;\r\n    -webkit-align-items: center;\r\n    display: -moz-flex; /* Mozilla */\r\n    -moz-justify-content: flex-start;\r\n    -moz-align-items: center;\r\n}\r\n/*flexJustifyStartAlignCenter*/\r\n.flexAlignCenterJustifyStart {    \r\n    display: -webkit-flex; /* Safari */\r\n    justify-content: flex-start;\r\n    align-items: center;\r\n    display: -webkit-flex; /* Safari */\r\n    -webkit-justify-content: flex-start;\r\n    -webkit-align-items: center;\r\n    display: -moz-flex; /* Mozilla */\r\n    -moz-justify-content: flex-start;\r\n    -moz-align-items: center;\r\n}\r\n/*flexEndAll*/\r\n.flexAlignEndJustifyEnd {     \r\n    display: flex;\r\n    justify-content: flex-end;\r\n    align-items: flex-end;\r\n    display: -webkit-flex; /* Safari */\r\n    -webkit-justify-content: flex-end; \r\n    -webkit-align-items: flex-end;\r\n    display: -moz-flex; /* Mozilla */\r\n    -moz-justify-content: flex-end; \r\n    -moz-align-items: flex-end;\r\n}\r\n/*spaceAround*/\r\n.flexAlignCenterJustifySpaceAround {      \r\n    display: flex;\r\n    justify-content: space-around;\r\n    align-items: center;\r\n    display: -webkit-flex; /* Safari */\r\n    -webkit-justify-content: space-around; \r\n    -webkit-align-items: center;\r\n    display: -moz-flex; /* Mozilla */\r\n    -moz-justify-content: space-around; \r\n    -moz-align-items: center;\r\n}\r\n/*spaceAroundOnly*/\r\n.flexJustifySpaceAround {        \r\n    display: flex;\r\n    justify-content: space-around;\r\n    display: -webkit-flex; /* Safari */\r\n    -webkit-justify-content: space-around; \r\n    display: -moz-flex; /* Mozilla */\r\n    -moz-justify-content: space-around; \r\n}\r\n/*flexStart*/\r\n.flexAlignCenterJustifyStart {     \r\n    display: flex;\r\n    justify-content: flex-start;\r\n    align-items: center;\r\n    display: -webkit-flex; /* Safari */\r\n    -webkit-justify-content: flex-start; \r\n    -webkit-align-items: center;\r\n    display: -moz-flex; /* Mozilla */\r\n    -moz-justify-content: flex-start; \r\n    -moz-align-items: center;\r\n}\r\n/*flexStartCenter*/\r\n.flexAlignStartJustifyCenter {        \r\n    display: flex;\r\n    justify-content: center;\r\n    align-items: flex-start;\r\n    display: -webkit-flex; /* Safari */\r\n    -webkit-justify-content: center; \r\n    -webkit-align-items: flex-start;\r\n    display: -moz-flex; /* Mozilla */\r\n    -moz-justify-content: center; \r\n    -moz-align-items: flex-start;\r\n}\r\n.flexAlignStartJustifyEnd {        \r\n    display: flex;\r\n    justify-content: flex-end;\r\n    align-items: flex-start;\r\n    display: -webkit-flex; /* Safari */\r\n    -webkit-justify-content: flex-end; \r\n    -webkit-align-items: flex-start;\r\n    display: -moz-flex; /* Mozilla */\r\n    -moz-justify-content: flex-end; \r\n    -moz-align-items: flex-start;\r\n}\r\n/*centerItems*/\r\n.flexAlignCenter {       \r\n    display: flex;\r\n    align-items: center;\r\n    display: -webkit-flex; /* Safari */\r\n    -webkit-align-items: center;\r\n    display: -moz-flex; /* Mozilla */\r\n    -moz-align-items: center;\r\n}\r\n/*justifyContent*/\r\n.flexJustifyCenter {      \r\n    display: flex;\r\n    justify-content: center;\r\n    display: -webkit-flex; /* Safari */\r\n    -webkit-justify-content: center; \r\n    display: -moz-flex; /* Mozilla */\r\n    -moz-justify-content: center; \r\n}\r\n/*spaceBetween*/\r\n.flexAlignCenterJustifySpaceBetween {      \r\n    display: flex;\r\n    justify-content: space-between;\r\n    align-items: center;\r\n    display: -webkit-flex; /* Safari */\r\n    -webkit-justify-content: space-between; \r\n    -webkit-align-items: center;\r\n    display: -moz-flex; /* Mozilla */\r\n    -moz-justify-content: space-between; \r\n    -moz-align-items: center;\r\n}\r\n/*centerContent*/\r\n.flexJustifyCenter {       \r\n    display: flex;\r\n    justify-content: center;\r\n    display: -webkit-flex; /* Safari */\r\n    -webkit-justify-content: center; \r\n    display: -moz-flex; /* Mozilla */\r\n    -moz-justify-content: center; \r\n}\r\n/*flexDirection*/\r\n.flexDirectionColumn {    \r\n    dispaly: flex;\r\n    flex-direction: column;\r\n    display: -webkit-flex; /* Safari */\r\n    -webkit-flex-direction: column; \r\n    display: -moz-flex; /* Mozilla */\r\n    -moz-flex-direction: column; \r\n}\r\n/*wrap*/\r\n.flexWrap{       \r\n    display: flex;\r\n    flex-wrap: wrap;\r\n    display: -webkit-flex; /* Safari */\r\n    -webkit-flex-wrap: wrap; \r\n    display: -moz-flex; /* Mozilla */\r\n    -moz-flex-wrap: wrap; \r\n}\r\n/*noWrap*/\r\n.flexNoWrap { \r\n    display: flex;\r\n    flex-wrap: no-wrap;\r\n    display: -webkit-flex; /* Safari */\r\n    -webkit-flex-wrap: no-wrap; \r\n    display: -moz-flex; /* Mozilla */\r\n    -moz-flex-wrap: no-wrap; \r\n}\r\n\r\n/* Content shodow starts*/\r\n.contentShadow{\r\n    -webkit-box-shadow: 7px 7px 1px 0px #46B6AD;\r\n    -moz-box-shadow: 7px 7px 1px 0px #46B6AD;\r\n    box-shadow: 7px 7px 1px 0px #46B6AD;\r\n}\r\n.boxShadow{\r\n    -webkit-box-shadow: 7px 7px 1px 0px #13A2BA;\r\n    -moz-box-shadow: 7px 7px 1px 0px #13A2BA;\r\n    box-shadow: 7px 7px 1px 0px #13A2BA;\r\n}\r\n.boxShadow1{\r\n    -webkit-box-shadow: 7px 40px 1px 0px #13A2BA;\r\n    -moz-box-shadow: 7px 40px 1px 0px #13A2BA;\r\n    box-shadow: 7px 40px 1px 0px #13A2BA;\r\n}\r\n.wholeBoxShadow {\r\n    box-shadow: -1px 1px 5px 8px rgba(93, 218, 218, 0.27);\r\n    -webkit-box-shadow: -1px 1px 5px 8px rgba(93, 218, 218, 0.27);\r\n    -moz-box-shadow: -1px 1px 5px 8px rgba(93, 218, 218, 0.27);\r\n}\r\n/* Content shodow stops*/\r\n\r\nhtml, body {\r\n    background-color: #59c4bc;\r\n    height: 100%;\r\n    color: #ffffff;\r\n    margin: 0 auto;\r\n}\r\n.surveyContentContainer {\r\n    width: 90%;\r\n    height: 80%;\r\n    margin: 0 auto;\r\n}\r\n.surveyContent {\r\n    width: 80%;\r\n    height: 58%;\r\n    margin: 0 auto;\r\n    background-color: #16bad6;\r\n    margin-bottom: 2%;\r\n    border-radius: 10px;\r\n}\r\n.surveyHome {\r\n    width: 90%;\r\n    height: 80%;\r\n    margin: 0 auto;\r\n    font-family: 'Myriad-Bold';\r\n    font-size: 30px;\r\n    color: #FFFFFF;\r\n}\r\n.surveyHome > div {\r\n    width: 90%;\r\n    height: 30%;\r\n    margin: 0 auto;\r\n}\r\n.surveyQuestionsContainer {\r\n    width: 90%;\r\n    height: 90%;\r\n    margin: 0 auto;\r\n    font-family: 'Myriad-Bold';\r\n    font-size: 30px;\r\n    color: #FFFFFF;\r\n}\r\n.surveyQuestion {\r\n    width: 100%;\r\n    height: 75%;\r\n    overflow-y: scroll;\r\n}\r\n.surveySignature {\r\n    width: 100%;\r\n    height: 25%;\r\n}\r\n.surveyActionContainer {\r\n    width: 80%;\r\n    height: 30%;\r\n}\r\n.surveyActions {\r\n    width: 90%;\r\n    height: 100%;\r\n    margin: 0 auto;\r\n}\r\n.surveyActions > div {\r\n    width: 45%;\r\n    height: 50%;\r\n    background-color: #FCB040;\r\n    border-radius: 10px;\r\n    font-family: 'Myriad-Bold';\r\n    font-size: 35px;\r\n}\r\n.surveyOptions {\r\n    width: 100%;\r\n    height: 25%;\r\n}\r\n.surveyOptions > div {\r\n    width: 48%;\r\n    height: 43%;\r\n    background-color: #FCB040;\r\n    border-radius: 10px;\r\n    font-family: 'Myriad-Bold';\r\n    font-size: 35px;\r\n    text-align: center;\r\n}\r\n.surveyNavigation {\r\n    width: 90%;\r\n    height: 20%;\r\n    margin: 0 auto;\r\n}\r\n.surveyNavigation > div {\r\n    width: 100%;\r\n    height: 100%;\r\n}\r\n.surveyNavigation > div > div {\r\n    width: 36%;\r\n    height: 43%;\r\n    background-color: #16bad6;\r\n    border-radius: 10px;\r\n    font-family: 'Myriad-Bold';\r\n    font-size: 35px;\r\n}\r\n.initalAvailableControls{\r\n    width: 100%;\r\n    height: 100%;\r\n}\r\n.prevNext {\r\n    width: 100%;\r\n    height: 100%;\r\n}\r\n\r\n/*IPAD Portrait mode starts*/\r\n@media only screen and (min-device-width: 768px) and (max-device-height: 1024px) and (orientation : portrait){\r\n    .surveyContentContainer {\r\n        height: 90%;\r\n    }\r\n    .surveyNavigation {\r\n        height: 15%;\r\n    }\r\n    .surveyContent {\r\n        width: 95%;\r\n    }\r\n    .surveyActions > div {\r\n        width: 43%;\r\n        height: 40%;\r\n        font-size: 32px;\r\n    }\r\n    .surveySignature > div {\r\n        font-size: 20px;    \r\n    }\r\n    .surveyQuestion {\r\n        height: 93%;\r\n        font-size: 28px;\r\n    }\r\n    .surveyOptions > div {\r\n        font-size: 25px;\r\n        height: 40%;\r\n        width: 38%;\r\n    }\r\n    .surveyNavigation > div > div {\r\n        font-size: 28px;\r\n        height: 73%;\r\n    }\r\n}\r\n/*IPAD Portrait mode ends*/\r\n\r\n/*IPAD Landscape mode starts*/\r\n@media only screen and (min-device-width: 768px) and (max-device-height: 1024px) and (orientation : landscape){\r\n    .surveyContentContainer {\r\n        width: 100%;\r\n        height: 85%;\r\n    }\r\n    .surveyContent {\r\n        width: 85%;\r\n    }\r\n    .surveyContentContainer {\r\n        height: 90%;\r\n    }\r\n    .surveyNavigation {\r\n        height: 15%;\r\n    }\r\n    .surveyActions > div {\r\n        width: 40%;\r\n        font-size: 30px;\r\n    }\r\n    .surveyQuestionsContainer {\r\n        width: 95%;\r\n        font-size: 28px;\r\n    }\r\n    .surveySignature > div {\r\n        font-size: 20px;    \r\n    }\r\n    .surveyOptions > div {\r\n        font-size: 24px;\r\n    }\r\n    .surveyNavigation > div > div {\r\n        width: 45%;\r\n        height: 75%;\r\n        font-size: 25px;\r\n    }\r\n}\r\n/*IPAD Landscape mode ends*/\r\n\r\n/*Mobile*/\r\n/*IPONE Portrait mode starts*/\r\n@media only screen and (min-device-width: 320px) and (max-device-height: 568px)  and (orientation : portrait) {\r\n    .surveyHome {\r\n        font-size: 18px;\r\n    }\r\n    .surveyHome > div {\r\n        width: 100%;\r\n        height: 35%;\r\n        margin: 0 auto;\r\n    }\r\n    .surveyContent {\r\n        width: 90%;\r\n        height: 60%;\r\n    }\r\n    .surveyQuestion {\r\n        height: 77%;\r\n    }\r\n    .surveySignature {\r\n        height: 23%;\r\n    }\r\n    .surveyActions {\r\n        width: 100%;\r\n    }\r\n    .surveyActions > div {\r\n        font-size: 20px;\r\n        border-radius: 5px;\r\n    }\r\n    .surveyQuestionsContainer {\r\n        font-size: 19px;\r\n    }\r\n    .surveyActionContainer {\r\n        width: 90%;\r\n    }\r\n    .surveySignature > div {\r\n        font-size: 14px;\r\n    }\r\n    .surveyOptions > div {\r\n        font-size: 15px;\r\n        border-radius: 5px;\r\n    }\r\n    .surveyNavigation > div > div {\r\n        width: 90%;\r\n        font-size: 15px;\r\n        height: 55%;\r\n        border-radius: 5px;\r\n    }\r\n}\r\n/*IPONE Portrait mode ends*/\r\n\r\n/*IPHONE Landscape mode starts*/\r\n@media only screen and (min-device-width: 320px) and (max-device-height: 568px)  and (orientation : landscape) {\r\n    .surveyOptions > div {\r\n        width: 45%;\r\n        height: 45%;\r\n        border-radius: 6px;\r\n        font-size: 14px;\r\n    }\r\n    .surveyQuestionsContainer {\r\n        font-size: 18px;\r\n        width: 95%;\r\n    }\r\n    .surveySignature {\r\n        font-size: 12px;\r\n        height:30%;\r\n    }\r\n    .surveyQuestion {\r\n        height: 70%;\r\n    }\r\n    .surveyNavigation > div > div {\r\n        width: 43%;\r\n        height: 80%;\r\n        border-radius: 5px;\r\n        font-size: 18px;\r\n    }\r\n    .surveyHome {\r\n        font-size: 21px;\r\n    }\r\n    .surveyActions > div {\r\n        width: 35%;\r\n        height: 75%;\r\n        border-radius: 5px;\r\n        font-size: 20px;\r\n    }\r\n    .surveyContent {\r\n        width: 100%;\r\n        height: 60%;\r\n        margin-top: 1%;\r\n        margin-bottom: 1%;\r\n    }\r\n    .displayResidentName  > img{\r\n        width:30px;\r\n        height:30px;\r\n    }\r\n    .surveyActionContainer {\r\n        width: 90%;\r\n        height: 30%;\r\n    }\r\n    .surveyContentContainer {\r\n        height: 90%;\r\n    }\r\n    .surveyNavigation {\r\n        height: 18%;\r\n    }\r\n}\r\n/*IPHONE Landscape mode ends*/\r\n\r\n/*Other Mobile devices Portrait mode starts*/\r\n@media screen and (min-width:350px) and (max-width: 450px) {\r\n    .surveyContent {\r\n        width: 95%;\r\n    }\r\n    .surveyContentContainer {\r\n        height: 90%;\r\n    }\r\n    .surveyNavigation {\r\n        height: 15%;\r\n    }\r\n    .surveyHome {\r\n        width: 100%;\r\n        font-size: 20px;\r\n    }\r\n    .surveyActions {\r\n        width: 100%;\r\n    }\r\n    .surveyActions > div {\r\n        font-size: 23px;\r\n        border-radius: 5px;\r\n        height: 45%;\r\n    }\r\n    .surveyQuestionsContainer {\r\n        font-size: 18px;\r\n    }\r\n    .surveySignature {\r\n        font-size: 14px;\r\n        height: 22%;\r\n    }\r\n    .surveyActionContainer {\r\n        width: 95%;\r\n    }\r\n    .surveyQuestion {\r\n        height: 78%;\r\n    }\r\n    .surveyOptions > div {\r\n        font-size: 17px;\r\n        border-radius: 5px;\r\n    }\r\n    .surveyNavigation > div > div {\r\n        width: 85%;\r\n        height: 75%;\r\n        font-size: 20px;\r\n        border-radius: 5px;\r\n    }\r\n}\r\n/*Other Mobile devices Portrait mode starts*/\r\n\r\n/*Other Mobile devices Landscape mode starts*/ \r\n@media screen and (min-width:600px) and (max-width:750px) {\r\n    .surveyContent {\r\n        width: 100%;\r\n        height: 75%;\r\n    }\r\n    .surveyNavigation {\r\n        height: 15%;\r\n    }\r\n    .surveyHome {\r\n        font-size: 20px;\r\n    }\r\n    .surveyContentContainer {\r\n        height: 100%;\r\n    }\r\n    .surveyOptions {\r\n        width: 100%;\r\n        margin: auto;\r\n    }\r\n    .surveyActions > div {\r\n        height: 65%;\r\n        width:30%;\r\n    }\r\n    .surveyActionContainer {\r\n        height: 25%;\r\n        width: 100%;\r\n    }\r\n    .surveyQuestionsContainer {\r\n        height: 95%;\r\n    }\r\n    .surveyOptions > div {\r\n        height: 75%;\r\n        width: 24%;\r\n        border-radius: 5px;\r\n        font-size: 14px;\r\n    }\r\n    .surveyNavigation > div > div {\r\n        height:90%;\r\n    }\r\n\r\n}\r\n/*Other Mobile devices Landscape mode ends*/ \r\n\r\n/*desktop starts*/\r\n@media only screen and (min-device-width: 1280px) and (max-device-height: 768px){\r\n\r\n}\r\n\r\n@media only screen and (min-width: 1280px) {\r\n\r\n}\r\n/*Desktop ends*\r\n\r\n\r\n\r\n\r\n/* Font Style and families are listed*/\r\n/*@font-face {\r\n    font-family: 'Bryant';\r\n    font-style: normal;\r\n    font-weight: 500;\r\n    src: url(\"./../../../fonts/BryantPro-Medium.otf\");\r\n}\r\n@font-face {\r\n    font-family: 'Myriad-Bold';\r\n    font-style: normal;\r\n    font-weight: 500;\r\n    src: url(\"./../../../fonts/Myriad-Pro-Bold.ttf\");\r\n}\r\n@font-face {\r\n    font-family: 'Myriad-Regular';\r\n    font-style: normal;\r\n    font-weight: 500;\r\n    src: url(\"./../../../fonts/Myriad-Pro-Regular.ttf\");\r\n}*/\r\n/*\r\n.centerAll {\r\n    display: flex;\r\n    justify-content: center;\r\n    align-items: center;\r\n    display: -webkit-flex;  Safari \r\n    -webkit-justify-content: center; \r\n    -webkit-align-items: center;\r\n    display: -moz-flex;  Mozilla \r\n    -moz-justify-content: center; \r\n    -moz-align-items: center;\r\n}\r\n Display flex and its properties are grouped for particular use \r\n.displayFlex {\r\n    display: flex;\r\n    display: -webkit-flex;  Safari \r\n    display: -moz-flex;  Mozilla \r\n\r\n}\r\n.centerAll {\r\n    display: flex;\r\n    justify-content: center;\r\n    align-items: center;\r\n    display: -webkit-flex;  Safari \r\n    -webkit-justify-content: center; \r\n    -webkit-align-items: center;\r\n    display: -moz-flex;  Mozilla \r\n    -moz-justify-content: center; \r\n    -moz-align-items: center;\r\n}\r\n.flexEnd {\r\n    display: flex;\r\n    justify-content: center;\r\n    align-items: flex-end;\r\n    display: -webkit-flex;  Safari \r\n    -webkit-justify-content: center; \r\n    -webkit-align-items: flex-end;\r\n    display: -moz-flex;  Mozilla \r\n    -moz-justify-content: center; \r\n    -moz-align-items: flex-end;\r\n}\r\n.flexEndAlign {\r\n    display: flex;\r\n    align-items: flex-end;\r\n    display: -webkit-flex;  Safari \r\n    -webkit-align-items: flex-end;\r\n    display: -moz-flex;  Mozilla \r\n    -moz-align-items: flex-end;\r\n}\r\n.flexAlignEnd {\r\n    display: flex;\r\n    justify-content: flex-end;\r\n    display: -webkit-flex;  Safari \r\n    -webkit-justify-content: flex-end;\r\n    display: -moz-flex;  Mozilla \r\n    -moz-justify-content: flex-end;\r\n}\r\n.flexEndAll {\r\n    display: flex;\r\n    justify-content: flex-end;\r\n    align-items: flex-end;\r\n    display: -webkit-flex;  Safari \r\n    -webkit-justify-content: flex-end; \r\n    -webkit-align-items: flex-end;\r\n    display: -moz-flex;  Mozilla \r\n    -moz-justify-content: flex-end; \r\n    -moz-align-items: flex-end;\r\n}\r\n.spaceAround {\r\n    display: flex;\r\n    justify-content: space-around;\r\n    align-items: center;\r\n    display: -webkit-flex;  Safari \r\n    -webkit-justify-content: space-around; \r\n    -webkit-align-items: center;\r\n    display: -moz-flex;  Mozilla \r\n    -moz-justify-content: space-around; \r\n    -moz-align-items: center;\r\n}\r\n.flexStart {\r\n    display: flex;\r\n    justify-content: flex-start;\r\n    align-items: center;\r\n    display: -webkit-flex;  Safari \r\n    -webkit-justify-content: flex-start; \r\n    -webkit-align-items: center;\r\n    display: -moz-flex;  Mozilla \r\n    -moz-justify-content: flex-start; \r\n    -moz-align-items: center;\r\n}\r\n.flexStartCenter {\r\n    display: flex;\r\n    justify-content: center;\r\n    align-items: flex-start;\r\n    display: -webkit-flex;  Safari \r\n    -webkit-justify-content: center; \r\n    -webkit-align-items: flex-start;\r\n    display: -moz-flex;  Mozilla \r\n    -moz-justify-content: center; \r\n    -moz-align-items: flex-start;\r\n}\r\n.centerItems {\r\n    display: flex;\r\n    align-items: center;\r\n    display: -webkit-flex;  Safari \r\n    -webkit-align-items: center;\r\n    display: -moz-flex;  Mozilla \r\n    -moz-align-items: center;\r\n}\r\n.justifyContent {\r\n    display: flex;\r\n    justify-content: center;\r\n    display: -webkit-flex;  Safari \r\n    -webkit-justify-content: center; \r\n    display: -moz-flex;  Mozilla \r\n    -moz-justify-content: center; \r\n}\r\n.spaceBetween {\r\n    display: flex;\r\n    justify-content: space-between;\r\n    align-items: center;\r\n    display: -webkit-flex;  Safari \r\n    -webkit-justify-content: space-between; \r\n    -webkit-align-items: center;\r\n    display: -moz-flex;  Mozilla \r\n    -moz-justify-content: space-between; \r\n    -moz-align-items: center;\r\n}\r\n.centerContent {\r\n    display: flex;\r\n    justify-content: center;\r\n    display: -webkit-flex;  Safari \r\n    -webkit-justify-content: center; \r\n    display: -moz-flex;  Mozilla \r\n    -moz-justify-content: center; \r\n}\r\n.flexDirection {\r\n    dispaly: flex;\r\n    flex-direction: column;\r\n    display: -webkit-flex;  Safari \r\n    -webkit-flex-direction: column; \r\n    display: -moz-flex;  Mozilla \r\n    -moz-flex-direction: column; \r\n}\r\n.wrap{\r\n    dispaly: flex;\r\n    flex-wrap: wrap;\r\n    display: -webkit-flex;  Safari \r\n    -webkit-flex-wrap: wrap; \r\n    display: -moz-flex;  Mozilla \r\n    -moz-flex-wrap: wrap; \r\n}\r\n\r\n Html layout header, section and footer speciivations\r\nheader {\r\n    height: 11%;\r\n    font-size: 35px;\r\n    font-family: 'Bryant';\r\n    width: 100%;\r\n    margin: 0 auto;\r\n}\r\n.header-title {\r\n    width: 50%;\r\n    display: flex;\r\n    justify-content: center;\r\n}\r\n.header-right {\r\n    width: 25%;\r\n}\r\nsection {\r\n    height:70%;\r\n}\r\nfooter {\r\n    height: 19%;\r\n    display: flex;\r\n}\r\n.footerClass {\r\n    width: 100%;\r\n    height: 100%;\r\n}\r\n.content-body {\r\n    background-color: #ffffff;\r\n    margin: 0 auto;\r\n    width: 97%;\r\n    height: 100%;\r\n}\r\n.container-main {\r\n    width: 94%;\r\n    height: 100%;\r\n    margin: 0 auto;\r\n}\r\n.main {\r\n    width: 100%;\r\n    height: 100%;\r\n}\r\n\r\nhtml, body {\r\n    background-color: #59c4bc;\r\n    height: 100%;\r\n    color: #ffffff;\r\n    margin: 0 auto;\r\n}\r\n.menu-div{\r\n    width:100%;\r\n    height:100%;\r\n}\r\n.cal-image {\r\n    width:50%;\r\n}\r\n.home-image {\r\n    width:50%;\r\n}\r\n.survey-alert-container{\r\n    width: 95%;\r\n    height: 80%;\r\n    margin: auto;\r\n}\r\n.survey-container{\r\n    width: 95%;\r\n    height: 58%;\r\n    margin: 0 auto;\r\n    background-color: #16bad6;\r\n    margin-bottom: 2%;\r\n    border-radius: 10px;\r\n}\r\n.decision-container{\r\n    width:100%;\r\n    height:35%;\r\n}\r\n.inner-container{\r\n    width: 85%;\r\n    height: 30%;\r\n    margin: auto;\r\n}\r\n.decision-key {\r\n    border-radius: 15px;\r\n    width:35%;\r\n    height:100%;\r\n    background-color: #F4B936;\r\n    color:#ffffff;\r\n    font-size: 22px;\r\n    font-family: 'Myriad-Bold';\r\n}\r\n.decision-key-controls {\r\n    border-radius: 15px;\r\n    width:30%;\r\n    height:45%;\r\n    background-color: #F4B936;\r\n    color:#ffffff;\r\n    font-size: 22px;\r\n    font-family: 'Myriad-Bold';\r\n}\r\n.nav-key {\r\n    border-radius: 15px;\r\n    width:45%;\r\n    height:73%;\r\n    background-color: #F4B936;\r\n    color:#ffffff;\r\n    font-size: 22px;\r\n    font-family: 'Myriad-Bold';\r\n}\r\n.decision-key-options {\r\n    border: 3px solid white;\r\n    border-radius: 15px;\r\n    width:45%;\r\n    height:45%;\r\n    background-color: #F4B936;\r\n    color:#ffffff;\r\n    font-size: 22px;\r\n    font-family: 'Myriad-Bold';\r\n}\r\n.survey-box-content {\r\n    width: 90%;\r\n    height: 75%;\r\n    margin: auto;\r\n    border: 4px solid white;\r\n    border-radius: 14px;\r\n    background-color: #16bad6;\r\n}\r\n.survey-box-main {\r\n    width: 90%;\r\n    height: 75%;\r\n    margin: 0 auto;\r\n    border: 4px solid white;\r\n    border-radius: 14px;\r\n    background-color: #16bad6;\r\n}\r\n.survey-msg-container{\r\n    width:100%;\r\n    margin: auto;\r\n    height:40%;\r\n}\r\n.survey-msg\r\n{ \r\n    height: 90%;\r\n    font-size: 30px;\r\n    font-family: 'Myriad-Bold';\r\n}\r\n.survey-check-container{\r\n    width:100%;\r\n    margin: auto;\r\n    height:40%;\r\n}\r\n.survey-check-text{\r\n    font-size: 27px;\r\n    font-family: 'Myriad-Bold';\r\n    height:100%;\r\n}\r\n.survey-navigation {\r\n    display: none;\r\n}\r\n.surevyControls {\r\n    //display: none;\r\n}\r\n.surveyOptions {\r\n    display: flex;\r\n}\r\n.survey-address-container  {\r\n    width:  100%;\r\n    height: 50%;\r\n}\r\n.address-time-date  {\r\n    height: 75%;\r\n    width: 95%;\r\n    margin: 0 auto;\r\n}\r\n.surveyNavContainer {\r\n    height: 15%;\r\n}\r\n.surveyNav {\r\n    height: 100%;\r\n    width: 70%;\r\n}\r\n\r\n.surveyNavigation {\r\n    width: 90%;\r\n    height: 15%;\r\n    margin: 0 auto;\r\n}\r\n.surveyActionContainer {\r\n    width: 80%;\r\n    height: 30%;\r\n    margin: 0 auto;\r\n}\r\n.prevNext {\r\n    width: 100%;\r\n    height: 100%;\r\n}\r\n.initalAvailableControls{\r\n    width: 100%;\r\n    height: 100%;\r\n}*/", ""]);
 
 	// exports
 
 
 /***/ },
-/* 209 */
+/* 215 */
 /***/ function(module, exports) {
 
 	/*
@@ -24118,25 +24277,7 @@
 
 
 /***/ },
-/* 210 */
-/***/ function(module, exports, __webpack_require__) {
-
-	module.exports = __webpack_require__.p + "public/assets/fonts/BryantPro-Medium.otf";
-
-/***/ },
-/* 211 */
-/***/ function(module, exports, __webpack_require__) {
-
-	module.exports = __webpack_require__.p + "public/assets/fonts/Myriad-Pro-Bold.ttf";
-
-/***/ },
-/* 212 */
-/***/ function(module, exports, __webpack_require__) {
-
-	module.exports = __webpack_require__.p + "public/assets/fonts/Myriad-Pro-Regular.ttf";
-
-/***/ },
-/* 213 */
+/* 216 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/*
@@ -24388,7 +24529,7 @@
 
 
 /***/ },
-/* 214 */
+/* 217 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -24398,7 +24539,7 @@
 	});
 	exports.default = configureStore;
 
-	var _index = __webpack_require__(215);
+	var _index = __webpack_require__(218);
 
 	var _index2 = _interopRequireDefault(_index);
 
@@ -24411,7 +24552,7 @@
 	}
 
 /***/ },
-/* 215 */
+/* 218 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -24422,7 +24563,7 @@
 
 	var _redux = __webpack_require__(183);
 
-	var _reducers = __webpack_require__(216);
+	var _reducers = __webpack_require__(219);
 
 	var surveyReducers = _interopRequireWildcard(_reducers);
 
@@ -24442,7 +24583,7 @@
 	exports.default = rootReducer;
 
 /***/ },
-/* 216 */
+/* 219 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -24458,11 +24599,11 @@
 	exports.displayNavigationPanel = displayNavigationPanel;
 	exports.displayBottomPanel = displayBottomPanel;
 
-	var _actionTypes = __webpack_require__(201);
+	var _actionTypes = __webpack_require__(207);
 
 	var types = _interopRequireWildcard(_actionTypes);
 
-	var _initialState = __webpack_require__(206);
+	var _initialState = __webpack_require__(212);
 
 	var _initialState2 = _interopRequireDefault(_initialState);
 

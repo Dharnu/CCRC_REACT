@@ -27,18 +27,19 @@ class SurveyControls extends React.Component {
 
   render() {
 
-    var availableControls = '';
-    if (this.props.index === -1) {
-      availableControls = <div className="displayFlex spaceBetween initalAvailableControls"><div className = "decision-key-controls centerAll"
+    var availableControls='';
+    if(this.props.index===-1){
+      availableControls=<div className="displayFlex flexAlignCenterJustifySpaceAround surveyActions"><div className = "decision-key-controls flexAlignCenterJustifyCenter" 
       onClick = { this.displayQuestions}>Now </div> 
-       <div className = "decision-key-controls centerAll" > Later</div> 
+       <div className = "decision-key-controls flexAlignCenterJustifyCenter" > Later</div> 
        </div>;
-    } else {
-      availableControls = <div className = "decision-key-controls centerAll" onClick = { this.goHome}>Exit </div>;
+    }
+    else {
+      availableControls=<div className="displayFlex flexAlignCenterJustifySpaceAround surveyActions"><div className = "decision-key-controls flexAlignCenterJustifyCenter"  onClick = { this.goHome}> Exit </div></div>;
     }
 
     return (
-      <div className = "surveyActionContainer displayFlex spaceBetween surevyControls" >
+        <div className = "surveyActionContainer displayFlex flexAlignCenterJustifySpaceAround surevyControls" >
         {availableControls}
         </div>
     )

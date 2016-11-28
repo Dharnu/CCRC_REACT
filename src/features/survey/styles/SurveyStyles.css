@@ -8,8 +8,736 @@ and open the template in the editor.
     Created on : Oct 31, 2016, 11:19:14 AM
     Author     : dharani
 */
+
+.container-main {
+    width: 94%;
+    height: 100%;
+    margin: 0 auto;
+}
+.containerMain {
+    width: 100%;
+    height: 100%;
+}
+
+header {
+    width: 100%;
+    height: 9%;
+    font-size: 35px;
+    font-family: 'Bryant';
+    margin: 0 auto;
+}
+.headerTitle {
+    width: 50%;
+    display: flex;
+    display: -webkit-flex; /* Safari */
+    display: -moz-flex; /* Mozilla */
+    justify-content: center;
+}
+.headerRight {
+    width: 25%;
+}
+/*Display resident name*/
+.displayResidentName {
+    width: 25%;
+    display: flex;
+    display: -webkit-flex; /* Safari */
+    display: -moz-flex; /* Mozilla */
+    align-items: center;
+}
+.residentName {
+    font-family: Times New Roman; 
+    font-weight: bold;
+    font-size: 25px; 
+    color: red;
+}
+/*Dispay resident name ends*/
+
+section {
+    height: 76%;
+}
+footer {
+    height: 15%;
+}
+.footerMain {
+    width: 100%;
+    height: 100%;
+}
+footer > div > div > img {
+    width: 130px;
+    height: 130px;
+}
+.sideFooter {
+    display: none;
+}
+.sideFooter > div {
+    width: 100%;
+    height: 100%;
+}
+.contentBody {
+    background-color: #ffffff;
+    margin: 0 auto;
+    width: 97%;
+    height: 100%;
+}
+.contentContainer {
+    width: 100%;
+    height: 100%;
+}
+.contentEmpty {
+    background-color: #ffffff;
+    margin: 0 auto;
+    width: 97%;
+    height: 100%;
+    color: #fcb040;
+    font-family: 'Myriad-Regular';
+    font-size: 30px;
+    text-align: center;
+}
+
+/* Scroll bar Style starts */
+::-webkit-scrollbar {
+    width: 5px;
+}
+::-webkit-scrollbar-thumb {
+    border-radius: 4px;
+    background-color: #FCB040;
+}
+/* Scroll bar Style ends*/
+
+/* Display flex and its properties are grouped for particular use */
+.displayFlex {
+    display: flex;
+    display: -webkit-flex; /* Safari */
+    display: -moz-flex; /* Mozilla */
+}
+/*centerAll*/
+.flexAlignCenterJustifyCenter {  
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    display: -webkit-flex; /* Safari */
+    -webkit-justify-content: center; 
+    -webkit-align-items: center;
+    display: -moz-flex; /* Mozilla */
+    -moz-justify-content: center; 
+    -moz-align-items: center;
+}
+/*flexEnd*/
+.flexAlignEndJustifyCenter {       
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    display: -webkit-flex; /* Safari */
+    -webkit-justify-content: center; 
+    -webkit-align-items: flex-end;
+    display: -moz-flex; /* Mozilla */
+    -moz-justify-content: center; 
+    -moz-align-items: flex-end;
+}
+.flexAlignEndJustifySapceBetween {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    display: -webkit-flex; /* Safari */
+    -webkit-justify-content: space-between; 
+    -webkit-align-items: flex-end;
+    display: -moz-flex; /* Mozilla */
+    -moz-justify-content: space-between; 
+    -moz-align-items: flex-end;
+}
+/*flexEndAlign*/
+.flexAlignEnd {   
+    display: flex;
+    align-items: flex-end;
+    display: -webkit-flex; /* Safari */
+    -webkit-align-items: flex-end;
+    display: -moz-flex; /* Mozilla */
+    -moz-align-items: flex-end;
+}
+/*flexJustifyCenter*/
+.flexAlignCenterJustifyEnd {       
+    display: -webkit-flex; /* Safari */
+    justify-content: flex-end;
+    align-items: center;
+    display: -webkit-flex; /* Safari */
+    -webkit-justify-content: flex-end;
+    -webkit-align-items: center;
+    display: -moz-flex; /* Mozilla */
+    -moz-justify-content: flex-end;
+    -moz-align-items: center;
+}
+.flexAlignStartJustifyStart {   
+    display: -webkit-flex; /* Safari */
+    justify-content: flex-start;
+    align-items: center;
+    display: -webkit-flex; /* Safari */
+    -webkit-justify-content: flex-start;
+    -webkit-align-items: center;
+    display: -moz-flex; /* Mozilla */
+    -moz-justify-content: flex-start;
+    -moz-align-items: center;
+}
+/*flexJustifyStartAlignCenter*/
+.flexAlignCenterJustifyStart {    
+    display: -webkit-flex; /* Safari */
+    justify-content: flex-start;
+    align-items: center;
+    display: -webkit-flex; /* Safari */
+    -webkit-justify-content: flex-start;
+    -webkit-align-items: center;
+    display: -moz-flex; /* Mozilla */
+    -moz-justify-content: flex-start;
+    -moz-align-items: center;
+}
+/*flexEndAll*/
+.flexAlignEndJustifyEnd {     
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    display: -webkit-flex; /* Safari */
+    -webkit-justify-content: flex-end; 
+    -webkit-align-items: flex-end;
+    display: -moz-flex; /* Mozilla */
+    -moz-justify-content: flex-end; 
+    -moz-align-items: flex-end;
+}
+/*spaceAround*/
+.flexAlignCenterJustifySpaceAround {      
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    display: -webkit-flex; /* Safari */
+    -webkit-justify-content: space-around; 
+    -webkit-align-items: center;
+    display: -moz-flex; /* Mozilla */
+    -moz-justify-content: space-around; 
+    -moz-align-items: center;
+}
+/*spaceAroundOnly*/
+.flexJustifySpaceAround {        
+    display: flex;
+    justify-content: space-around;
+    display: -webkit-flex; /* Safari */
+    -webkit-justify-content: space-around; 
+    display: -moz-flex; /* Mozilla */
+    -moz-justify-content: space-around; 
+}
+/*flexStart*/
+.flexAlignCenterJustifyStart {     
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    display: -webkit-flex; /* Safari */
+    -webkit-justify-content: flex-start; 
+    -webkit-align-items: center;
+    display: -moz-flex; /* Mozilla */
+    -moz-justify-content: flex-start; 
+    -moz-align-items: center;
+}
+/*flexStartCenter*/
+.flexAlignStartJustifyCenter {        
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    display: -webkit-flex; /* Safari */
+    -webkit-justify-content: center; 
+    -webkit-align-items: flex-start;
+    display: -moz-flex; /* Mozilla */
+    -moz-justify-content: center; 
+    -moz-align-items: flex-start;
+}
+.flexAlignStartJustifyEnd {        
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-start;
+    display: -webkit-flex; /* Safari */
+    -webkit-justify-content: flex-end; 
+    -webkit-align-items: flex-start;
+    display: -moz-flex; /* Mozilla */
+    -moz-justify-content: flex-end; 
+    -moz-align-items: flex-start;
+}
+/*centerItems*/
+.flexAlignCenter {       
+    display: flex;
+    align-items: center;
+    display: -webkit-flex; /* Safari */
+    -webkit-align-items: center;
+    display: -moz-flex; /* Mozilla */
+    -moz-align-items: center;
+}
+/*justifyContent*/
+.flexJustifyCenter {      
+    display: flex;
+    justify-content: center;
+    display: -webkit-flex; /* Safari */
+    -webkit-justify-content: center; 
+    display: -moz-flex; /* Mozilla */
+    -moz-justify-content: center; 
+}
+/*spaceBetween*/
+.flexAlignCenterJustifySpaceBetween {      
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    display: -webkit-flex; /* Safari */
+    -webkit-justify-content: space-between; 
+    -webkit-align-items: center;
+    display: -moz-flex; /* Mozilla */
+    -moz-justify-content: space-between; 
+    -moz-align-items: center;
+}
+/*centerContent*/
+.flexJustifyCenter {       
+    display: flex;
+    justify-content: center;
+    display: -webkit-flex; /* Safari */
+    -webkit-justify-content: center; 
+    display: -moz-flex; /* Mozilla */
+    -moz-justify-content: center; 
+}
+/*flexDirection*/
+.flexDirectionColumn {    
+    dispaly: flex;
+    flex-direction: column;
+    display: -webkit-flex; /* Safari */
+    -webkit-flex-direction: column; 
+    display: -moz-flex; /* Mozilla */
+    -moz-flex-direction: column; 
+}
+/*wrap*/
+.flexWrap{       
+    display: flex;
+    flex-wrap: wrap;
+    display: -webkit-flex; /* Safari */
+    -webkit-flex-wrap: wrap; 
+    display: -moz-flex; /* Mozilla */
+    -moz-flex-wrap: wrap; 
+}
+/*noWrap*/
+.flexNoWrap { 
+    display: flex;
+    flex-wrap: no-wrap;
+    display: -webkit-flex; /* Safari */
+    -webkit-flex-wrap: no-wrap; 
+    display: -moz-flex; /* Mozilla */
+    -moz-flex-wrap: no-wrap; 
+}
+
+/* Content shodow starts*/
+.contentShadow{
+    -webkit-box-shadow: 7px 7px 1px 0px #46B6AD;
+    -moz-box-shadow: 7px 7px 1px 0px #46B6AD;
+    box-shadow: 7px 7px 1px 0px #46B6AD;
+}
+.boxShadow{
+    -webkit-box-shadow: 7px 7px 1px 0px #13A2BA;
+    -moz-box-shadow: 7px 7px 1px 0px #13A2BA;
+    box-shadow: 7px 7px 1px 0px #13A2BA;
+}
+.boxShadow1{
+    -webkit-box-shadow: 7px 40px 1px 0px #13A2BA;
+    -moz-box-shadow: 7px 40px 1px 0px #13A2BA;
+    box-shadow: 7px 40px 1px 0px #13A2BA;
+}
+.wholeBoxShadow {
+    box-shadow: -1px 1px 5px 8px rgba(93, 218, 218, 0.27);
+    -webkit-box-shadow: -1px 1px 5px 8px rgba(93, 218, 218, 0.27);
+    -moz-box-shadow: -1px 1px 5px 8px rgba(93, 218, 218, 0.27);
+}
+/* Content shodow stops*/
+
+html, body {
+    background-color: #59c4bc;
+    height: 100%;
+    color: #ffffff;
+    margin: 0 auto;
+}
+.surveyContentContainer {
+    width: 90%;
+    height: 80%;
+    margin: 0 auto;
+}
+.surveyContent {
+    width: 80%;
+    height: 58%;
+    margin: 0 auto;
+    background-color: #16bad6;
+    margin-bottom: 2%;
+    border-radius: 10px;
+}
+.surveyHome {
+    width: 90%;
+    height: 80%;
+    margin: 0 auto;
+    font-family: 'Myriad-Bold';
+    font-size: 30px;
+    color: #FFFFFF;
+}
+.surveyHome > div {
+    width: 90%;
+    height: 30%;
+    margin: 0 auto;
+}
+.surveyQuestionsContainer {
+    width: 90%;
+    height: 90%;
+    margin: 0 auto;
+    font-family: 'Myriad-Bold';
+    font-size: 30px;
+    color: #FFFFFF;
+}
+.surveyQuestion {
+    width: 100%;
+    height: 75%;
+    overflow-y: scroll;
+}
+.surveySignature {
+    width: 100%;
+    height: 25%;
+}
+.surveyActionContainer {
+    width: 80%;
+    height: 30%;
+}
+.surveyActions {
+    width: 90%;
+    height: 100%;
+    margin: 0 auto;
+}
+.surveyActions > div {
+    width: 45%;
+    height: 50%;
+    background-color: #FCB040;
+    border-radius: 10px;
+    font-family: 'Myriad-Bold';
+    font-size: 35px;
+}
+.surveyOptions {
+    width: 100%;
+    height: 25%;
+}
+.surveyOptions > div {
+    width: 48%;
+    height: 43%;
+    background-color: #FCB040;
+    border-radius: 10px;
+    font-family: 'Myriad-Bold';
+    font-size: 35px;
+    text-align: center;
+}
+.surveyNavigation {
+    width: 90%;
+    height: 20%;
+    margin: 0 auto;
+}
+.surveyNavigation > div {
+    width: 100%;
+    height: 100%;
+}
+.surveyNavigation > div > div {
+    width: 36%;
+    height: 43%;
+    background-color: #16bad6;
+    border-radius: 10px;
+    font-family: 'Myriad-Bold';
+    font-size: 35px;
+}
+.initalAvailableControls{
+    width: 100%;
+    height: 100%;
+}
+.prevNext {
+    width: 100%;
+    height: 100%;
+}
+
+/*IPAD Portrait mode starts*/
+@media only screen and (min-device-width: 768px) and (max-device-height: 1024px) and (orientation : portrait){
+    .surveyContentContainer {
+        height: 90%;
+    }
+    .surveyNavigation {
+        height: 15%;
+    }
+    .surveyContent {
+        width: 95%;
+    }
+    .surveyActions > div {
+        width: 43%;
+        height: 40%;
+        font-size: 32px;
+    }
+    .surveySignature > div {
+        font-size: 20px;    
+    }
+    .surveyQuestion {
+        height: 93%;
+        font-size: 28px;
+    }
+    .surveyOptions > div {
+        font-size: 25px;
+        height: 40%;
+        width: 38%;
+    }
+    .surveyNavigation > div > div {
+        font-size: 28px;
+        height: 73%;
+    }
+}
+/*IPAD Portrait mode ends*/
+
+/*IPAD Landscape mode starts*/
+@media only screen and (min-device-width: 768px) and (max-device-height: 1024px) and (orientation : landscape){
+    .surveyContentContainer {
+        width: 100%;
+        height: 85%;
+    }
+    .surveyContent {
+        width: 85%;
+    }
+    .surveyContentContainer {
+        height: 90%;
+    }
+    .surveyNavigation {
+        height: 15%;
+    }
+    .surveyActions > div {
+        width: 40%;
+        font-size: 30px;
+    }
+    .surveyQuestionsContainer {
+        width: 95%;
+        font-size: 28px;
+    }
+    .surveySignature > div {
+        font-size: 20px;    
+    }
+    .surveyOptions > div {
+        font-size: 24px;
+    }
+    .surveyNavigation > div > div {
+        width: 45%;
+        height: 75%;
+        font-size: 25px;
+    }
+}
+/*IPAD Landscape mode ends*/
+
+/*Mobile*/
+/*IPONE Portrait mode starts*/
+@media only screen and (min-device-width: 320px) and (max-device-height: 568px)  and (orientation : portrait) {
+    .surveyHome {
+        font-size: 18px;
+    }
+    .surveyHome > div {
+        width: 100%;
+        height: 35%;
+        margin: 0 auto;
+    }
+    .surveyContent {
+        width: 90%;
+        height: 60%;
+    }
+    .surveyQuestion {
+        height: 77%;
+    }
+    .surveySignature {
+        height: 23%;
+    }
+    .surveyActions {
+        width: 100%;
+    }
+    .surveyActions > div {
+        font-size: 20px;
+        border-radius: 5px;
+    }
+    .surveyQuestionsContainer {
+        font-size: 19px;
+    }
+    .surveyActionContainer {
+        width: 90%;
+    }
+    .surveySignature > div {
+        font-size: 14px;
+    }
+    .surveyOptions > div {
+        font-size: 15px;
+        border-radius: 5px;
+    }
+    .surveyNavigation > div > div {
+        width: 90%;
+        font-size: 15px;
+        height: 55%;
+        border-radius: 5px;
+    }
+}
+/*IPONE Portrait mode ends*/
+
+/*IPHONE Landscape mode starts*/
+@media only screen and (min-device-width: 320px) and (max-device-height: 568px)  and (orientation : landscape) {
+    .surveyOptions > div {
+        width: 45%;
+        height: 45%;
+        border-radius: 6px;
+        font-size: 14px;
+    }
+    .surveyQuestionsContainer {
+        font-size: 18px;
+        width: 95%;
+    }
+    .surveySignature {
+        font-size: 12px;
+        height:30%;
+    }
+    .surveyQuestion {
+        height: 70%;
+    }
+    .surveyNavigation > div > div {
+        width: 43%;
+        height: 80%;
+        border-radius: 5px;
+        font-size: 18px;
+    }
+    .surveyHome {
+        font-size: 21px;
+    }
+    .surveyActions > div {
+        width: 35%;
+        height: 75%;
+        border-radius: 5px;
+        font-size: 20px;
+    }
+    .surveyContent {
+        width: 100%;
+        height: 60%;
+        margin-top: 1%;
+        margin-bottom: 1%;
+    }
+    .displayResidentName  > img{
+        width:30px;
+        height:30px;
+    }
+    .surveyActionContainer {
+        width: 90%;
+        height: 30%;
+    }
+    .surveyContentContainer {
+        height: 90%;
+    }
+    .surveyNavigation {
+        height: 18%;
+    }
+}
+/*IPHONE Landscape mode ends*/
+
+/*Other Mobile devices Portrait mode starts*/
+@media screen and (min-width:350px) and (max-width: 450px) {
+    .surveyContent {
+        width: 95%;
+    }
+    .surveyContentContainer {
+        height: 90%;
+    }
+    .surveyNavigation {
+        height: 15%;
+    }
+    .surveyHome {
+        width: 100%;
+        font-size: 20px;
+    }
+    .surveyActions {
+        width: 100%;
+    }
+    .surveyActions > div {
+        font-size: 23px;
+        border-radius: 5px;
+        height: 45%;
+    }
+    .surveyQuestionsContainer {
+        font-size: 18px;
+    }
+    .surveySignature {
+        font-size: 14px;
+        height: 22%;
+    }
+    .surveyActionContainer {
+        width: 95%;
+    }
+    .surveyQuestion {
+        height: 78%;
+    }
+    .surveyOptions > div {
+        font-size: 17px;
+        border-radius: 5px;
+    }
+    .surveyNavigation > div > div {
+        width: 85%;
+        height: 75%;
+        font-size: 20px;
+        border-radius: 5px;
+    }
+}
+/*Other Mobile devices Portrait mode starts*/
+
+/*Other Mobile devices Landscape mode starts*/ 
+@media screen and (min-width:600px) and (max-width:750px) {
+    .surveyContent {
+        width: 100%;
+        height: 75%;
+    }
+    .surveyNavigation {
+        height: 15%;
+    }
+    .surveyHome {
+        font-size: 20px;
+    }
+    .surveyContentContainer {
+        height: 100%;
+    }
+    .surveyOptions {
+        width: 100%;
+        margin: auto;
+    }
+    .surveyActions > div {
+        height: 65%;
+        width:30%;
+    }
+    .surveyActionContainer {
+        height: 25%;
+        width: 100%;
+    }
+    .surveyQuestionsContainer {
+        height: 95%;
+    }
+    .surveyOptions > div {
+        height: 75%;
+        width: 24%;
+        border-radius: 5px;
+        font-size: 14px;
+    }
+    .surveyNavigation > div > div {
+        height:90%;
+    }
+
+}
+/*Other Mobile devices Landscape mode ends*/ 
+
+/*desktop starts*/
+@media only screen and (min-device-width: 1280px) and (max-device-height: 768px){
+
+}
+
+@media only screen and (min-width: 1280px) {
+
+}
+/*Desktop ends*
+
+
+
+
 /* Font Style and families are listed*/
-@font-face {
+/*@font-face {
     font-family: 'Bryant';
     font-style: normal;
     font-weight: 500;
@@ -26,34 +754,34 @@ and open the template in the editor.
     font-style: normal;
     font-weight: 500;
     src: url("./../../../fonts/Myriad-Pro-Regular.ttf");
-}
-
+}*/
+/*
 .centerAll {
     display: flex;
     justify-content: center;
     align-items: center;
-    display: -webkit-flex; /* Safari */
+    display: -webkit-flex;  Safari 
     -webkit-justify-content: center; 
     -webkit-align-items: center;
-    display: -moz-flex; /* Mozilla */
+    display: -moz-flex;  Mozilla 
     -moz-justify-content: center; 
     -moz-align-items: center;
 }
-/* Display flex and its properties are grouped for particular use */
+ Display flex and its properties are grouped for particular use 
 .displayFlex {
     display: flex;
-    display: -webkit-flex; /* Safari */
-    display: -moz-flex; /* Mozilla */
+    display: -webkit-flex;  Safari 
+    display: -moz-flex;  Mozilla 
 
 }
 .centerAll {
     display: flex;
     justify-content: center;
     align-items: center;
-    display: -webkit-flex; /* Safari */
+    display: -webkit-flex;  Safari 
     -webkit-justify-content: center; 
     -webkit-align-items: center;
-    display: -moz-flex; /* Mozilla */
+    display: -moz-flex;  Mozilla 
     -moz-justify-content: center; 
     -moz-align-items: center;
 }
@@ -61,37 +789,37 @@ and open the template in the editor.
     display: flex;
     justify-content: center;
     align-items: flex-end;
-    display: -webkit-flex; /* Safari */
+    display: -webkit-flex;  Safari 
     -webkit-justify-content: center; 
     -webkit-align-items: flex-end;
-    display: -moz-flex; /* Mozilla */
+    display: -moz-flex;  Mozilla 
     -moz-justify-content: center; 
     -moz-align-items: flex-end;
 }
 .flexEndAlign {
     display: flex;
     align-items: flex-end;
-    display: -webkit-flex; /* Safari */
+    display: -webkit-flex;  Safari 
     -webkit-align-items: flex-end;
-    display: -moz-flex; /* Mozilla */
+    display: -moz-flex;  Mozilla 
     -moz-align-items: flex-end;
 }
 .flexAlignEnd {
     display: flex;
     justify-content: flex-end;
-    display: -webkit-flex; /* Safari */
+    display: -webkit-flex;  Safari 
     -webkit-justify-content: flex-end;
-    display: -moz-flex; /* Mozilla */
+    display: -moz-flex;  Mozilla 
     -moz-justify-content: flex-end;
 }
 .flexEndAll {
     display: flex;
     justify-content: flex-end;
     align-items: flex-end;
-    display: -webkit-flex; /* Safari */
+    display: -webkit-flex;  Safari 
     -webkit-justify-content: flex-end; 
     -webkit-align-items: flex-end;
-    display: -moz-flex; /* Mozilla */
+    display: -moz-flex;  Mozilla 
     -moz-justify-content: flex-end; 
     -moz-align-items: flex-end;
 }
@@ -99,10 +827,10 @@ and open the template in the editor.
     display: flex;
     justify-content: space-around;
     align-items: center;
-    display: -webkit-flex; /* Safari */
+    display: -webkit-flex;  Safari 
     -webkit-justify-content: space-around; 
     -webkit-align-items: center;
-    display: -moz-flex; /* Mozilla */
+    display: -moz-flex;  Mozilla 
     -moz-justify-content: space-around; 
     -moz-align-items: center;
 }
@@ -110,10 +838,10 @@ and open the template in the editor.
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    display: -webkit-flex; /* Safari */
+    display: -webkit-flex;  Safari 
     -webkit-justify-content: flex-start; 
     -webkit-align-items: center;
-    display: -moz-flex; /* Mozilla */
+    display: -moz-flex;  Mozilla 
     -moz-justify-content: flex-start; 
     -moz-align-items: center;
 }
@@ -121,66 +849,66 @@ and open the template in the editor.
     display: flex;
     justify-content: center;
     align-items: flex-start;
-    display: -webkit-flex; /* Safari */
+    display: -webkit-flex;  Safari 
     -webkit-justify-content: center; 
     -webkit-align-items: flex-start;
-    display: -moz-flex; /* Mozilla */
+    display: -moz-flex;  Mozilla 
     -moz-justify-content: center; 
     -moz-align-items: flex-start;
 }
 .centerItems {
     display: flex;
     align-items: center;
-    display: -webkit-flex; /* Safari */
+    display: -webkit-flex;  Safari 
     -webkit-align-items: center;
-    display: -moz-flex; /* Mozilla */
+    display: -moz-flex;  Mozilla 
     -moz-align-items: center;
 }
 .justifyContent {
     display: flex;
     justify-content: center;
-    display: -webkit-flex; /* Safari */
+    display: -webkit-flex;  Safari 
     -webkit-justify-content: center; 
-    display: -moz-flex; /* Mozilla */
+    display: -moz-flex;  Mozilla 
     -moz-justify-content: center; 
 }
 .spaceBetween {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    display: -webkit-flex; /* Safari */
+    display: -webkit-flex;  Safari 
     -webkit-justify-content: space-between; 
     -webkit-align-items: center;
-    display: -moz-flex; /* Mozilla */
+    display: -moz-flex;  Mozilla 
     -moz-justify-content: space-between; 
     -moz-align-items: center;
 }
 .centerContent {
     display: flex;
     justify-content: center;
-    display: -webkit-flex; /* Safari */
+    display: -webkit-flex;  Safari 
     -webkit-justify-content: center; 
-    display: -moz-flex; /* Mozilla */
+    display: -moz-flex;  Mozilla 
     -moz-justify-content: center; 
 }
 .flexDirection {
     dispaly: flex;
     flex-direction: column;
-    display: -webkit-flex; /* Safari */
+    display: -webkit-flex;  Safari 
     -webkit-flex-direction: column; 
-    display: -moz-flex; /* Mozilla */
+    display: -moz-flex;  Mozilla 
     -moz-flex-direction: column; 
 }
 .wrap{
     dispaly: flex;
     flex-wrap: wrap;
-    display: -webkit-flex; /* Safari */
+    display: -webkit-flex;  Safari 
     -webkit-flex-wrap: wrap; 
-    display: -moz-flex; /* Mozilla */
+    display: -moz-flex;  Mozilla 
     -moz-flex-wrap: wrap; 
 }
 
-/* Html layout header, section and footer speciivations*/
+ Html layout header, section and footer speciivations
 header {
     height: 11%;
     font-size: 35px;
@@ -378,4 +1106,4 @@ html, body {
 .initalAvailableControls{
     width: 100%;
     height: 100%;
-}
+}*/

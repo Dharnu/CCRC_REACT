@@ -26,14 +26,9 @@ class SurveyMessage extends React.Component {
 			//this.reachedSurveyEnd();
 			messageContent = 'there are ' + (this.props.surveyQuestions.length-this.props.surveyQuestionsAnswered).toString() + ' unanswered questions'
 		}
-		return (<div className="survey-box-main flexDirection spaceAround ">
-                
-                <div className="survey-check-container centerAll">
-                    <div className="survey-check-text">
-                        {messageContent}
-                    </div>
-                </div>
-            </div>
+		return (<div className="surveyHome flexAlignCenterJustifyCenter flexDirectionColumn ">
+                            <div className="flexAlignCenterJustifyCenter">{messageContent}</div>
+                        </div>
 
 		)
 	}

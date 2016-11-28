@@ -19,21 +19,23 @@ class SurveyApp extends React.Component {
 
     return (
 
-      <div className="main">
-  	 <header className="centerAll">SURVEY</header>
-  	 <section>
-            <div className="content-body content-shadow displayFlex flexDirection">
-                <div className="survey-alert-container flexDirection">
-                    <div className="survey-container centerAll">
-                        <SurveyMessage />
-                    </div>
-                    {this.props.state.displayControlPanel?<SurveyControls />:''}
-                    {this.props.state.displayOptionsPanel?<SurveyOptions />:''}                    
+        <div className="containerMain">
+            <header className="flexAlignCenterJustifyCenter">SURVEY</header>
+            <section>
+                <div className="displayFlex contentContainer">                    
+                    <div className="contentBody contentShadow flexAlignCenterJustifyCenter flexDirectionColumn">
+                        <div className="surveyContentContainer flexAlignCenterJustifyCenter flexDirectionColumn">
+                            <div className="surveyContent flexAlignCenterJustifyCenter">
+                                <SurveyMessage />
+                            </div>
+                            {this.props.state.displayControlPanel?<SurveyControls />:''}
+                            {this.props.state.displayOptionsPanel?<SurveyOptions />:''}                    
+                        </div>
+                        {this.props.state.displayNavigationPanel?<SurveyNavigation />:''}
+                    </div>   
                 </div>
-                {this.props.state.displayNavigationPanel?<SurveyNavigation />:''}</div>
-            
-        </section>
-  	<footer>{this.props.state.displayBottomPanel?<SurveyBottom/>:''}</footer>
+            </section>
+            <footer>{this.props.state.displayBottomPanel?<SurveyBottom/>:''}</footer>
   </div>
 
     )

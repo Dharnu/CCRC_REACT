@@ -25,13 +25,13 @@ class SurveyOptions extends React.Component {
     var optionsList = []
     if (this.props.index<this.props.surveyQuestions.length) {
       optionsList = this.props.surveyQuestions[this.props.index].options.map(option => {
-        return <div onClick={this.nextQuestion} className="decision-key-options centerAll" id={option.id} key={option.id}>{option.option}</div>
+        return <div onClick={this.nextQuestion} className="flexAlignCenterJustifyCenter" id={option.id} key={option.id}>{option.option}</div>
       });
     }
     
     return (
 
-      <div className="inner-container displayFlex spaceBetween wrap surveyOptions">
+      <div className="surveyOptions flexAlignCenterJustifySpaceBetween flexWrap">
             {optionsList}
         </div>
 
