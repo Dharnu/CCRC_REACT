@@ -46,7 +46,6 @@ export function displayPanels(state, action) {
 
 }
 export function displayControlPanel(state = initialState.displaySurveyControlPanel, action) {
-
 	switch (action.type) {
 		case types.HIDE_CONTROL_PANEL:
 

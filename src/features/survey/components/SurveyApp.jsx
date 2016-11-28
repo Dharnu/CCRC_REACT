@@ -30,9 +30,7 @@ class SurveyApp extends React.Component {
                 <div className="displayFlex contentContainer">                    
                     <div className="contentBody contentShadow flexAlignCenterJustifyCenter flexDirectionColumn">
                         <div className="surveyContentContainer flexAlignCenterJustifyCenter flexDirectionColumn">
-                            <div className="surveyContent flexAlignCenterJustifyCenter">
-                                <SurveyMessage />
-                            </div>
+                            <SurveyMessage />
                             {this.props.state.displayControlPanel?<SurveyControls />:''}
                             {this.props.state.displayOptionsPanel?<SurveyOptions />:''}                    
                         </div>

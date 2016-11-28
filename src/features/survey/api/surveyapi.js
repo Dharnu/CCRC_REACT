@@ -1,7 +1,7 @@
 export default class SurveyApi {
 
 constructor(){
-  this.url='http://10.10.1.167/survey/survey.php';
+  this.url='http://10.10.1.166/CCRC_SPA/json.php';
 }
 
  fetchSurveys(){

@@ -11,13 +11,13 @@ var {Provider} = require('react-redux');
 // .then(surveys=> {
 // 				SurveyStore.dispatch(surveyFetchSuccess(surveys));
 // 			})
- SurveyStore.subscribe(()=>{console.log(SurveyStore.getState());});
+SurveyStore.subscribe(()=>{console.log(SurveyStore.getState());});
 
 SurveyStore.dispatch(surveyFetchSuccess([{
 		'id': 69,
 		'survey': 'Test1',
 		'date': 'October 21, 2016 12:09:07 PM',
-		'signature': '- StatusSolutionAdministrator8668467272',
+		'signature': '- StatusSolution<br/>Administrator<br/>(866) 846-7272<br/>',
 		'options': [{
 			'id': 4,
 			'option': 'Good'
@@ -37,7 +37,7 @@ SurveyStore.dispatch(surveyFetchSuccess([{
 		'id': 71,
 		'survey': 'Test2',
 		'date': 'October 21, 2016 12:09:07 PM',
-		'signature': '- StatusSolutionAdministrator8668467272',
+		'signature': '- StatusSolution<br/>Administrator<br/>(866) 846-7272<br/>',
 		'options': [{
 			'id': 4,
 			'option': 'Good'
@@ -52,7 +52,7 @@ SurveyStore.dispatch(surveyFetchSuccess([{
 		'id': 74,
 		'survey': 'Test3',
 		'date': 'October 21, 2016 12:09:07 PM',
-		'signature': '- StatusSolutionAdministrator8668467272',
+		'signature': '- StatusSolution<br/>Administrator<br/>(866) 846-7272<br/>',
 		'options': [{
 			'id': 4,
 			'option': 'Good'
@@ -67,7 +67,7 @@ SurveyStore.dispatch(surveyFetchSuccess([{
 		'id': 75,
 		'survey': 'Test4',
 		'date': 'October 21, 2016 12:09:07 PM',
-		'signature': '- StatusSolutionAdministrator8668467272',
+		'signature': '- StatusSolution<br/>Administrator<br/>(866) 846-7272<br/>',
 		'options': [{
 			'id': 4,
 			'option': 'Good'
@@ -84,7 +84,7 @@ class App extends Component {
   render() {
     return (
     	<Provider store={SurveyStore}>
-      <SurveyApp/>
+            <SurveyApp/>
       </Provider>
     )
   }
