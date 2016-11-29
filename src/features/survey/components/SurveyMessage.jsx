@@ -22,17 +22,17 @@ class SurveyMessage extends React.Component {
                                                 <div className="surveyQuestion"><div>{((this.props.index+1)+') ') + this.props.surveyQuestions[this.props.index].survey}</div></div>
                                                 <div className="surveySignature flexAlignEnd"><div>{this.props.surveyQuestions[this.props.index].signature}</div></div>
                                             </div>;
-		} else if (this.props.index === this.props.surveyQuestions.length) {
+		} else if (this.props.index === this.props.surveyQuestionsCount) {
 			/** broadcast options hide and display control panel*/
 			//this.reachedSurveyEnd();
-                        if((this.props.surveyQuestions.length-this.props.surveyQuestionsAnswered) === 0){
+                        if((this.props.surveyQuestionsCount-this.props.surveyQuestionsAnswered) === 0){
                             messageContent = <div id="surveyHome" className="surveyHome flexAlignCenterJustifyCenter flexDirectionColumn">
                                             <div className="flexAlignCenterJustifyCenter">You answered all Survey(s)</div>
                                             <div className="flexAlignCenterJustifyCenter">Thank You.</div>
                                         </div>;
                         } else {
                             messageContent = <div id="surveyHome" className="surveyHome flexAlignCenterJustifyCenter flexDirectionColumn">
-                                                <div className="flexAlignCenterJustifyCenter">You skipped {(this.props.surveyQuestions.length-this.props.surveyQuestionsAnswered).toString()} Survey(s)</div>
+                                                <div className="flexAlignCenterJustifyCenter">You skipped {(this.props.surveyQuestionsCount-this.props.surveyQuestionsAnswered).toString()} Survey(s)</div>
                                                 <div className="flexAlignCenterJustifyCenter">Thank You.</div>
                                             </div>;
                         }

@@ -546,13 +546,13 @@ html, body {
         font-size: 25px;
     }
     .surveyNavigationSubOne > div > div {
-    width: 65%;
-    height: 43%;
-    background-color: #16bad6;
-    border-radius: 10px;
-    font-family: 'Myriad-Bold';
-    font-size: 35px;
-}
+        width: 65%;
+        height: 43%;
+        background-color: #16bad6;
+        border-radius: 10px;
+        font-family: 'Myriad-Bold';
+        font-size: 35px;
+    }
 }
 /*IPAD Landscape mode ends*/
 
@@ -604,13 +604,13 @@ html, body {
         border-radius: 5px;
     }
     .surveyNavigationSubOne > div > div {
-    width: 65%;
-    height: 43%;
-    background-color: #16bad6;
-    border-radius: 10px;
-    font-family: 'Myriad-Bold';
-    font-size: 35px;
-}
+        width: 65%;
+        height: 43%;
+        background-color: #16bad6;
+        border-radius: 10px;
+        font-family: 'Myriad-Bold';
+        font-size: 35px;
+    }
 }
 /*IPONE Portrait mode ends*/
 
@@ -640,13 +640,13 @@ html, body {
         font-size: 18px;
     }
     .surveyNavigationSubOne > div > div {
-    width: 65%;
-    height: 43%;
-    background-color: #16bad6;
-    border-radius: 10px;
-    font-family: 'Myriad-Bold';
-    font-size: 35px;
-}
+        width: 65%;
+        height: 43%;
+        background-color: #16bad6;
+        border-radius: 10px;
+        font-family: 'Myriad-Bold';
+        font-size: 35px;
+    }
     .surveyHome {
         font-size: 21px;
     }
@@ -726,13 +726,13 @@ html, body {
         border-radius: 5px;
     }
     .surveyNavigationSubOne > div > div {
-    width: 65%;
-    height: 43%;
-    background-color: #16bad6;
-    border-radius: 10px;
-    font-family: 'Myriad-Bold';
-    font-size: 35px;
-}
+        width: 65%;
+        height: 43%;
+        background-color: #16bad6;
+        border-radius: 10px;
+        font-family: 'Myriad-Bold';
+        font-size: 35px;
+    }
 }
 /*Other Mobile devices Portrait mode starts*/
 
@@ -776,13 +776,13 @@ html, body {
         height:90%;
     }
     .surveyNavigationSubOne > div > div {
-    width: 65%;
-    height: 43%;
-    background-color: #16bad6;
-    border-radius: 10px;
-    font-family: 'Myriad-Bold';
-    font-size: 35px;
-}
+        width: 65%;
+        height: 43%;
+        background-color: #16bad6;
+        border-radius: 10px;
+        font-family: 'Myriad-Bold';
+        font-size: 35px;
+    }
 
 }
 /*Other Mobile devices Landscape mode ends*/ 
@@ -798,27 +798,63 @@ html, body {
 /*Desktop ends*
 
 
+/* Popup stats*/
+.overlay {
+    //display: none;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.55);
+    transition: opacity 500ms;
+}
+.loading_msg {
+    font-family: 'Myriad-Bold';
+    font-size: 30px;
+}
+.loader {
+    border: 10px solid #f3f3f3;
+    border-radius: 50%;
+    border-top: 10px solid #3498db;
+    border-bottom: 10px solid #3498db;
+    width: 50px;
+    height: 50px;
+    -webkit-animation: spin 2s linear infinite;
+    animation: spin 2s linear infinite;
+}
+
+@-webkit-keyframes spin {
+    0% { -webkit-transform: rotate(0deg); }
+    100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
 
 
 /* Font Style and families are listed*/
-/*@font-face {
+@font-face {
     font-family: 'Bryant';
     font-style: normal;
     font-weight: 500;
-    src: url("./../../../fonts/BryantPro-Medium.otf");
+    src: url("http://10.10.1.166/react/demo/public/assets/fonts/BryantPro-Medium.otf");
 }
 @font-face {
     font-family: 'Myriad-Bold';
     font-style: normal;
     font-weight: 500;
-    src: url("./../../../fonts/Myriad-Pro-Bold.ttf");
+    src: url("http://10.10.1.166/react/demo/public/assets/fonts/Myriad-Pro-Bold.ttf");
 }
 @font-face {
     font-family: 'Myriad-Regular';
     font-style: normal;
     font-weight: 500;
-    src: url("./../../../fonts/Myriad-Pro-Regular.ttf");
-}*/
+    src: url("http://10.10.1.166/react/demo/public/assets/fonts/Myriad-Pro-Regular.ttf");
+}
 /*
 .centerAll {
     display: flex;

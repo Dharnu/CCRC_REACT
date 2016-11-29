@@ -17,9 +17,8 @@ class SurveyControls extends React.Component {
   }
 
   displayQuestions(event) {
-    this.props.actions.incrementSurveyIndex();
     this.props.actions.fetchSurveyQuestions();
-
+    
   }
 
   render() {
@@ -32,6 +31,7 @@ class SurveyControls extends React.Component {
        </div>;
     }
     else {
+debugger;
       availableControls=<div className="displayFlex flexAlignCenterJustifySpaceAround surveyActions"><div className = "decision-key-controls flexAlignCenterJustifyCenter"  onClick = { this.goHome}> Exit </div></div>;
     }
 

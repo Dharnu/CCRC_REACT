@@ -54,9 +54,10 @@ export function fetchSurveyQuestions() {
 				dispatch(surveyFetchSuccess(result.data));
 				dispatch(displaySurveyQuestions());
 				dispatch(hideControlPanel(true));
+                                dispatch(incrementSurveyIndex());
 				dispatch(hideOptionsPanel(false));
 				dispatch(hideNavigationPanel(false));
-
+                                
 			})
 			.catch(error => {
 				debugger
