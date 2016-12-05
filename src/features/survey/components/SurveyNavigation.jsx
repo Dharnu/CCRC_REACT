@@ -14,7 +14,6 @@ class SurveyNavigation extends React.Component {
     skip(event) {
         this.props.actions.incrementSurveyIndex();
         if(this.props.index === this.props.totalSurveys){
-debugger;
             this.props.actions.surveyEnded();
         }
     }

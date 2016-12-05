@@ -31,7 +31,6 @@ class SurveyControls extends React.Component {
        </div>;
     }
     else {
-debugger;
       availableControls=<div className="displayFlex flexAlignCenterJustifySpaceAround surveyActions"><div className = "decision-key-controls flexAlignCenterJustifyCenter"  onClick = { this.goHome}> Exit </div></div>;
     }
 

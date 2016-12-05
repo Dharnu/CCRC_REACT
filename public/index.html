@@ -13,11 +13,18 @@
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
     <title>React Survey Demo</title>
+    <!-- CCRC Common styles -->
+    <link href="css/ccrc_common_style.css" rel="stylesheet" />
+    <link href="css/configuration.css" rel="stylesheet" />
+    <link href="css/document_style.css" rel="stylesheet" />
+    
+    <!-- Mobiscroll JS and CSS Includes -->
+    <link href="css/mobiscroll.css" rel="stylesheet" />
   </head>
   <body>
     <div id="root" class="container-main"></div>
-    <div id="roomno">101</div>
-    <div class="overlay flexAlignCenterJustifyCenter flexDirectionColumn">
+    <!-- <div id="roomno">101</div> -->
+    <div class="overlay flexAlignCenterJustifyCenter flexDirectionColumn" style="display: none;">
         <div class="loader"></div>
         <div class="loading_msg">Loading...</div>
     </div>

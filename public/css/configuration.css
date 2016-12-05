@@ -1,0 +1,483 @@
+/* 
+    Created on : Nov 3, 2016, 3:23:45 PM
+    Author     : dharani
+*/
+
+/* Font Style and families are listed*/
+@font-face {
+    font-family: 'Bryant';
+    font-style: normal;
+    font-weight: 500;
+    src: url("../assets/fonts/BryantPro-Medium.otf");
+}
+@font-face {
+    font-family: 'Myriad-Bold';
+    font-style: normal;
+    font-weight: 500;
+    src: url("../assets/fonts/Myriad-Pro-Bold.ttf");
+}
+@font-face {
+    font-family: 'Myriad-Regular';
+    font-style: normal;
+    font-weight: 500;
+    src: url("../assets/fonts/Myriad-Pro-Regular.ttf");
+}
+
+/* Html layout header, section and footer speciivations*/
+html ,body {
+    background-color: #59c4bc;
+    height: 100%;
+    color: #ffffff;
+    margin: 0 auto;
+} 
+.container-main {
+    width: 94%;
+    height: 100%;
+    margin: 0 auto;
+}
+.calendarBody {
+    background-color: #16bad6;
+    height: 100%;
+    color: #ffffff;
+    margin: 0 auto;
+}
+.dinningCalendarBody {
+    background-color: #59c4bc;
+    height: 100%;
+    color: #ffffff;
+    margin: 0 auto;
+}
+.containerMain {
+    width: 94%;
+    height: 100%;
+    margin: 0 auto;
+}
+header {
+    width: 100%;
+    height: 9%;
+    font-size: 35px;
+    font-family: 'Bryant';
+    margin: 0 auto;
+}
+.headerTitle {
+    width: 50%;
+    display: flex;
+    display: -webkit-flex; /* Safari */
+    display: -moz-flex; /* Mozilla */
+    justify-content: center;
+}
+.headerRight {
+    width: 25%;
+}
+/*Display resident name*/
+.displayResidentName {
+    width: 25%;
+    display: flex;
+    display: -webkit-flex; /* Safari */
+    display: -moz-flex; /* Mozilla */
+    align-items: center;
+}
+.residentName {
+    font-family: Times New Roman; 
+    font-weight: bold;
+    font-size: 25px; 
+    color: red;
+}
+/*Dispay resident name ends*/
+
+section {
+    height: 76%;
+}
+footer {
+    height: 15%;
+}
+.footerMain {
+    width: 100%;
+    height: 100%;
+}
+footer > div > div > img {
+    width: 130px;
+    height: 130px;
+}
+.sideFooter {
+    display: none;
+}
+.sideFooter > div {
+    width: 100%;
+    height: 100%;
+}
+.contentBody {
+    background-color: #ffffff;
+    margin: 0 auto;
+    width: 97%;
+    height: 100%;
+}
+.contentContainer {
+    width: 100%;
+    height: 100%;
+}
+.contentEmpty {
+    background-color: #ffffff;
+    margin: 0 auto;
+    width: 97%;
+    height: 100%;
+    color: #fcb040;
+    font-family: 'Myriad-Regular';
+    font-size: 30px;
+    text-align: center;
+}
+
+/*Sponser Template starts*/
+.sponserContainerMain {
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+}
+.sponserContainer {
+    width: 94%;
+    height: 97%;
+    margin: 0 auto;
+}
+.sponserSection {
+    height: 85%;
+}
+/*Sponser Template starts*/
+
+/* Scroll bar Style starts */
+::-webkit-scrollbar {
+    width: 5px;
+}
+::-webkit-scrollbar-thumb {
+    border-radius: 4px;
+    background-color: #FCB040;
+}
+/* Scroll bar Style ends*/
+
+
+/*IPAD Portrait mode starts*/
+@media only screen and (min-device-width: 768px) and (max-device-height: 1024px) and (orientation : portrait){
+    header {
+        width: 97%;
+    }
+    /*community directory style starts here*/
+    .communityHeader{
+        font-size: 26px;
+    }
+    /*community directory style ends here*/
+
+    /*dinning portrait style starts*/
+    .dinningHeader {
+        font-size: 27px;
+        text-align: center;
+    }
+    .contentContainer {
+        width: 100%;
+        height: 100%;
+    }
+    /*dinning potrait style starts*/
+    /*directory Services starts here*/
+   
+    /*directory Services starts here*/
+
+
+
+}
+/*IPAD Portrait mode ends*/
+
+/*IPAD Landscape mode starts*/
+@media only screen and (min-device-width: 768px) and (max-device-height: 1024px) and (orientation : landscape){
+    section {
+        height: 77%;
+    }
+    footer {
+        height: 14%;
+    }
+    footer > div > div > img {
+        width: 100px;
+        height: 100px;
+    }
+    .contentBody {
+        width: 100%;
+        height: 97%;
+    }
+    /*dinning landscape style starts*/
+    .dinningHeader {
+        font-size: 30px;
+        text-align: center
+    }
+    /*dinning landscape style starts*/
+   
+
+}
+/*IPAD Landscape mode ends*/
+
+/*MOBILE*/
+/*IPHONE Portrait mode starts*/
+@media only screen and (min-device-width: 320px) and (max-device-height: 568px)  and (orientation : portrait) {
+    header {
+        height: 12%;
+        font-size: 27px;
+        flex-direction: column;
+        -webkit-flex-direction: column; 
+        -moz-flex-direction: column; 
+    }
+    .displayResidentName {
+        width: 100%;
+        height: 50%;
+        justify-content: center;
+        -webkit-justify-content: center; 
+        -moz-justify-content: center; 
+    }
+    .displayResidentName > img {
+        width: 30px;
+        height: 30px;
+    }
+    .residentName {
+        font-size: 20px;
+    }
+    .headerTitle {
+        width: 100%;
+        font-size: 30px;
+    }
+    .headerRight {
+        display: none;
+    }
+    section {
+        height: 70%;
+    }
+    footer {
+        height: 18%;
+    }
+    footer > div > div > img{
+        width: 75px;
+        height: 75px;
+    }
+    .greenPageFooter > div > img {
+        width: 60px;
+        height: 65px;
+    }
+    /*community directory  portrait style starts*/
+    .communityHeader {
+        font-size: 23px;
+    }
+    /*community directory potrait style starts*/
+    /*dinning potrait style starts*/
+    .dinningHeader {
+        font-size: 17px;
+        text-align: center;
+    }
+    .contentContainer {
+        width: 100%;
+        height: 100%;
+    }
+    /*dinning potrait style starts*/
+   
+}
+/*IPHONE Portrait mode ends*/
+
+/*IPHONE Landscape mode starts*/
+@media only screen and (min-device-width: 320px) and (max-device-height: 568px)  and (orientation : landscape) {
+    .contentBody {
+        height: 95%;
+    }
+    header {
+        height: 12%;
+        font-size: 23px;
+    }
+    .displayResidentName > img {
+        width: 30px;
+        height: 30px;
+    }
+    .residentName {
+        font-size: 20px;
+    }
+    section {
+        height: 88%;
+    }
+    .content-body {
+        height: 92%;
+    }
+    .mailHeader {
+        height: 16%;
+    }
+    footer {
+        display: none;
+    }
+    .sideFooter {
+        display: flex;
+        display: -webkit-flex; /* Safari */
+        display: -moz-flex; /* Mozilla */
+        width: 11%;
+        height: 97%;
+    }
+    .sideFooter > div > div > img {
+        width: 50px;
+        height: 50px;
+    }
+    /*community directory  style starts*/
+    .communityHeader {
+        font-size: 20px;
+    }
+    /*community directory t style starts*/
+    /*dinning landscape style starts*/
+    .dinningHeader {
+        font-size: 15px;
+        text-align: center;
+    }
+    /*dinning landscape style starts*/
+  
+}
+/*IPHONE Landscape mode ends*/
+
+/*Other Mobile devices Portrait mode starts*/
+@media screen and (min-width:350px) and (max-width: 450px) {
+    header {
+        height: 12%;
+        flex-direction: column;
+        -webkit-flex-direction: column; 
+        -moz-flex-direction: column; 
+    }
+    .displayResidentName {
+        width: 100%;
+        height: 50%;
+        justify-content: center;
+        -webkit-justify-content: center; 
+        -moz-justify-content: center; 
+    }
+    .displayResidentName > img {
+        width: 30px;
+        height: 30px;
+    }
+    .residentName {
+        font-size: 20px;
+    }
+    .headerTitle {
+        width: 100%;
+    }
+    .headerRight {
+        display: none;
+    }
+    section {
+        height: 72%;
+    }
+    footer {
+        height: 16%;
+    }
+    footer > div > div > img{
+        width: 75px;
+        height: 75px;
+    }
+    .greenPageFooter > div > img {
+        width: 67px;
+        height: 67px;
+    }
+    /*community directory portrait style starts for other devices*/   
+    .communityHeader {
+        font-size: 23px;
+    }
+    /*community directory portrait style starts for other devices*/ 
+    /*dinning POTRAITE style starts*/
+    .dinningHeader {
+        font-size: 15px;
+        text-align: center;
+    }
+    .contentContainer {
+        width: 100%;
+        height: 100%;
+    } 
+    /*dinning POTRAITE style starts*/
+    
+}
+/*Other Mobile devices Portrait mode ends*/
+
+
+/*Other Mobile devices Landscape mode starts*/ 
+@media screen and (min-width:600px) and (max-width:750px) { 
+    .contentBody {
+        height: 95%;
+    }
+    footer {
+        display: none;
+    }
+    .sideFooter {
+        display: flex;
+        display: -webkit-flex; /* Safari */
+        display: -moz-flex; /* Mozilla */
+        width: 11%;
+        height: 97%;
+    }
+
+    .sideFooter > div > div > img {
+        width: 55px;
+        height: 55px;
+    }
+    .displayResidentName {
+        width: 30%;
+    }                                                       
+    .headerRight {
+        width: 30%;
+    }
+    .headerTitle {
+        width: 40%;
+    }
+    /*Survey*/
+    .surveyContentContainer {
+        height: 90%;
+    }
+    .surveyActions > div {
+        height: 80%;
+    }
+    /*community directory Landscape style starts for other devices*/   
+    .communityHeader {
+        font-size: 19px;
+    }
+    /*community directory Landscape style starts for other devices*/  
+   
+}
+/*Other Mobile devices Landscape mode ends*/ 
+
+
+/*Larger screens */
+/*desktop starts*/
+@media only screen and (min-device-width: 1280px) and (max-device-height: 768px){
+
+    section {
+        height: 75%;
+    }
+    footer {
+        width: 100%;
+        height: 16%;
+        display: flex;
+        display: -webkit-flex; /* Safari */
+        display: -moz-flex; /* Mozilla */
+    }
+    .contentBody {
+        background-color: #ffffff;
+        margin: 0 auto;
+        width: 100%;
+        height: 95%;
+    }
+}
+@media only screen and (min-width: 1280px) {
+    header {
+        width: 97%;
+    }
+    .containerMain {
+        width: 84%;
+        height: 100%;
+        margin: 0 auto;
+    }
+}
+@media only screen and (min-width: 1100px)  {
+    .contentBody {
+        height: 99%;
+    }
+    .containerMain {
+        height: 100%;
+    }
+}
+
+/*Larger screens ends */
+
+
+
